@@ -1,0 +1,148 @@
+/* CUPRÉ dokumentáció – közös stílus (képernyőre és A4 nyomtatásra / PDF-re) */
+:root {
+  --green: #08271f;
+  --green-2: #0f3a2e;
+  --copper: #b87333;
+  --copper-dark: #a15e30;
+  --cream: #fbf5ee;
+  --sand: #efe1d1;
+  --ink: #241d19;
+  --muted: #6e6258;
+  --line: #e6d7c8;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font: 15px/1.65 Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, .serif { font-family: Georgia, "Times New Roman", serif; font-weight: 500; }
+
+a { color: var(--copper-dark); }
+
+.page { max-width: 980px; margin: 0 auto; padding: 48px 40px 64px; }
+
+/* Borító */
+.cover {
+  background: var(--green);
+  color: #f5e6d4;
+  padding: 64px 40px 56px;
+  position: relative;
+  overflow: hidden;
+}
+.cover-inner { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center; }
+.cover .eyebrow { color: #e5b88b; }
+.cover h1 { font-size: 54px; line-height: 1.02; margin: 14px 0 18px; color: #fff; }
+.cover h1 em { font-style: normal; color: #f1c4a1; }
+.cover p { color: #d9cabb; font-size: 16px; max-width: 520px; }
+.cover img { width: 100%; border-radius: 14px; box-shadow: 0 20px 50px #0007; }
+.cover .meta { margin-top: 26px; font-size: 12px; color: #c0afa0; letter-spacing: 0.04em; }
+
+.eyebrow { font-size: 11px; letter-spacing: 0.24em; font-weight: 700; color: var(--copper); text-transform: uppercase; }
+
+h2 { font-size: 34px; line-height: 1.1; margin: 46px 0 14px; }
+h3 { font-size: 21px; margin: 26px 0 8px; }
+p { margin: 8px 0; }
+.lead { font-size: 17px; color: #4f4640; }
+.muted { color: var(--muted); font-size: 13px; }
+
+/* Kártyarács */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 18px 0; }
+.grid.two { grid-template-columns: repeat(2, 1fr); }
+.card { background: #fffaf5; border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; break-inside: avoid; }
+.card h3 { margin-top: 0; font-size: 19px; }
+.card p, .card li { font-size: 13.5px; color: #4f4640; }
+.card ul { padding-left: 18px; margin: 6px 0 0; }
+.icon { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--green); color: #f1c4a1; font-size: 16px; margin-bottom: 8px; }
+
+/* Kiemelő sáv */
+.band { background: var(--green); color: #f5e6d4; border-radius: 16px; padding: 26px 30px; margin: 26px 0; break-inside: avoid; }
+.band h3 { color: #fff; margin-top: 0; }
+.band p, .band li { color: #d9cabb; }
+.band strong { color: #f1c4a1; }
+
+/* Számok */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 18px 0; }
+.stat { background: var(--sand); border-radius: 14px; padding: 16px; text-align: center; break-inside: avoid; }
+.stat b { display: block; font: 500 34px/1 Georgia, serif; color: var(--copper-dark); }
+.stat span { font-size: 12px; color: var(--muted); }
+
+/* Képek */
+figure { margin: 18px 0; break-inside: avoid; }
+figure img { width: 100%; border-radius: 12px; border: 1px solid var(--line); display: block; }
+figcaption { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.shots { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; align-items: start; }
+
+/* Táblázatok */
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13.5px; break-inside: avoid; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: var(--sand); font-weight: 700; font-size: 12px; letter-spacing: 0.03em; }
+code { font-family: Consolas, "Courier New", monospace; font-size: 12.5px; background: #f3e9de; padding: 1px 5px; border-radius: 4px; }
+pre { background: #1d2a25; color: #f0e6da; padding: 14px 16px; border-radius: 10px; font-size: 12.5px; overflow-x: auto; break-inside: avoid; }
+pre code { background: none; padding: 0; color: inherit; }
+
+/* Figyelmeztetés / tipp */
+.note { border-left: 4px solid var(--copper); background: #f6ebdf; padding: 12px 16px; border-radius: 0 10px 10px 0; margin: 14px 0; font-size: 14px; break-inside: avoid; }
+.note.warn { border-color: #b3412e; background: #f8e6e0; }
+
+/* Tartalomjegyzék */
+.toc { columns: 2; column-gap: 32px; padding-left: 18px; }
+.toc li { margin: 3px 0; }
+
+/* Lábléc */
+.footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+
+@media screen and (max-width: 760px) {
+  .cover-inner, .grid, .grid.two, .stats, .shots { grid-template-columns: 1fr; }
+  .cover h1 { font-size: 40px; }
+  .toc { columns: 1; }
+}
+
+/* Nyomtatás / PDF: A4, borító külön oldalon, a fejezetek új oldalon kezdődnek */
+@page { size: A4; margin: 16mm 14mm 18mm; }
+@page :first { margin: 0; }
+@media print {
+  body { background: #fff; font-size: 12.5px; }
+  .page { padding: 0; max-width: none; }
+  .cover { margin: 0; min-height: 297mm; padding: 34mm 16mm 20mm; break-after: page; display: flex; align-items: center; }
+  .cover-inner { width: 100%; grid-template-columns: 1fr; gap: 26px; }
+  .cover h1 { font-size: 46px; }
+  .cover img { max-height: 120mm; object-fit: cover; object-position: top; }
+  figure img { max-height: 150mm; object-fit: contain; object-position: top; background: #fffaf5; }
+  .shots figure img { max-height: 120mm; object-fit: cover; }
+  /* A tartalom folyamatosan tördelődik: nincs kényszerített fejezettörés, így nem maradnak üres féloldalak */
+  h2 { font-size: 26px; margin: 22px 0 10px; }
+  h3 { font-size: 17px; margin: 16px 0 6px; }
+  h2, h3, figcaption { break-after: avoid; }
+  .lead { font-size: 14px; }
+  .grid { grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 12px 0; }
+  .grid.two { grid-template-columns: repeat(2, 1fr); }
+  .card { padding: 11px 13px; }
+  .card h3 { font-size: 15px; margin-bottom: 4px; }
+  .card p, .card li { font-size: 11.5px; line-height: 1.5; }
+  .icon { width: 26px; height: 26px; font-size: 13px; margin-bottom: 5px; }
+  .stats { gap: 10px; margin: 12px 0; }
+  .stat { padding: 10px; }
+  .stat b { font-size: 26px; }
+  .band { padding: 16px 20px; margin: 16px 0; }
+  .note { padding: 9px 13px; margin: 10px 0; font-size: 12px; }
+  table { font-size: 11.5px; margin: 10px 0; }
+  th, td { padding: 6px 8px; }
+  thead { display: table-header-group; }
+  tr { break-inside: avoid; }
+  figure { margin: 12px 0; }
+  figure img { max-height: 68mm; object-fit: cover; object-position: top; }
+  .shots figure img { max-height: 95mm; }
+  section.keep { break-inside: avoid; }
+  /* Kis elemek egyben maradnak; a hosszú táblázatok sorok között törhetnek */
+  .card, .band, figure, pre, .note, .stat { break-inside: avoid; }
+  .grid, .stats { break-inside: auto; }
+  p, li { orphans: 3; widows: 3; }
+  a { color: var(--copper-dark); text-decoration: none; }
+}

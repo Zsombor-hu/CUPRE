@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CUPRÉ webshop – felhasználói dokumentáció</title>
+  <link rel="stylesheet" href="doc.css" />
+</head>
+<body>
+  <header class="cover">
+    <div class="cover-inner">
+      <div>
+        <div class="eyebrow">CUPRÉ webshop</div>
+        <h1>Felhasználói<br /><em>dokumentáció</em></h1>
+        <p>
+          Kézikönyv a webáruház üzemeltetéséhez: beállítások, termékek, rendelések, kuponok, hírlevél, fizetés,
+          szállítás és a vásárlói folyamat.
+        </p>
+        <p class="meta">Változat: 2026. november · a fejlesztési állapotot írja le</p>
+      </div>
+      <img src="img/termekek.png" alt="Terméklista" />
+    </div>
+  </header>
+
+  <main class="page">
+    <section>
+      <div class="eyebrow">Tartalom</div>
+      <h2>Tartalomjegyzék</h2>
+      <ol class="toc">
+        <li><a href="#attekintes">Áttekintés</a></li>
+        <li><a href="#kornyezetek">Környezetek és indítás</a></li>
+        <li><a href="#beallitasok">Bolt-beállítások (company.json)</a></li>
+        <li><a href="#termekek">Termékek és GYIK</a></li>
+        <li><a href="#nyelvek">Nyelvek és szövegek</a></li>
+        <li><a href="#admin">Admin felület</a></li>
+        <li><a href="#rendelesek">Rendelések kezelése</a></li>
+        <li><a href="#kuponok">Kuponok</a></li>
+        <li><a href="#hirlevel">Hírlevél</a></li>
+        <li><a href="#fizetes">Fizetési módok</a></li>
+        <li><a href="#szallitas">Szállítási módok</a></li>
+        <li><a href="#levelek">Kimenő levelek</a></li>
+        <li><a href="#vasarlo">A vásárló szemével</a></li>
+        <li><a href="#jogi">Jogi oldalak</a></li>
+        <li><a href="#mentes">Adatok, mentés, biztonság</a></li>
+        <li><a href="#hibak">Gyakori kérdések, hibaelhárítás</a></li>
+        <li><a href="#eles">Élesítési ellenőrzőlista</a></li>
+      </ol>
+    </section>
+
+    <section id="attekintes">
+      <h2>1. Áttekintés</h2>
+      <p class="lead">
+        A CUPRÉ webshop egy Next.js alapú webáruház. A tartalom (termékek, GYIK, cégadatok, szövegek) szerkeszthető
+        adatfájlokban van, a vásárlói adatok, rendelések, kuponok és hírlevél-feliratkozók pedig környezetenként külön
+        SQLite adatbázisban.
+      </p>
+      <table>
+        <tr><th style="width:32%">Mit hol talál</th><th>Hely</th></tr>
+        <tr><td>Termékek, GYIK, cégadatok</td><td><code>src/data/&lt;környezet&gt;/products.json</code>, <code>faq.json</code>, <code>company.json</code></td></tr>
+        <tr><td>Felületi szövegek (3 nyelv)</td><td><code>src/data/i18n/hu.json</code>, <code>en.json</code>, <code>de.json</code></td></tr>
+        <tr><td>Jogi szövegek (3 nyelv)</td><td><code>src/data/legal/hu.json</code>, <code>en.json</code>, <code>de.json</code></td></tr>
+        <tr><td>Vásárlók, rendelések, kuponok, feliratkozók</td><td><code>src/data/&lt;környezet&gt;/customers.sqlite</code></td></tr>
+        <tr><td>Kimenő levelek (amíg nincs e-mail-küldés)</td><td><code>src/data/&lt;környezet&gt;/outbox/</code></td></tr>
+        <tr><td>Képek</td><td><code>public/images/</code></td></tr>
+        <tr><td>Titkos beállítások (jelszó, kulcsok)</td><td><code>.env</code> fájlok – sablon: <code>.env.example</code></td></tr>
+      </table>
+    </section>
+
+    <section id="kornyezetek">
+      <h2>2. Környezetek és indítás</h2>
+      <p>Három, egymástól teljesen elkülönített környezet van, mindegyik saját adatfájlokkal és adatbázissal:</p>
+      <table>
+        <tr><th>Környezet</th><th>Parancs</th><th>Cím</th><th>Adatkönyvtár</th></tr>
+        <tr><td>Fejlesztés</td><td><code>pnpm dev</code></td><td>http://localhost:3000</td><td><code>src/data/development/</code></td></tr>
+        <tr><td>Teszt</td><td><code>pnpm build:test</code> + <code>pnpm start:test</code></td><td>:3001</td><td><code>src/data/test/</code></td></tr>
+        <tr><td>Éles</td><td><code>pnpm build</code> + <code>pnpm start</code></td><td>:3002</td><td><code>src/data/production/</code></td></tr>
+      </table>
+      <div class="note">
+        <strong>Fontos:</strong> a JSON adatfájlok tartalma a teszt és az éles környezetben a <em>build</em> során kerül
+        az oldalakba. Ha módosítja a termékeket, a GYIK-et vagy a cégadatokat, utána újra kell buildelni
+        (<code>pnpm build</code>) és újraindítani. Fejlesztési módban a változás azonnal látszik.
+      </div>
+      <h3>Környezeti változók</h3>
+      <table>
+        <tr><th style="width:30%">Változó</th><th>Szerep</th></tr>
+        <tr><td><code>ADMIN_PASSWORD</code></td><td>Az admin felület jelszava (legalább 12 karakter). Ha üres, az admin felület ki van kapcsolva.</td></tr>
+        <tr><td><code>SITE_URL</code></td><td>A webshop nyilvános címe, pl. <code>https://cupre.hu</code>. Kell a levelek linkjeihez, a biztonságos sütikhez és a Barionhoz.</td></tr>
+        <tr><td><code>BARION_POS_KEY</code>, <code>BARION_PAYEE</code>, <code>BARION_ENVIRONMENT</code></td><td>Barion kártyás fizetés: titkos kulcs, pénztárca e-mail, <code>sandbox</code> vagy <code>production</code>.</td></tr>
+      </table>
+    </section>
+
+    <section id="beallitasok">
+      <h2>3. Bolt-beállítások (company.json)</h2>
+      <p>A <code>src/data/&lt;környezet&gt;/company.json</code> a bolt „vezérlőpultja”. A <code>[KITÖLTENDŐ]</code> jelölésű értékeket élesítés előtt ki kell tölteni.</p>
+      <table>
+        <tr><th style="width:28%">Rész</th><th>Tartalom</th></tr>
+        <tr><td><code>company</code></td><td>Cégnév, székhely, levelezési cím, e-mail, telefon, cégjegyzékszám, adószám, képviselő – az impresszumban, az ÁSZF-ben és a levelekben jelenik meg.</td></tr>
+        <tr><td><code>hosting</code></td><td>Tárhelyszolgáltató adatai (kötelező az impresszumban).</td></tr>
+        <tr><td><code>conciliationBody</code></td><td>Az illetékes békéltető testület adatai.</td></tr>
+        <tr><td><code>shop.liveOrders</code></td><td><code>true</code> esetén éles mód: a pénztár gombja „Megrendelés fizetési kötelezettséggel”.</td></tr>
+        <tr><td><code>shop.shipping</code></td><td>Szállítási módok be/ki és díjaik (lásd 11. fejezet).</td></tr>
+        <tr><td><code>shop.payments</code></td><td>Fizetési módok be/ki, bankszámla, utánvételi díj (lásd 10. fejezet).</td></tr>
+        <tr><td><code>shop.legalUpdated</code></td><td>A jogi dokumentumok hatálybalépésének dátuma.</td></tr>
+      </table>
+      <pre><code>"shipping": {
+  "home":     { "enabled": true, "feeHuf": 1990, "carrierName": "GLS", "deliveryDays": "2–4" },
+  "foxpost":  { "enabled": true, "feeHuf": 1290, "deliveryDays": "2–3" },
+  "mplPoint": { "enabled": false, "feeHuf": 1390, "deliveryDays": "2–4" }
+}</code></pre>
+    </section>
+
+    <section id="termekek">
+      <h2>4. Termékek és GYIK</h2>
+      <h3>Termékek (products.json)</h3>
+      <p>Minden termék szöveges mezője háromnyelvű (<code>{"hu": …, "en": …, "de": …}</code>); ha bármelyik nyelv hiányzik, a build hibát jelez.</p>
+      <table>
+        <tr><th style="width:26%">Mező</th><th>Jelentés</th></tr>
+        <tr><td><code>slug</code></td><td>A termékoldal címe: <code>/termekek/&lt;slug&gt;</code>. Egyedinek kell lennie.</td></tr>
+        <tr><td><code>featured</code></td><td><code>true</code>: ez a termék jelenik meg a főoldal „Kiemelt termékünk” blokkjában.</td></tr>
+        <tr><td><code>name</code>, <code>subtitle</code>, <code>description</code>, <code>points</code></td><td>Név, alcím, leírás, kiemelt jellemzők (ikon + felirat).</td></tr>
+        <tr><td><code>image</code>, <code>imageAlt</code></td><td>Kép a <code>public/images/</code> mappából és a leíró szöveg.</td></tr>
+        <tr><td><code>variants</code></td><td>Megvásárolható változatok: <code>sku</code> (egyedi cikkszám), <code>size</code>, <code>grade</code> (<code>first</code> = I. osztály, <code>second</code> = II. osztály), <code>priceHuf</code> (bruttó), <code>priceNote</code>.</td></tr>
+        <tr><td><code>productInfo</code></td><td>Kötelező termékadatok: szálösszetétel, kezelés, gyártó, EU-s felelős személy, termékazonosító, biztonsági információk.</td></tr>
+      </table>
+      <figure>
+        <img src="img/termekoldal.png" alt="Termékoldal" />
+        <figcaption>A termékoldal: a változatválasztó a <code>variants</code>, az alsó blokk a <code>productInfo</code> mezőből épül.</figcaption>
+      </figure>
+      <h3>GYIK (faq.json)</h3>
+      <p>Kérdés–válasz párok három nyelven, opcionális hivatkozással. Ismétlődő kérdést a rendszer nem enged (build hiba).</p>
+    </section>
+
+    <section id="nyelvek">
+      <h2>5. Nyelvek és szövegek</h2>
+      <p>A webshop magyarul a gyökércímen (<code>/</code>, <code>/termekek</code>), angolul <code>/en/…</code>, németül <code>/de/…</code> alatt érhető el. A vásárló a fejléc nyelvválasztójával vált (mobilon a menüben).</p>
+      <p>A felületi szövegek a <code>src/data/i18n/</code> szótárakban vannak. A magyar szótár a minta: ha az angolból vagy a németből egy kulcs hiányzik, a build hibát jelez.</p>
+      <div class="note">Az ajándékbanner képébe égetett felirat magyar – idegen nyelven csak a kép leírása fordított.</div>
+    </section>
+
+    <section id="admin">
+      <h2>6. Admin felület</h2>
+      <p>Az admin oldalak (közös menüvel):</p>
+      <table>
+        <tr><th style="width:30%">Oldal</th><th>Cím</th></tr>
+        <tr><td>Rendelések</td><td><code>/admin/rendelesek</code></td></tr>
+        <tr><td>Kuponok</td><td><code>/admin/kuponok</code></td></tr>
+        <tr><td>Hírlevél-feliratkozók</td><td><code>/admin/hirlevel</code> – itt van a belépő űrlap is</td></tr>
+      </table>
+      <p><strong>Belépés:</strong> nyissa meg a <code>/admin/hirlevel</code> oldalt, és adja meg az <code>ADMIN_PASSWORD</code> jelszót. A munkamenet 8 óráig érvényes. Túl sok hibás próbálkozás után néhány percig nem lehet belépni.</p>
+      <div class="note warn">Az admin jelszót ne ossza meg e-mailben; éles környezetben a szerver környezeti változójában tárolja.</div>
+    </section>
+
+    <section id="rendelesek">
+      <h2>7. Rendelések kezelése</h2>
+      <h3>Lista</h3>
+      <p>A felső fülekkel állapot szerint szűrhet (darabszámmal), a keresőmezőben rendelésszámra, névre vagy e-mail címre kereshet. A <strong>CSV letöltése</strong> az éppen beállított szűrővel exportál.</p>
+      <h3>Rendelés részletei</h3>
+      <p>Egy sorra kattintva megnyílnak a részletek: vásárló, tételek, szállítás (átvételi ponttal), fizetés (mód, állapot, Barion azonosító, kupon), valamint az állapot- és fizetési napló.</p>
+      <h3>Rendelésállapotok</h3>
+      <table>
+        <tr><th style="width:22%">Állapot</th><th>Mikor használja</th></tr>
+        <tr><td>Beérkezett</td><td>Új rendelés (automatikus).</td></tr>
+        <tr><td>Feldolgozás alatt</td><td>Összekészítés alatt.</td></tr>
+        <tr><td>Feladva</td><td>Átadta a futárnak / automatába. <strong>A vásárló értesítő levelet kap</strong>; a megjegyzés mezőbe írt szöveg (pl. csomagkövetési szám) a levélben is megjelenik.</td></tr>
+        <tr><td>Teljesítve</td><td>A vásárló átvette.</td></tr>
+        <tr><td>Lemondva</td><td>Elállás vagy lemondás. (A visszatérítést jelenleg kézzel kell intézni.)</td></tr>
+      </table>
+      <h3>Fizetés beérkezett</h3>
+      <p>Átutalásos és utánvétes rendelésnél a <strong>Fizetés beérkezett</strong> gombbal rögzíti a beérkezést; a vásárló értesítést kap. Kártyás fizetésnél ez nem szükséges és nem is lehetséges – az állapotot a Barion adja.</p>
+      <table>
+        <tr><th style="width:26%">Fizetési állapot</th><th>Jelentés</th></tr>
+        <tr><td>átutalásra vár</td><td>Átutalásos rendelés, a pénz még nem érkezett meg.</td></tr>
+        <tr><td>átvételkor fizet</td><td>Utánvétes rendelés.</td></tr>
+        <tr><td>folyamatban</td><td>Kártyás fizetés elindult, még nincs végeredmény.</td></tr>
+        <tr><td>fizetve</td><td>Kifizetett rendelés.</td></tr>
+        <tr><td>sikertelen / megszakítva / lejárt</td><td>A kártyás fizetés nem sikerült; a vásárló az eredményoldalról újrapróbálhatja.</td></tr>
+      </table>
+    </section>
+
+    <section id="kuponok">
+      <h2>8. Kuponok</h2>
+      <p>A <code>/admin/kuponok</code> oldalon hozhat létre fix összegű kedvezménykuponokat.</p>
+      <table>
+        <tr><th style="width:26%">Mező</th><th>Jelentés</th></tr>
+        <tr><td>Kód</td><td>Legalább 3 karakter (betű, szám, kötőjel). A kis- és nagybetű nem számít.</td></tr>
+        <tr><td>Kedvezmény (Ft)</td><td>A termékek árából levont összeg. Legfeljebb a termékek áráig vonódik le; a szállítási és utánvételi díjat nem érinti.</td></tr>
+        <tr><td>Érvényes ettől / eddig</td><td>Napra pontos, budapesti idő szerint; a kezdő és a záró nap is beleszámít. Üresen hagyva nincs korlát.</td></tr>
+        <tr><td>Megjegyzés</td><td>Belső megjegyzés (pl. kampány neve).</td></tr>
+      </table>
+      <p>A listában látja a kupon állapotát (Érvényes / Még nem érvényes / Lejárt / Kikapcsolva) és azt, hányszor használták. Egy rendeléshez egy kupon használható; a rendeléskor a rendszer újra ellenőrzi.</p>
+    </section>
+
+    <section id="hirlevel">
+      <h2>9. Hírlevél</h2>
+      <p>Feliratkozni a <code>/hirlevel</code> oldalon (a főoldali „Értesítést kérek” gomb ide visz), regisztrációkor, a vásárlói fiókban és a pénztárban lehet. A feliratkozás <strong>dupla megerősítésű</strong>: csak a levélben lévő linkre kattintva lesz aktív.</p>
+      <figure>
+        <img src="img/hirlevel.png" alt="Hírlevél-feliratkozás" />
+        <figcaption>Hírlevél-feliratkozás kifejezett hozzájárulással.</figcaption>
+      </figure>
+      <p>Az admin oldalon látja a feliratkozókat állapot szerint (Aktív / Megerősítésre vár / Leiratkozott), törölhet, és CSV-t tölthet le a hírlevélküldő szolgáltatóba (alapértelmezésben csak az aktív címekkel).</p>
+      <div class="note">Hírlevelet csak az „Aktív” (megerősített) címekre küldjön. Ha a vásárló a hírlevélküldő szolgáltatónál iratkozik le, azt itt is jelölje vagy törölje.</div>
+    </section>
+
+    <section id="fizetes">
+      <h2>10. Fizetési módok</h2>
+      <p>A <code>company.json</code> → <code>shop.payments</code> alatt minden mód külön kapcsolható. Ha egyik sincs bekapcsolva, a rendelés fizetési mód nélkül rögzül.</p>
+      <table>
+        <tr><th style="width:20%">Mód</th><th>Beállítás</th><th>Működés</th></tr>
+        <tr><td>Bankkártya</td><td><code>card.enabled</code>, <code>card.provider</code>: <code>barion</code> vagy <code>mock</code></td><td>A vásárló a Barion fizetőoldalán fizet, majd visszatér az eredményoldalra. A <code>mock</code> csak fejlesztéshez való tesztoldal (élesben tiltott).</td></tr>
+        <tr><td>Banki átutalás</td><td><code>transfer</code>: számlatulajdonos, bank, számlaszám, IBAN, SWIFT, határidő</td><td>A visszaigazolás és a levél tartalmazza a számlaadatokat és a közleményt (<code>CUPRE-&lt;rendelésszám&gt;</code>).</td></tr>
+        <tr><td>Utánvét</td><td><code>cod.enabled</code>, <code>cod.feeHuf</code></td><td>Az utánvételi díj hozzáadódik a végösszeghez.</td></tr>
+      </table>
+      <div class="note">A Barionhoz <code>BARION_POS_KEY</code>, <code>BARION_PAYEE</code> és https-sel kezdődő <code>SITE_URL</code> kell; ezek nélkül a kártyás mód nem jelenik meg.</div>
+    </section>
+
+    <section id="szallitas">
+      <h2>11. Szállítási módok</h2>
+      <table>
+        <tr><th style="width:24%">Mód</th><th>Működés</th></tr>
+        <tr><td>Házhozszállítás futárral</td><td>A megadott címre. A futárcég neve a <code>carrierName</code> mezőben állítható.</td></tr>
+        <tr><td>Foxpost csomagautomata</td><td>A vásárló az „Automata kiválasztása” gombbal a Foxpost térképes keresőjében választ; az automata neve, címe és azonosítója a rendeléshez kerül.</td></tr>
+        <tr><td>MPL PostaPont / automata</td><td>A vásárló beírja a választott posta / PostaPont / automata nevét és címét.</td></tr>
+      </table>
+      <p>A díjat mindig a szerver számolja a beállításból. Átvételi pontos szállításnál a pénztár címmezői a számlázási címet jelentik.</p>
+    </section>
+
+    <section id="levelek">
+      <h2>12. Kimenő levelek</h2>
+      <table>
+        <tr><th style="width:34%">Levél</th><th>Mikor megy ki</th></tr>
+        <tr><td>Rendelés visszaigazolása</td><td>Minden rendeléskor (tételek, szállítás, fizetési teendők, ÁSZF-link).</td></tr>
+        <tr><td>Fizetés beérkezett</td><td>Sikeres kártyás fizetés után, illetve amikor az admin rögzíti a beérkezést.</td></tr>
+        <tr><td>Csomag feladva</td><td>Amikor az admin „Feladva” állapotba teszi a rendelést.</td></tr>
+        <tr><td>Hírlevél megerősítése</td><td>Feliratkozáskor.</td></tr>
+        <tr><td>Jelszó-visszaállítás</td><td>Az „Elfelejtett jelszó” kérésre (1 óráig érvényes link).</td></tr>
+      </table>
+      <div class="note warn">Jelenleg a levelek <strong>nem mennek ki</strong>: szövegfájlként kerülnek a <code>src/data/&lt;környezet&gt;/outbox/</code> mappába. Az éles e-mail-küldés bekötése élesítés előtti feladat.</div>
+    </section>
+
+    <section id="vasarlo">
+      <h2>13. A vásárló szemével</h2>
+      <ol>
+        <li><strong>Termék kiválasztása:</strong> a termékoldalon méret és osztály, majd „Kosárba teszem”. A kosár a böngészőben megmarad.</li>
+        <li><strong>Pénztár:</strong> szállítási adatok, szállítási mód (átvételi pont), fizetési mód, opcionális kuponkód, az ÁSZF elfogadása, opcionális hírlevél.</li>
+        <li><strong>Fizetés:</strong> kártyánál a Barion oldalán; átutalásnál a megjelenő adatokkal; utánvétnél átvételkor.</li>
+        <li><strong>Visszaigazolás:</strong> oldalon és e-mailben, a vásárló nyelvén.</li>
+      </ol>
+      <h3>Vásárlói fiók</h3>
+      <p>Regisztráció vásárlás nélkül is (<code>/fiok/regisztracio</code>). A „Fiókom” oldalon: szállítási adatok, hírlevél be/ki, rendeléseim (állapottal), jelszócsere, kilépés és a fiók törlése. A pénztár a belépett vásárló adatait előtölti.</p>
+      <figure>
+        <img src="img/regisztracio.png" alt="Regisztráció" />
+        <figcaption>Regisztráció – adatkezelési hozzájárulással, opcionális hírlevéllel.</figcaption>
+      </figure>
+    </section>
+
+    <section id="jogi">
+      <h2>14. Jogi oldalak</h2>
+      <p>ÁSZF (<code>/aszf</code>), adatkezelési tájékoztató (<code>/adatvedelem</code>), elállási tájékoztató nyilatkozatmintával (<code>/elallas</code>) és impresszum (<code>/impresszum</code>), mindhárom nyelven; a lábléc minden oldalon linkeli őket.</p>
+      <p>A szövegek a <code>src/data/legal/&lt;nyelv&gt;.json</code> fájlokban vannak; a <code>{companyName}</code>, <code>{email}</code> stb. helyettesítőket a rendszer a <code>company.json</code> adataival tölti ki.</p>
+      <figure>
+        <img src="img/aszf.png" alt="ÁSZF oldal" />
+        <figcaption>A jogi oldalak tetején a „Vázlat” figyelmeztetés látszik, amíg a szövegeket jogász nem véglegesíti.</figcaption>
+      </figure>
+    </section>
+
+    <section id="mentes">
+      <h2>15. Adatok, mentés, biztonság</h2>
+      <ul>
+        <li><strong>Mentés:</strong> rendszeresen mentse a <code>src/data/production/customers.sqlite</code> fájlt (és a <code>company.json</code>, <code>products.json</code> fájlokat). Az adatbázis egyetlen fájl – a mentés egyszerű másolás (leállított szervernél, vagy az SQLite <code>.backup</code> paranccsal).</li>
+        <li><strong>Személyes adatok:</strong> az adatbázis és az <code>outbox</code> mappa személyes adatot tartalmaz, ezért nem kerül verziókezelésbe.</li>
+        <li><strong>Fióktörlés:</strong> a vásárló maga törölheti a fiókját; a rendelések a számviteli megőrzés miatt megmaradnak.</li>
+        <li><strong>Jelszavak:</strong> visszafejthetetlen formában tárolódnak; jelszócsere után minden eszközről kijelentkeztet.</li>
+      </ul>
+    </section>
+
+    <section id="hibak">
+      <h2>16. Gyakori kérdések, hibaelhárítás</h2>
+      <table>
+        <tr><th style="width:38%">Jelenség</th><th>Teendő</th></tr>
+        <tr><td>Módosítottam a termékeket, de az oldalon nem látszik.</td><td>Teszt/éles környezetben újra kell buildelni és indítani (<code>pnpm build</code>, <code>pnpm start</code>).</td></tr>
+        <tr><td>A build hibát jelez egy JSON fájlra.</td><td>Hiányzik egy fordítás, duplikált a slug / cikkszám / GYIK-kérdés, vagy hibás a JSON szintaxis. A hibaüzenet megnevezi a fájlt.</td></tr>
+        <tr><td>Nem jelenik meg a kártyás fizetés.</td><td>Ellenőrizze a <code>card.enabled</code> értéket, a Barion kulcsokat és a https <code>SITE_URL</code>-t; a <code>mock</code> élesben tiltott.</td></tr>
+        <tr><td>Az admin oldal szerint „nincs bekapcsolva”.</td><td>Állítsa be az <code>ADMIN_PASSWORD</code> változót (legalább 12 karakter), majd indítsa újra a szervert.</td></tr>
+        <tr><td>A vásárló nem kapott levelet.</td><td>Az e-mail-küldés még nincs bekötve; a levél az <code>outbox</code> mappában található.</td></tr>
+        <tr><td>Egy kupon nem váltható be.</td><td>Nézze meg az admin listában: kikapcsolt, lejárt vagy még nem érvényes.</td></tr>
+      </table>
+    </section>
+
+    <section id="eles">
+      <h2>17. Élesítési ellenőrzőlista</h2>
+      <table>
+        <tr><th style="width:6%">✓</th><th>Teendő</th></tr>
+        <tr><td>☐</td><td>Végleges termékadatok, árak, valódi termékfotók; <code>productInfo</code> kitöltése</td></tr>
+        <tr><td>☐</td><td><code>company.json</code> kitöltése (cégadatok, bankszámla, díjak); <code>liveOrders: true</code></td></tr>
+        <tr><td>☐</td><td>Jogi szövegek jogászi véglegesítése, a „Vázlat” figyelmeztetés eltávolítása</td></tr>
+        <tr><td>☐</td><td>Barion szerződés, sandbox teszt, éles kulcsok; Barion logó és Pixel követelményeinek ellenőrzése</td></tr>
+        <tr><td>☐</td><td>Futár, Foxpost, MPL szerződés; szállítási módok bekapcsolása</td></tr>
+        <tr><td>☐</td><td>Valódi e-mail-küldés bekötése; számlázó rendszer bekötése</td></tr>
+        <tr><td>☐</td><td><code>ADMIN_PASSWORD</code>, <code>SITE_URL</code> beállítása; telepítés HTTPS-sel; adatmentés beállítása</td></tr>
+        <tr><td>☐</td><td>Próbarendelés minden szállítási és fizetési móddal a teszt környezetben</td></tr>
+      </table>
+      <p class="footer">CUPRÉ webshop · felhasználói dokumentáció. A képernyőképek a fejlesztési változatból készültek; a képek AI-generált látványtervek, az árak tesztárak.</p>
+    </section>
+  </main>
+</body>
+</html>
