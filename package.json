@@ -1,0 +1,31 @@
+{
+  "name": "nextjs-pelda",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "cross-env APP_ENV=production next build",
+    "start": "cross-env APP_ENV=production next start -p 3002",
+    "build:test": "cross-env APP_ENV=test next build",
+    "start:test": "cross-env APP_ENV=test next start -p 3001",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@heroui/react": "^3.2.6",
+    "@heroui/styles": "^3.2.6",
+    "next": "16.3.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "cross-env": "^10.1.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.3",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

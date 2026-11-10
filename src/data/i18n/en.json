@@ -1,0 +1,550 @@
+{
+  "meta": {
+    "title": "CUPRÉ | The new ritual of rest",
+    "description": "CUPRÉ – premium copper-fibre textiles, the fabric of calm. Discover the CUPRÉ Original collection.",
+    "productsTitle": "Products | CUPRÉ",
+    "productsDescription": "CUPRÉ copper-fibre textiles by size and quality grade.",
+    "checkoutTitle": "Checkout | CUPRÉ",
+    "checkoutDescription": "Place your order in the CUPRÉ shop.",
+    "accountTitle": "My account | CUPRÉ",
+    "loginTitle": "Sign in | CUPRÉ",
+    "registerTitle": "Create account | CUPRÉ",
+    "passwordTitle": "Password | CUPRÉ",
+    "newsletterTitle": "Newsletter | CUPRÉ",
+    "paymentTitle": "Payment | CUPRÉ"
+  },
+  "language": {
+    "label": "Language",
+    "names": {
+      "hu": "Magyar",
+      "en": "English",
+      "de": "Deutsch"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "copper": "World of copper",
+    "technology": "Technology",
+    "usage": "How to use",
+    "about": "About us",
+    "faq": "FAQ",
+    "mainMenu": "Main menu",
+    "mobileMenu": "Mobile menu",
+    "homeAria": "CUPRÉ home page",
+    "brandSub": [
+      "PREMIUM",
+      "COPPER-FIBRE TEXTILES"
+    ],
+    "search": "Search",
+    "account": "Account",
+    "openCart": "Open cart",
+    "openMenu": "Open menu"
+  },
+  "toasts": {
+    "search": "Search will become available once the product catalogue grows.",
+    "account": "Customer accounts are not active yet.",
+    "newsletter": "The newsletter sign-up is not connected yet.",
+    "emptyCart": "Your cart is empty."
+  },
+  "hero": {
+    "eyebrow": "CUPRÉ · COPPER LIVING",
+    "title": "The new ritual",
+    "titleAccent": "of rest.",
+    "text": "Premium copper-fibre textiles for the special moments at home.",
+    "cta": "Discover the copper sheet"
+  },
+  "benefits": {
+    "aria": "CUPRÉ values",
+    "items": [
+      [
+        "Rest",
+        "at home"
+      ],
+      [
+        "Carefully chosen",
+        "materials"
+      ],
+      [
+        "Distinctive",
+        "copper-fibre textile"
+      ],
+      [
+        "Elegant, timeless",
+        "design"
+      ],
+      [
+        "A thoughtful",
+        "gift idea"
+      ]
+    ]
+  },
+  "product": {
+    "featuredEyebrow": "FEATURED PRODUCT",
+    "collectionEyebrow": "CUPRÉ COLLECTION",
+    "addToCart": "Add to cart",
+    "back": "← All products",
+    "size": "Size",
+    "grade": "Grade",
+    "sku": "SKU",
+    "grades": {
+      "first": "First grade",
+      "second": "Second grade"
+    }
+  },
+  "products": {
+    "eyebrow": "COLLECTION",
+    "title": "Our products",
+    "text": "Premium copper-fibre textiles, available in variants by size and quality grade.",
+    "fromPrice": "from {price}"
+  },
+  "gift": {
+    "alt": "CUPRÉ festive gift box with copper-fibre crescent emblem and a Hungarian greeting"
+  },
+  "story": {
+    "eyebrow": "MATERIAL · AESTHETICS · HARMONY",
+    "title": "The special world of copper",
+    "text": "The distinctive character of copper-fibre textiles meets a refined home environment.",
+    "cards": [
+      {
+        "alt": "Mother and daughter in a harmonious bedroom with copper-coloured textile – AI-generated mood image",
+        "title": "Distinctive texture",
+        "text": "Discover the look of copper-containing weaves and the story of the material."
+      },
+      {
+        "alt": "Bright, harmonious bedroom",
+        "title": "The calm of home",
+        "text": "Natural light, warm tones and carefully chosen details."
+      },
+      {
+        "alt": "Copper-fibre textile and a stylised shielding mesh – technology illustration",
+        "title": "Copper-fibre technology and protection",
+        "text": "The shielding and antimicrobial properties of copper-containing fabrics can be tested. The specific effects of the CUPRÉ sheet must be verified by product tests."
+      }
+    ]
+  },
+  "technology": {
+    "alt": "Detail of copper-coloured textile and pillow, technology mood illustration",
+    "caption": "COPPER FIBRES · WEAVING · MATERIAL TECHNOLOGY",
+    "eyebrow": "THE TECHNOLOGY BEHIND THE MATERIAL",
+    "title": "What makes copper-fibre textile special?",
+    "intro": "Copper is an electrically conductive metal. When copper-containing fibres are woven or otherwise incorporated into a textile, the material can gain technical properties that differ from conventional fabrics. Their extent depends on the copper content, the structure of the weave and the design of the finished product.",
+    "facts": [
+      {
+        "title": "Copper-containing fibres",
+        "text": "The conductive fibres are part of the fabric structure. The exact copper content and material composition must be confirmed by the manufacturer's data sheet."
+      },
+      {
+        "title": "Electromagnetic shielding",
+        "text": "With a suitable design, a conductive textile can attenuate electromagnetic signals at certain frequencies. The degree of shielding can be measured in a laboratory, frequency by frequency. We currently do not publish any verified measurement values for CUPRÉ Original."
+      },
+      {
+        "title": "Copper and microorganisms",
+        "text": "The antimicrobial properties of certain copper surfaces have been studied. This alone does not prove that this particular sheet is antibacterial, prevents infection or provides any health benefit."
+      },
+      {
+        "title": "Sleep and well-being",
+        "text": "We do not have adequate evidence that this particular copper sheet improves sleep quality or protects against the health effects of environmental radiation. CUPRÉ presents a distinctive textile technology and the experience of resting at home."
+      }
+    ],
+    "note": "Technical claims will be refined once the product-specific documentation from Lorix / the material manufacturer has been received. This description is for information only and is not medical advice.",
+    "link": "More questions"
+  },
+  "care": {
+    "alt": "Deep green and copper bedroom with a copper-coloured sheet",
+    "eyebrow": "THE WORLD OF CUPRÉ",
+    "title": [
+      "Harmony lies",
+      "in the details."
+    ],
+    "paragraphs": [
+      "We believe in a thoughtfully designed home, in special materials and in the value of time set aside for rest.",
+      "The copper sheet is placed on the lying surface so that you lie on it – it is not pulled over you like a blanket. The exact layering, instructions for use and care will be finalised based on the manufacturer's documentation."
+    ],
+    "link": "Frequently asked questions"
+  },
+  "brand": {
+    "eyebrow": "THE CUPRÉ STORY",
+    "title": [
+      "The fabric",
+      "of calm."
+    ],
+    "text": "The warm glow of copper. The gentle curve of the crescent. Carefully woven fibres. The visual world of CUPRÉ was born from these small details."
+  },
+  "packaging": {
+    "eyebrow": "CAREFULLY PACKAGED",
+    "title": "A gift from the very first moment.",
+    "text": "A deep green paper band, copper details, an elegant card. The CUPRÉ Essential packaging aims for a refined look without unnecessary excess.",
+    "muted": "Packaging variants are still in development.",
+    "alt": "CUPRÉ packaging concept"
+  },
+  "faq": {
+    "eyebrow": "GOOD TO KNOW",
+    "title": "Frequently asked questions"
+  },
+  "newsletter": {
+    "eyebrow": "NEWSLETTER",
+    "title": "Subscribe to the CUPRÉ newsletter",
+    "intro": "Be the first to hear about our launch, new collections and offers. No purchase or account needed.",
+    "name": "Name (optional)",
+    "email": "Email address",
+    "consentBefore": "I agree that CUPRÉ may send newsletters to this email address. I can unsubscribe at any time. See the ",
+    "consentLink": "privacy notice",
+    "consentAfter": " for details.",
+    "submit": "Subscribe",
+    "sent": "We have sent you a confirmation email. Your subscription becomes active once you click the link in it.",
+    "confirmTitle": "Confirm subscription",
+    "confirming": "Confirming…",
+    "confirmed": "Thank you! Your subscription is confirmed.",
+    "unsubscribeTitle": "Unsubscribe",
+    "unsubscribing": "Unsubscribing…",
+    "unsubscribed": "You have unsubscribed from the CUPRÉ newsletter. You can subscribe again at any time.",
+    "invalid": "This link is invalid or can no longer be used.",
+    "backHome": "Back to the home page"
+  },
+  "footer": {
+    "tagline": [
+      "Premium copper-fibre textiles.",
+      "The fabric of calm."
+    ],
+    "explore": "Explore",
+    "info": "Information",
+    "contact": "Contact",
+    "featuredProduct": "CUPRÉ Original",
+    "copper": "World of copper",
+    "technology": "Technology",
+    "about": "About the brand",
+    "usage": "How to use",
+    "faq": "FAQ",
+    "packaging": "Packaging",
+    "contactText": "Contact details and legal documents will be added before launch.",
+    "legal": "© 2026 CUPRÉ · Development prototype, not an operating online shop. Photos and packaging are design concepts."
+  },
+  "cart": {
+    "title": "Your cart",
+    "aria": "Cart",
+    "close": "Close cart",
+    "empty": "Your cart is empty.",
+    "imageAlt": "{name} concept image",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "pieces": "{qty} pcs",
+    "total": "Total:",
+    "inactive": "Purchasing is not active yet. This is an interactive design prototype.",
+    "checkout": "Proceed to checkout →"
+  },
+  "checkout": {
+    "eyebrow": "CHECKOUT",
+    "title": "Place your order",
+    "shipping": "Shipping details",
+    "fields": {
+      "name": "Name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "postcode": "Postcode",
+      "city": "City",
+      "address": "Street and number"
+    },
+    "note": "Note (optional)",
+    "summary": "Your order",
+    "total": "Total",
+    "submit": "Place order",
+    "submitting": "Sending…",
+    "paymentInactive": "Online payment is not active yet; placing an order does not create a payment obligation.",
+    "thanksEyebrow": "THANK YOU",
+    "thanksTitle": "Your order has been recorded.",
+    "orderNumber": "Order number",
+    "thanksText": "Online payment is not active yet. We will contact you by email about the details of your order.",
+    "backToProducts": "Back to products",
+    "emptyTitle": "Your cart is empty.",
+    "emptyText": "Choose a size and quality grade on the product page, then come back here.",
+    "viewProducts": "View products",
+    "errors": {
+      "required": {
+        "name": "Please enter your name.",
+        "email": "Please enter your email address.",
+        "phone": "Please enter your phone number.",
+        "postcode": "Please enter your postcode.",
+        "city": "Please enter your city.",
+        "address": "Please enter your address."
+      },
+      "invalidEmail": "The email address format is invalid.",
+      "emptyCart": "Your cart is empty.",
+      "invalidItems": "Your cart contains an invalid item. Please refresh the page and try again.",
+      "invalidRequest": "Invalid request.",
+      "network": "We could not send your order right now. Please try again later.",
+      "termsRequired": "You must accept the Terms & Conditions to order.",
+      "invalidPaymentMethod": "Please choose a payment method.",
+      "paymentUnavailable": "The selected payment method is currently unavailable.",
+      "invalidShippingMethod": "Please choose a delivery method.",
+      "pickupPointRequired": "Please choose a pickup point.",
+      "couponInvalid": "This coupon code is not valid.",
+      "couponNotYetValid": "This coupon cannot be used yet.",
+      "couponExpired": "This coupon has expired."
+    }
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "Page not found.",
+    "text": "The page you are looking for does not exist or has been moved.",
+    "back": "Back to the home page"
+  },
+  "legal": {
+    "nav": {
+      "aszf": "Terms & Conditions",
+      "adatvedelem": "Privacy notice",
+      "elallas": "Withdrawal information",
+      "impresszum": "Legal notice"
+    },
+    "footerTitle": "Legal",
+    "draftNotice": "Draft: this document is a framework created during development and must be finalised by a lawyer. Fields marked [KITÖLTENDŐ] are still missing.",
+    "fields": {
+      "name": "Company name",
+      "seat": "Registered office",
+      "postalAddress": "Postal address",
+      "email": "Email",
+      "phone": "Phone",
+      "registryNumber": "Company registration number",
+      "registryCourt": "Registry",
+      "taxNumber": "Tax number",
+      "euVatNumber": "EU VAT number",
+      "representative": "Representative"
+    },
+    "hosting": "Hosting provider",
+    "conciliation": "Competent conciliation body",
+    "authority": "Data protection supervisory authority"
+  },
+  "productInfo": {
+    "title": "Product information",
+    "composition": "Composition",
+    "care": "Care",
+    "manufacturer": "Manufacturer",
+    "euResponsible": "Responsible person in the EU",
+    "productId": "Product identifier",
+    "safety": "Safety information",
+    "grossNote": "Prices are in Hungarian forint and include VAT."
+  },
+  "checkoutLegal": {
+    "termsBefore": "I have read and accept the ",
+    "termsLink": "Terms & Conditions",
+    "termsAfter": " and I acknowledge the ",
+    "withdrawalLink": "withdrawal information",
+    "termsEnd": ".",
+    "privacyBefore": "We process the data you provide to fulfil your order; see our ",
+    "privacyLink": "privacy notice",
+    "privacyAfter": " for details.",
+    "submitLive": "Order with obligation to pay",
+    "shipping": "Shipping fee",
+    "shippingPending": "to be confirmed"
+  },
+  "mail": {
+    "subject": "CUPRÉ – order confirmation (#{orderId})",
+    "greeting": "Dear {name},",
+    "intro": "Thank you for your order. We have recorded the following:",
+    "total": "Total",
+    "address": "Delivery address",
+    "legal": "Our Terms & Conditions and withdrawal information are available here:",
+    "footer": "This is an automated message. If you have any questions, write to us: {email}",
+    "greetingAnonymous": "Hello,",
+    "newsletterSubject": "CUPRÉ – please confirm your newsletter subscription",
+    "newsletterIntro": "Thank you for subscribing to the CUPRÉ newsletter! Please click the link below to confirm:",
+    "newsletterConfirm": "Confirm",
+    "newsletterIgnore": "If you did not subscribe, no action is needed – we never send newsletters without confirmation. You can unsubscribe at any time here",
+    "newsletterUnsubscribe": "Unsubscribe",
+    "resetSubject": "CUPRÉ – reset your password",
+    "resetIntro": "You requested a password reset for your CUPRÉ account. The link below is valid for 1 hour:",
+    "resetLink": "Set a new password",
+    "resetIgnore": "If you did not request this, please ignore this email; your password will not change.",
+    "paymentReceivedSubject": "CUPRÉ – payment received (#{orderId})",
+    "paymentReceivedIntro": "Thank you, the payment ({amount}) for your order #{orderId} has been received.",
+    "shippedSubject": "CUPRÉ – your parcel is on its way (#{orderId})",
+    "shippedIntro": "We are happy to let you know that your order #{orderId} has been shipped.",
+    "shippedNote": "Note"
+  },
+  "account": {
+    "eyebrow": "CUPRÉ ACCOUNT",
+    "loginTitle": "Sign in",
+    "loginIntro": "Sign in to your CUPRÉ account.",
+    "email": "Email address",
+    "password": "Password",
+    "passwordConfirm": "Repeat password",
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "name": "Name",
+    "passwordHint": "At least 8 characters.",
+    "submitLogin": "Sign in",
+    "forgot": "Forgot your password?",
+    "noAccount": "No account yet?",
+    "registerLink": "Create one – no purchase needed",
+    "registerTitle": "Create account",
+    "registerIntro": "You can open an account without buying anything: save your delivery details and order faster later.",
+    "submitRegister": "Create account",
+    "haveAccount": "Already have an account?",
+    "loginLink": "Sign in",
+    "privacyBefore": "I have read the ",
+    "privacyLink": "privacy notice",
+    "privacyAfter": " and agree that CUPRÉ may process the data I provide for my account.",
+    "newsletterOptIn": "Send me the CUPRÉ newsletter (we will send a confirmation email; you can unsubscribe at any time).",
+    "forgotTitle": "Forgot password",
+    "forgotIntro": "Enter the email address of your account and we will send you a link to set a new password.",
+    "submitForgot": "Send link",
+    "forgotSent": "If an account exists for this address, we have sent a password reset link. The link is valid for 1 hour.",
+    "resetTitle": "Set a new password",
+    "submitReset": "Save password",
+    "resetDone": "Your new password has been saved. You can now sign in with it.",
+    "dashboardTitle": "My account",
+    "hello": "Hello, {name}!",
+    "memberSince": "Member since: {date}",
+    "profileTitle": "Delivery details",
+    "profileIntro": "We use these details to pre-fill the checkout.",
+    "save": "Save",
+    "saved": "Saved.",
+    "newsletterTitle": "Newsletter",
+    "newsletterStatus": {
+      "none": "You are not subscribed.",
+      "pending": "Awaiting confirmation – please check your inbox.",
+      "active": "You are subscribed to the newsletter.",
+      "unsubscribed": "You have unsubscribed from the newsletter."
+    },
+    "newsletterOn": "Subscribe",
+    "newsletterOff": "Unsubscribe",
+    "ordersTitle": "My orders",
+    "noOrders": "You have no orders yet.",
+    "orderLabel": "#{id} · {date}",
+    "passwordTitle": "Change password",
+    "passwordSaved": "Your new password has been saved. You have been signed out on other devices.",
+    "logout": "Sign out",
+    "deleteTitle": "Delete account",
+    "deleteText": "Your account, sign-in details and newsletter subscription will be permanently deleted. Data of your previous orders must be kept under accounting law.",
+    "deleteButton": "Delete account permanently",
+    "deleteConfirm": "Are you sure you want to delete your account? This cannot be undone.",
+    "deleted": "Your account has been deleted.",
+    "loading": "Loading…",
+    "loginRequired": "Please sign in to view your account.",
+    "errors": {
+      "required": "This field is required.",
+      "invalidEmail": "The email address format is invalid.",
+      "weakPassword": "The password must be at least 8 characters long.",
+      "passwordMismatch": "The passwords do not match.",
+      "emailTaken": "An account with this email address already exists.",
+      "invalidCredentials": "Incorrect email address or password.",
+      "wrongPassword": "Incorrect password.",
+      "invalidToken": "This link is invalid or has expired.",
+      "consentRequired": "Please tick this box to continue.",
+      "tooManyAttempts": "Too many attempts. Please try again in a few minutes.",
+      "unauthorized": "Your session has expired, please sign in again.",
+      "invalidRequest": "Invalid request.",
+      "network": "The request could not be sent right now. Please try again later."
+    }
+  },
+  "checkoutAccount": {
+    "loggedInAs": "Signed in as {email}",
+    "loginPrompt": "Have an account?",
+    "loginLink": "Sign in",
+    "loginSuffix": " for faster checkout.",
+    "newsletterOptIn": "Send me the CUPRÉ newsletter (we will send a confirmation email)."
+  },
+  "newsletterBand": {
+    "title": "CUPRÉ is coming soon.",
+    "text": "Follow us and discover the story of the first collection.",
+    "button": "Notify me →"
+  },
+  "payment": {
+    "title": "Payment method",
+    "methods": {
+      "card": "Bank card",
+      "transfer": "Bank transfer",
+      "cod": "Cash on delivery",
+      "none": "–"
+    },
+    "descriptions": {
+      "card": "Secure payment on the Barion payment page. Your card details are handled by Barion; CUPRÉ never has access to them.",
+      "cardMock": "TEST mode: the payment is simulated by a test page; no real charge is made.",
+      "transfer": "After ordering we show the bank account number and reference; we ship once the payment has arrived.",
+      "cod": "Pay the courier in cash or by card on delivery."
+    },
+    "fee": "+ {fee}",
+    "codFee": "Cash on delivery fee",
+    "barionNotice": "Card payments are provided by Barion Payment Zrt. By placing the order I acknowledge that CUPRÉ transfers the data required for the payment (name, email address, order number, total) to Barion Payment Zrt.",
+    "statuses": {
+      "not_required": "nothing to do",
+      "pending": "payment in progress",
+      "awaiting_transfer": "awaiting transfer",
+      "awaiting_cod": "pay on delivery",
+      "paid": "paid",
+      "failed": "payment failed",
+      "canceled": "payment cancelled",
+      "expired": "payment expired"
+    },
+    "transferTitle": "Bank transfer details",
+    "accountHolder": "Beneficiary",
+    "bankName": "Bank",
+    "accountNumber": "Account number",
+    "reference": "Reference",
+    "amount": "Amount due",
+    "due": "Payment due within {days} days of ordering.",
+    "codInstruction": "Pay {amount} to the courier on delivery.",
+    "submitCard": "Continue to payment",
+    "redirecting": "Redirecting to the payment page…",
+    "result": {
+      "eyebrow": "PAYMENT",
+      "successTitle": "Payment successful",
+      "successText": "Thank you, your payment has been received. We have also sent a confirmation by email.",
+      "pendingTitle": "Payment in progress",
+      "pendingText": "Your payment is still being processed. This page refreshes automatically.",
+      "failedTitle": "Payment failed",
+      "failedText": "Your card has not been charged. You can try again; if you have questions, write to us: {email}.",
+      "retry": "Retry payment",
+      "infoTitle": "Your order has been recorded",
+      "invalid": "The order could not be found or the link is invalid.",
+      "orderNumber": "Order number"
+    },
+    "mock": {
+      "eyebrow": "TEST",
+      "title": "Test payment page",
+      "text": "Development test only: no real payment is made and no card details are requested.",
+      "success": "Successful payment",
+      "fail": "Failed payment",
+      "cancel": "Cancel",
+      "amount": "Amount"
+    }
+  },
+  "shipping": {
+    "title": "Delivery method",
+    "methods": {
+      "home": "Home delivery by courier",
+      "foxpost": "Foxpost parcel locker",
+      "mpl_point": "MPL PostaPont / parcel locker",
+      "none": "–"
+    },
+    "descriptions": {
+      "home": "Delivered to the address you provide.",
+      "foxpost": "Collect from the Foxpost locker you choose.",
+      "mpl_point": "Collect at a post office, PostaPont or MPL parcel locker."
+    },
+    "deliveryDays": "Estimated delivery: {days} working days",
+    "choosePoint": "Choose a locker",
+    "changePoint": "Choose another locker",
+    "foxpostPickerTitle": "Choose a Foxpost locker",
+    "close": "Close",
+    "mplManualHint": "Enter the name and address of the post office, PostaPont or MPL parcel locker you choose. You can search for points here:",
+    "pointName": "Pickup point name",
+    "pointAddress": "Pickup point address",
+    "pickupPoint": "Pickup point",
+    "billingAddressNote": "For pickup point delivery, the address below is your billing address."
+  },
+  "coupon": {
+    "title": "Coupon code",
+    "placeholder": "Enter your coupon code",
+    "apply": "Apply",
+    "remove": "Remove",
+    "discountLine": "Discount ({code})"
+  },
+  "orderStatuses": {
+    "new": "Received",
+    "processing": "Processing",
+    "shipped": "Shipped",
+    "completed": "Completed",
+    "canceled": "Cancelled"
+  }
+}

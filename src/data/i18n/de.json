@@ -1,0 +1,550 @@
+{
+  "meta": {
+    "title": "CUPRÉ | Das neue Ritual der Ruhe",
+    "description": "CUPRÉ – Premium-Textilien mit Kupferfasern, der besondere Stoff der Ruhe. Entdecken Sie die Kollektion CUPRÉ Original.",
+    "productsTitle": "Produkte | CUPRÉ",
+    "productsDescription": "CUPRÉ Textilien mit Kupferfasern nach Größe und Qualitätsklasse.",
+    "checkoutTitle": "Kasse | CUPRÉ",
+    "checkoutDescription": "Bestellung im CUPRÉ Shop aufgeben.",
+    "accountTitle": "Mein Konto | CUPRÉ",
+    "loginTitle": "Anmelden | CUPRÉ",
+    "registerTitle": "Registrieren | CUPRÉ",
+    "passwordTitle": "Passwort | CUPRÉ",
+    "newsletterTitle": "Newsletter | CUPRÉ",
+    "paymentTitle": "Zahlung | CUPRÉ"
+  },
+  "language": {
+    "label": "Sprache",
+    "names": {
+      "hu": "Magyar",
+      "en": "English",
+      "de": "Deutsch"
+    }
+  },
+  "nav": {
+    "home": "Start",
+    "products": "Produkte",
+    "copper": "Welt des Kupfers",
+    "technology": "Technologie",
+    "usage": "Anwendung",
+    "about": "Über uns",
+    "faq": "FAQ",
+    "mainMenu": "Hauptmenü",
+    "mobileMenu": "Mobiles Menü",
+    "homeAria": "CUPRÉ Startseite",
+    "brandSub": [
+      "PREMIUM-TEXTILIEN",
+      "MIT KUPFERFASERN"
+    ],
+    "search": "Suche",
+    "account": "Konto",
+    "openCart": "Warenkorb öffnen",
+    "openMenu": "Menü öffnen"
+  },
+  "toasts": {
+    "search": "Die Suche wird verfügbar, sobald der Produktkatalog erweitert wird.",
+    "account": "Kundenkonten sind noch nicht aktiviert.",
+    "newsletter": "Die Newsletter-Anmeldung ist noch nicht angebunden.",
+    "emptyCart": "Ihr Warenkorb ist noch leer."
+  },
+  "hero": {
+    "eyebrow": "CUPRÉ · COPPER LIVING",
+    "title": "Das neue Ritual",
+    "titleAccent": "der Ruhe.",
+    "text": "Premium-Textilien mit Kupferfasern für die besonderen Momente zu Hause.",
+    "cta": "Das Kupferlaken entdecken"
+  },
+  "benefits": {
+    "aria": "Die Werte von CUPRÉ",
+    "items": [
+      [
+        "Erholung",
+        "zu Hause"
+      ],
+      [
+        "Sorgfältig ausgewählte",
+        "Materialien"
+      ],
+      [
+        "Besonderes Textil",
+        "mit Kupferfasern"
+      ],
+      [
+        "Elegantes, zeitloses",
+        "Design"
+      ],
+      [
+        "Eine aufmerksame",
+        "Geschenkidee"
+      ]
+    ]
+  },
+  "product": {
+    "featuredEyebrow": "UNSER HIGHLIGHT",
+    "collectionEyebrow": "CUPRÉ KOLLEKTION",
+    "addToCart": "In den Warenkorb",
+    "back": "← Alle Produkte",
+    "size": "Größe",
+    "grade": "Klasse",
+    "sku": "Artikelnummer",
+    "grades": {
+      "first": "1. Wahl",
+      "second": "2. Wahl"
+    }
+  },
+  "products": {
+    "eyebrow": "KOLLEKTION",
+    "title": "Unsere Produkte",
+    "text": "Premium-Textilien mit Kupferfasern in Varianten nach Größe und Qualitätsklasse.",
+    "fromPrice": "ab {price}"
+  },
+  "gift": {
+    "alt": "Festliche CUPRÉ Geschenkverpackung mit Kupferfaser-Halbmond-Emblem und ungarischer Grußbotschaft"
+  },
+  "story": {
+    "eyebrow": "MATERIAL · ÄSTHETIK · HARMONIE",
+    "title": "Die besondere Welt des Kupfers",
+    "text": "Der einzigartige Charakter von Kupferfaser-Textilien trifft auf ein stilvolles Zuhause.",
+    "cards": [
+      {
+        "alt": "Mutter und Tochter in einem harmonischen Schlafzimmer mit kupferfarbenem Textil – KI-generiertes Stimmungsbild",
+        "title": "Besondere Textur",
+        "text": "Entdecken Sie die Optik kupferhaltiger Gewebe und die Geschichte des Materials."
+      },
+      {
+        "alt": "Helles, harmonisches Schlafzimmer",
+        "title": "Die Ruhe des Zuhauses",
+        "text": "Natürliches Licht, warme Farbtöne und sorgfältig gewählte Details."
+      },
+      {
+        "alt": "Kupferfaser-Textil und stilisiertes Abschirmgitter – Technologie-Illustration",
+        "title": "Kupferfaser-Technologie und Schutz",
+        "text": "Die abschirmenden und antimikrobiellen Eigenschaften kupferhaltiger Gewebe lassen sich prüfen. Die konkreten Wirkungen des CUPRÉ Lakens müssen durch Produkttests belegt werden."
+      }
+    ]
+  },
+  "technology": {
+    "alt": "Detail von kupferfarbenem Textil und Kissen, Technologie-Stimmungsbild",
+    "caption": "KUPFERFASERN · WEBUNG · MATERIALTECHNOLOGIE",
+    "eyebrow": "DIE TECHNOLOGIE HINTER DEM MATERIAL",
+    "title": "Was macht Kupferfaser-Textil besonders?",
+    "intro": "Kupfer ist ein elektrisch leitfähiges Metall. Werden kupferhaltige Fasern in ein Textil eingewebt oder auf andere Weise eingearbeitet, kann das Material andere technische Eigenschaften erhalten als herkömmliche Stoffe. Deren Ausmaß hängt vom Kupfergehalt, von der Gewebestruktur und von der Ausführung des Endprodukts ab.",
+    "facts": [
+      {
+        "title": "Kupferhaltige Fasern",
+        "text": "Die leitfähigen Fasern sind Teil der Gewebestruktur. Der genaue Kupfergehalt und die Materialzusammensetzung müssen durch das Datenblatt des Herstellers belegt werden."
+      },
+      {
+        "title": "Elektromagnetische Abschirmung",
+        "text": "Bei geeigneter Ausführung kann ein leitfähiges Textil elektromagnetische Signale bei bestimmten Frequenzen dämpfen. Das Ausmaß der Abschirmung lässt sich im Labor frequenzabhängig messen. Für CUPRÉ Original veröffentlichen wir derzeit keine geprüften Messwerte."
+      },
+      {
+        "title": "Kupfer und Mikroorganismen",
+        "text": "Die antimikrobiellen Eigenschaften bestimmter Kupferoberflächen wurden untersucht. Dies allein belegt nicht, dass dieses konkrete Laken antibakteriell wirkt, Infektionen vorbeugt oder einen gesundheitlichen Nutzen bietet."
+      },
+      {
+        "title": "Schlaf und Wohlbefinden",
+        "text": "Uns liegen keine ausreichenden Belege dafür vor, dass dieses konkrete Kupferlaken die Schlafqualität verbessert oder vor gesundheitlichen Auswirkungen von Umweltstrahlung schützt. CUPRÉ stellt eine besondere Textiltechnologie und das Erlebnis der Erholung zu Hause vor."
+      }
+    ],
+    "note": "Die technischen Angaben werden nach Eingang der produktspezifischen Dokumentation von Lorix / dem Materialhersteller präzisiert. Die Beschreibung dient nur der Information und ist keine medizinische Empfehlung.",
+    "link": "Weitere Fragen"
+  },
+  "care": {
+    "alt": "Schlafzimmer in Tiefgrün und Kupfer mit kupferfarbenem Laken",
+    "eyebrow": "DIE WELT VON CUPRÉ",
+    "title": [
+      "Harmonie liegt",
+      "im Detail."
+    ],
+    "paragraphs": [
+      "Wir glauben an ein bewusst gestaltetes Zuhause, an besondere Materialien und an den Wert der Zeit, die der Erholung gewidmet ist.",
+      "Das Kupferlaken wird auf die Liegefläche gelegt, sodass man darauf liegt – es wird nicht wie eine Decke übergezogen. Die genaue Schichtung sowie die Gebrauchs- und Pflegehinweise werden anhand der Herstellerdokumentation festgelegt."
+    ],
+    "link": "Häufige Fragen"
+  },
+  "brand": {
+    "eyebrow": "DIE GESCHICHTE VON CUPRÉ",
+    "title": [
+      "Der besondere",
+      "Stoff der Ruhe."
+    ],
+    "text": "Der warme Glanz des Kupfers. Der sanfte Bogen des Halbmonds. Sorgfältig gewebte Fasern. Aus diesen kleinen Details ist die visuelle Welt von CUPRÉ entstanden."
+  },
+  "packaging": {
+    "eyebrow": "SORGFÄLTIG VERPACKT",
+    "title": "Ein Geschenk vom ersten Moment an.",
+    "text": "Eine tiefgrüne Papierbanderole, kupferfarbene Details, eine elegante Karte. Die CUPRÉ Essential Verpackung steht für einen edlen Auftritt ohne unnötigen Überfluss.",
+    "muted": "Die Verpackungsvarianten befinden sich in Entwicklung.",
+    "alt": "Entwurf der CUPRÉ Verpackung"
+  },
+  "faq": {
+    "eyebrow": "WISSENSWERTES",
+    "title": "Häufige Fragen"
+  },
+  "newsletter": {
+    "eyebrow": "NEWSLETTER",
+    "title": "CUPRÉ Newsletter abonnieren",
+    "intro": "Erfahren Sie als Erste vom Start, von neuen Kollektionen und Angeboten. Ganz ohne Kauf oder Konto.",
+    "name": "Name (optional)",
+    "email": "E-Mail-Adresse",
+    "consentBefore": "Ich willige ein, dass CUPRÉ mir Newsletter an diese E-Mail-Adresse sendet. Abmeldung jederzeit möglich. Einzelheiten in der ",
+    "consentLink": "Datenschutzerklärung",
+    "consentAfter": ".",
+    "submit": "Abonnieren",
+    "sent": "Wir haben Ihnen eine Bestätigungs-E-Mail gesendet. Das Abonnement wird wirksam, sobald Sie auf den Link darin klicken.",
+    "confirmTitle": "Abonnement bestätigen",
+    "confirming": "Wird bestätigt…",
+    "confirmed": "Vielen Dank! Ihr Abonnement ist bestätigt.",
+    "unsubscribeTitle": "Abmelden",
+    "unsubscribing": "Abmeldung läuft…",
+    "unsubscribed": "Sie haben den CUPRÉ Newsletter abbestellt. Sie können ihn jederzeit erneut abonnieren.",
+    "invalid": "Der Link ist ungültig oder kann nicht mehr verwendet werden.",
+    "backHome": "Zurück zur Startseite"
+  },
+  "footer": {
+    "tagline": [
+      "Premium-Textilien mit Kupferfasern.",
+      "Der besondere Stoff der Ruhe."
+    ],
+    "explore": "Entdecken",
+    "info": "Informationen",
+    "contact": "Kontakt",
+    "featuredProduct": "CUPRÉ Original",
+    "copper": "Welt des Kupfers",
+    "technology": "Technologie",
+    "about": "Über die Marke",
+    "usage": "Anwendung",
+    "faq": "Häufige Fragen",
+    "packaging": "Verpackung",
+    "contactText": "Kontaktdaten und rechtliche Dokumente werden vor dem Start ergänzt.",
+    "legal": "© 2026 CUPRÉ · Entwicklungsprototyp, kein aktiver Onlineshop. Fotos und Verpackungen sind Entwürfe."
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "aria": "Warenkorb",
+    "close": "Warenkorb schließen",
+    "empty": "Ihr Warenkorb ist noch leer.",
+    "imageAlt": "{name} Entwurfsbild",
+    "decrease": "Menge verringern",
+    "increase": "Menge erhöhen",
+    "pieces": "{qty} Stk.",
+    "total": "Gesamtsumme:",
+    "inactive": "Der Kauf ist derzeit nicht aktiv. Dies ist ein interaktiver Designentwurf.",
+    "checkout": "Weiter zur Kasse →"
+  },
+  "checkout": {
+    "eyebrow": "KASSE",
+    "title": "Bestellung aufgeben",
+    "shipping": "Lieferdaten",
+    "fields": {
+      "name": "Name",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer",
+      "postcode": "Postleitzahl",
+      "city": "Ort",
+      "address": "Straße und Hausnummer"
+    },
+    "note": "Anmerkung (optional)",
+    "summary": "Ihre Bestellung",
+    "total": "Gesamtsumme",
+    "submit": "Bestellung aufgeben",
+    "submitting": "Wird gesendet…",
+    "paymentInactive": "Die Online-Zahlung ist noch nicht aktiv; die Bestellung begründet keine Zahlungsverpflichtung.",
+    "thanksEyebrow": "VIELEN DANK",
+    "thanksTitle": "Ihre Bestellung wurde erfasst.",
+    "orderNumber": "Bestellnummer",
+    "thanksText": "Die Online-Zahlung ist noch nicht aktiv. Wir melden uns per E-Mail zu den Details Ihrer Bestellung.",
+    "backToProducts": "Zurück zu den Produkten",
+    "emptyTitle": "Ihr Warenkorb ist noch leer.",
+    "emptyText": "Wählen Sie auf der Produktseite Größe und Qualitätsklasse und kehren Sie dann hierher zurück.",
+    "viewProducts": "Produkte ansehen",
+    "errors": {
+      "required": {
+        "name": "Bitte geben Sie Ihren Namen ein.",
+        "email": "Bitte geben Sie Ihre E-Mail-Adresse ein.",
+        "phone": "Bitte geben Sie Ihre Telefonnummer ein.",
+        "postcode": "Bitte geben Sie die Postleitzahl ein.",
+        "city": "Bitte geben Sie den Ort ein.",
+        "address": "Bitte geben Sie die Adresse ein."
+      },
+      "invalidEmail": "Das Format der E-Mail-Adresse ist ungültig.",
+      "emptyCart": "Ihr Warenkorb ist leer.",
+      "invalidItems": "Ihr Warenkorb enthält einen ungültigen Artikel. Bitte laden Sie die Seite neu und versuchen Sie es erneut.",
+      "invalidRequest": "Ungültige Anfrage.",
+      "network": "Die Bestellung konnte gerade nicht gesendet werden. Bitte versuchen Sie es später erneut.",
+      "termsRequired": "Für die Bestellung müssen Sie die AGB akzeptieren.",
+      "invalidPaymentMethod": "Bitte wählen Sie eine Zahlungsart.",
+      "paymentUnavailable": "Die gewählte Zahlungsart ist derzeit nicht verfügbar.",
+      "invalidShippingMethod": "Bitte wählen Sie eine Versandart.",
+      "pickupPointRequired": "Bitte wählen Sie eine Abholstelle.",
+      "couponInvalid": "Dieser Gutscheincode ist ungültig.",
+      "couponNotYetValid": "Dieser Gutschein kann noch nicht eingelöst werden.",
+      "couponExpired": "Dieser Gutschein ist abgelaufen."
+    }
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "Seite nicht gefunden.",
+    "text": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "back": "Zurück zur Startseite"
+  },
+  "legal": {
+    "nav": {
+      "aszf": "AGB",
+      "adatvedelem": "Datenschutz",
+      "elallas": "Widerrufsbelehrung",
+      "impresszum": "Impressum"
+    },
+    "footerTitle": "Rechtliches",
+    "draftNotice": "Entwurf: Dieses Dokument ist ein während der Entwicklung erstellter Rahmen und muss von einem Juristen finalisiert werden. Mit [KITÖLTENDŐ] markierte Angaben fehlen noch.",
+    "fields": {
+      "name": "Firma",
+      "seat": "Sitz",
+      "postalAddress": "Postanschrift",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "registryNumber": "Handelsregisternummer",
+      "registryCourt": "Registergericht",
+      "taxNumber": "Steuernummer",
+      "euVatNumber": "USt-IdNr.",
+      "representative": "Vertreten durch"
+    },
+    "hosting": "Hosting-Anbieter",
+    "conciliation": "Zuständige Schlichtungsstelle",
+    "authority": "Datenschutz-Aufsichtsbehörde"
+  },
+  "productInfo": {
+    "title": "Produktinformationen",
+    "composition": "Materialzusammensetzung",
+    "care": "Pflege",
+    "manufacturer": "Hersteller",
+    "euResponsible": "Verantwortliche Person in der EU",
+    "productId": "Produktkennung",
+    "safety": "Sicherheitshinweise",
+    "grossNote": "Preise in ungarischen Forint inklusive MwSt."
+  },
+  "checkoutLegal": {
+    "termsBefore": "Ich habe die ",
+    "termsLink": "AGB",
+    "termsAfter": " gelesen und akzeptiere sie; die ",
+    "withdrawalLink": "Widerrufsbelehrung",
+    "termsEnd": " habe ich zur Kenntnis genommen.",
+    "privacyBefore": "Wir verarbeiten Ihre Angaben zur Abwicklung der Bestellung; Einzelheiten in der ",
+    "privacyLink": "Datenschutzerklärung",
+    "privacyAfter": ".",
+    "submitLive": "Zahlungspflichtig bestellen",
+    "shipping": "Versandkosten",
+    "shippingPending": "werden noch festgelegt"
+  },
+  "mail": {
+    "subject": "CUPRÉ – Bestellbestätigung (#{orderId})",
+    "greeting": "Hallo {name},",
+    "intro": "vielen Dank für Ihre Bestellung. Wir haben Folgendes erfasst:",
+    "total": "Gesamtsumme",
+    "address": "Lieferadresse",
+    "legal": "Unsere AGB und die Widerrufsbelehrung finden Sie hier:",
+    "footer": "Dies ist eine automatische Nachricht. Bei Fragen schreiben Sie uns: {email}",
+    "greetingAnonymous": "Guten Tag,",
+    "newsletterSubject": "CUPRÉ – bitte bestätigen Sie Ihr Newsletter-Abonnement",
+    "newsletterIntro": "Vielen Dank für Ihre Anmeldung zum CUPRÉ Newsletter! Bitte bestätigen Sie sie über den folgenden Link:",
+    "newsletterConfirm": "Bestätigen",
+    "newsletterIgnore": "Wenn Sie sich nicht angemeldet haben, müssen Sie nichts tun – ohne Bestätigung senden wir keinen Newsletter. Abmelden können Sie sich jederzeit hier",
+    "newsletterUnsubscribe": "Abmelden",
+    "resetSubject": "CUPRÉ – Passwort zurücksetzen",
+    "resetIntro": "Sie haben das Zurücksetzen des Passworts für Ihr CUPRÉ Konto angefordert. Der folgende Link ist 1 Stunde gültig:",
+    "resetLink": "Neues Passwort festlegen",
+    "resetIgnore": "Wenn Sie dies nicht angefordert haben, ignorieren Sie diese E-Mail; Ihr Passwort bleibt unverändert.",
+    "paymentReceivedSubject": "CUPRÉ – Zahlung eingegangen (#{orderId})",
+    "paymentReceivedIntro": "Vielen Dank, die Zahlung ({amount}) für Ihre Bestellung #{orderId} ist eingegangen.",
+    "shippedSubject": "CUPRÉ – Ihr Paket ist unterwegs (#{orderId})",
+    "shippedIntro": "Wir freuen uns, Ihnen mitzuteilen, dass Ihre Bestellung #{orderId} versandt wurde.",
+    "shippedNote": "Hinweis"
+  },
+  "account": {
+    "eyebrow": "CUPRÉ KONTO",
+    "loginTitle": "Anmelden",
+    "loginIntro": "Melden Sie sich bei Ihrem CUPRÉ Konto an.",
+    "email": "E-Mail-Adresse",
+    "password": "Passwort",
+    "passwordConfirm": "Passwort wiederholen",
+    "currentPassword": "Aktuelles Passwort",
+    "newPassword": "Neues Passwort",
+    "name": "Name",
+    "passwordHint": "Mindestens 8 Zeichen.",
+    "submitLogin": "Anmelden",
+    "forgot": "Passwort vergessen?",
+    "noAccount": "Noch kein Konto?",
+    "registerLink": "Jetzt registrieren – auch ohne Kauf",
+    "registerTitle": "Registrieren",
+    "registerIntro": "Sie können ein Konto auch ohne Kauf eröffnen: Speichern Sie Ihre Lieferdaten und bestellen Sie später schneller.",
+    "submitRegister": "Konto erstellen",
+    "haveAccount": "Sie haben bereits ein Konto?",
+    "loginLink": "Anmelden",
+    "privacyBefore": "Ich habe die ",
+    "privacyLink": "Datenschutzerklärung",
+    "privacyAfter": " gelesen und willige ein, dass CUPRÉ die für mein Konto angegebenen Daten verarbeitet.",
+    "newsletterOptIn": "Ich möchte den CUPRÉ Newsletter erhalten (Sie erhalten eine Bestätigungs-E-Mail; Abmeldung jederzeit möglich).",
+    "forgotTitle": "Passwort vergessen",
+    "forgotIntro": "Geben Sie die E-Mail-Adresse Ihres Kontos ein. Wir senden Ihnen einen Link zum Festlegen eines neuen Passworts.",
+    "submitForgot": "Link senden",
+    "forgotSent": "Falls zu dieser Adresse ein Konto existiert, haben wir einen Link zum Zurücksetzen gesendet. Der Link ist 1 Stunde gültig.",
+    "resetTitle": "Neues Passwort festlegen",
+    "submitReset": "Passwort speichern",
+    "resetDone": "Ihr neues Passwort wurde gespeichert. Sie können sich jetzt damit anmelden.",
+    "dashboardTitle": "Mein Konto",
+    "hello": "Hallo, {name}!",
+    "memberSince": "Registriert seit: {date}",
+    "profileTitle": "Lieferdaten",
+    "profileIntro": "Mit diesen Daten füllen wir die Kasse vor.",
+    "save": "Speichern",
+    "saved": "Gespeichert.",
+    "newsletterTitle": "Newsletter",
+    "newsletterStatus": {
+      "none": "Sie haben den Newsletter nicht abonniert.",
+      "pending": "Bestätigung ausstehend – bitte prüfen Sie Ihr Postfach.",
+      "active": "Sie haben den Newsletter abonniert.",
+      "unsubscribed": "Sie haben den Newsletter abbestellt."
+    },
+    "newsletterOn": "Abonnieren",
+    "newsletterOff": "Abbestellen",
+    "ordersTitle": "Meine Bestellungen",
+    "noOrders": "Sie haben noch keine Bestellungen.",
+    "orderLabel": "#{id} · {date}",
+    "passwordTitle": "Passwort ändern",
+    "passwordSaved": "Ihr neues Passwort wurde gespeichert. Auf anderen Geräten wurden Sie abgemeldet.",
+    "logout": "Abmelden",
+    "deleteTitle": "Konto löschen",
+    "deleteText": "Ihr Konto, Ihre Anmeldedaten und Ihr Newsletter-Abonnement werden endgültig gelöscht. Die Daten Ihrer bisherigen Bestellungen müssen wir aus buchhalterischen Gründen aufbewahren.",
+    "deleteButton": "Konto endgültig löschen",
+    "deleteConfirm": "Möchten Sie Ihr Konto wirklich löschen? Dies kann nicht rückgängig gemacht werden.",
+    "deleted": "Ihr Konto wurde gelöscht.",
+    "loading": "Wird geladen…",
+    "loginRequired": "Bitte melden Sie sich an, um Ihr Konto zu sehen.",
+    "errors": {
+      "required": "Pflichtfeld.",
+      "invalidEmail": "Das Format der E-Mail-Adresse ist ungültig.",
+      "weakPassword": "Das Passwort muss mindestens 8 Zeichen lang sein.",
+      "passwordMismatch": "Die Passwörter stimmen nicht überein.",
+      "emailTaken": "Mit dieser E-Mail-Adresse existiert bereits ein Konto.",
+      "invalidCredentials": "E-Mail-Adresse oder Passwort ist falsch.",
+      "wrongPassword": "Falsches Passwort.",
+      "invalidToken": "Der Link ist ungültig oder abgelaufen.",
+      "consentRequired": "Bitte setzen Sie das Häkchen, um fortzufahren.",
+      "tooManyAttempts": "Zu viele Versuche. Bitte versuchen Sie es in einigen Minuten erneut.",
+      "unauthorized": "Ihre Sitzung ist abgelaufen, bitte melden Sie sich erneut an.",
+      "invalidRequest": "Ungültige Anfrage.",
+      "network": "Die Anfrage konnte gerade nicht gesendet werden. Bitte versuchen Sie es später erneut."
+    }
+  },
+  "checkoutAccount": {
+    "loggedInAs": "Angemeldet als {email}",
+    "loginPrompt": "Sie haben ein Konto?",
+    "loginLink": "Anmelden",
+    "loginSuffix": " für eine schnellere Bestellung.",
+    "newsletterOptIn": "Ich möchte den CUPRÉ Newsletter erhalten (Sie erhalten eine Bestätigungs-E-Mail)."
+  },
+  "newsletterBand": {
+    "title": "CUPRÉ kommt bald.",
+    "text": "Folgen Sie uns und entdecken Sie die Geschichte der ersten Kollektion.",
+    "button": "Benachrichtigen →"
+  },
+  "payment": {
+    "title": "Zahlungsart",
+    "methods": {
+      "card": "Bankkarte",
+      "transfer": "Banküberweisung",
+      "cod": "Nachnahme",
+      "none": "–"
+    },
+    "descriptions": {
+      "card": "Sichere Zahlung auf der Barion-Zahlungsseite. Ihre Kartendaten verarbeitet Barion; CUPRÉ hat keinen Zugriff darauf.",
+      "cardMock": "TESTMODUS: Die Zahlung wird von einer Testseite simuliert, es erfolgt keine echte Belastung.",
+      "transfer": "Nach der Bestellung zeigen wir Kontonummer und Verwendungszweck an; der Versand erfolgt nach Zahlungseingang.",
+      "cod": "Bezahlung bar oder mit Karte beim Kurier bei der Zustellung."
+    },
+    "fee": "+ {fee}",
+    "codFee": "Nachnahmegebühr",
+    "barionNotice": "Kartenzahlungen werden von der Barion Payment Zrt. abgewickelt. Mit der Bestellung nehme ich zur Kenntnis, dass CUPRÉ die für die Zahlung erforderlichen Daten (Name, E-Mail-Adresse, Bestellnummer, Gesamtbetrag) an die Barion Payment Zrt. übermittelt.",
+    "statuses": {
+      "not_required": "nichts zu tun",
+      "pending": "Zahlung läuft",
+      "awaiting_transfer": "Überweisung ausstehend",
+      "awaiting_cod": "Zahlung bei Zustellung",
+      "paid": "bezahlt",
+      "failed": "Zahlung fehlgeschlagen",
+      "canceled": "Zahlung abgebrochen",
+      "expired": "Zahlung abgelaufen"
+    },
+    "transferTitle": "Überweisungsdaten",
+    "accountHolder": "Empfänger",
+    "bankName": "Bank",
+    "accountNumber": "Kontonummer",
+    "reference": "Verwendungszweck",
+    "amount": "Zu zahlender Betrag",
+    "due": "Zahlbar innerhalb von {days} Tagen nach der Bestellung.",
+    "codInstruction": "Bitte zahlen Sie {amount} bei der Zustellung an den Kurier.",
+    "submitCard": "Weiter zur Zahlung",
+    "redirecting": "Weiterleitung zur Zahlungsseite…",
+    "result": {
+      "eyebrow": "ZAHLUNG",
+      "successTitle": "Zahlung erfolgreich",
+      "successText": "Vielen Dank, Ihre Zahlung ist eingegangen. Eine Bestätigung haben wir Ihnen auch per E-Mail gesendet.",
+      "pendingTitle": "Zahlung läuft",
+      "pendingText": "Ihre Zahlung wird noch verarbeitet. Diese Seite aktualisiert sich automatisch.",
+      "failedTitle": "Zahlung fehlgeschlagen",
+      "failedText": "Ihre Karte wurde nicht belastet. Sie können es erneut versuchen; bei Fragen schreiben Sie uns: {email}.",
+      "retry": "Zahlung erneut versuchen",
+      "infoTitle": "Ihre Bestellung wurde erfasst",
+      "invalid": "Die Bestellung wurde nicht gefunden oder der Link ist ungültig.",
+      "orderNumber": "Bestellnummer"
+    },
+    "mock": {
+      "eyebrow": "TEST",
+      "title": "Test-Zahlungsseite",
+      "text": "Nur ein Entwicklertest: Es erfolgt keine echte Zahlung, es werden keine Kartendaten abgefragt.",
+      "success": "Erfolgreiche Zahlung",
+      "fail": "Fehlgeschlagene Zahlung",
+      "cancel": "Abbrechen",
+      "amount": "Betrag"
+    }
+  },
+  "shipping": {
+    "title": "Versandart",
+    "methods": {
+      "home": "Lieferung per Kurier",
+      "foxpost": "Foxpost-Paketautomat",
+      "mpl_point": "MPL PostaPont / Paketautomat",
+      "none": "–"
+    },
+    "descriptions": {
+      "home": "Lieferung an die angegebene Adresse.",
+      "foxpost": "Abholung am gewählten Foxpost-Automaten.",
+      "mpl_point": "Abholung in einer Postfiliale, an einem PostaPont oder MPL-Paketautomaten."
+    },
+    "deliveryDays": "Voraussichtliche Lieferzeit: {days} Werktage",
+    "choosePoint": "Automaten wählen",
+    "changePoint": "Anderen Automaten wählen",
+    "foxpostPickerTitle": "Foxpost-Automaten wählen",
+    "close": "Schließen",
+    "mplManualHint": "Geben Sie Name und Adresse der gewählten Postfiliale, des PostaPonts oder MPL-Paketautomaten an. Abholstellen finden Sie hier:",
+    "pointName": "Name der Abholstelle",
+    "pointAddress": "Adresse der Abholstelle",
+    "pickupPoint": "Abholstelle",
+    "billingAddressNote": "Bei Lieferung an eine Abholstelle ist die folgende Adresse Ihre Rechnungsadresse."
+  },
+  "coupon": {
+    "title": "Gutscheincode",
+    "placeholder": "Gutscheincode eingeben",
+    "apply": "Einlösen",
+    "remove": "Entfernen",
+    "discountLine": "Rabatt ({code})"
+  },
+  "orderStatuses": {
+    "new": "Eingegangen",
+    "processing": "In Bearbeitung",
+    "shipped": "Versandt",
+    "completed": "Abgeschlossen",
+    "canceled": "Storniert"
+  }
+}

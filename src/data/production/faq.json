@@ -1,0 +1,101 @@
+[
+  {
+    "id": "elhelyezes",
+    "question": {
+      "hu": "Hová kell tenni a rézlepedőt?",
+      "en": "Where should the copper sheet be placed?",
+      "de": "Wohin gehört das Kupferlaken?"
+    },
+    "answer": {
+      "hu": "A fekvőfelületre, a test alá kell elhelyezni, nem takaróként használni. A pontos elhelyezést a gyártói útmutató alapján véglegesítjük.",
+      "en": "On the lying surface, underneath the body – it is not used as a blanket. The exact placement will be finalised based on the manufacturer's instructions.",
+      "de": "Auf die Liegefläche, unter den Körper – nicht als Decke verwenden. Die genaue Platzierung wird anhand der Herstelleranleitung festgelegt."
+    }
+  },
+  {
+    "id": "meret",
+    "question": {
+      "hu": "Mekkora a CUPRÉ Original mérete?",
+      "en": "What size is CUPRÉ Original?",
+      "de": "Wie groß ist CUPRÉ Original?"
+    },
+    "answer": {
+      "hu": "A jelenleg rendelkezésre álló forgalmazói tájékoztató szerint 150 × 200 cm. A végleges termékadatokat még ellenőrizzük.",
+      "en": "According to the distributor information currently available, 150 × 200 cm. We are still verifying the final product data.",
+      "de": "Laut den derzeit verfügbaren Händlerangaben 150 × 200 cm. Die endgültigen Produktdaten prüfen wir noch."
+    }
+  },
+  {
+    "id": "anyag",
+    "question": {
+      "hu": "Milyen anyagból készül?",
+      "en": "What is it made of?",
+      "de": "Aus welchem Material besteht es?"
+    },
+    "answer": {
+      "hu": "A tájékoztató réz és poliamid összetételt említ. A pontos százalékos összetételt és kezelési információkat a gyártói dokumentáció alapján tesszük közzé.",
+      "en": "The product information mentions a composition of copper and polyamide. We will publish the exact percentage composition and care information based on the manufacturer's documentation.",
+      "de": "Die Produktinformation nennt eine Zusammensetzung aus Kupfer und Polyamid. Die genaue prozentuale Zusammensetzung und Pflegehinweise veröffentlichen wir anhand der Herstellerdokumentation."
+    }
+  },
+  {
+    "id": "technologia",
+    "question": {
+      "hu": "Hogyan működik a rézszálas technológia?",
+      "en": "How does copper-fibre technology work?",
+      "de": "Wie funktioniert die Kupferfaser-Technologie?"
+    },
+    "answer": {
+      "hu": "A réztartalmú szálak vezető tulajdonsága bizonyos alkalmazásokban elektromágneses árnyékolást tehet lehetővé. A pontos hatás a késztermék mérési eredményeitől függ.",
+      "en": "In certain applications, the conductivity of copper-containing fibres can enable electromagnetic shielding. The exact effect depends on the measurement results of the finished product.",
+      "de": "Die Leitfähigkeit kupferhaltiger Fasern kann in bestimmten Anwendungen eine elektromagnetische Abschirmung ermöglichen. Die genaue Wirkung hängt von den Messergebnissen des Endprodukts ab."
+    },
+    "link": {
+      "href": "/#technologia",
+      "label": {
+        "hu": "Olvasd el a technológiai ismertetőt.",
+        "en": "Read the technology overview.",
+        "de": "Zur Technologie-Übersicht."
+      }
+    }
+  },
+  {
+    "id": "alvas",
+    "question": {
+      "hu": "Bizonyítottan javítja az alvást?",
+      "en": "Is it proven to improve sleep?",
+      "de": "Verbessert es nachweislich den Schlaf?"
+    },
+    "answer": {
+      "hu": "A konkrét termékre jelenleg nem áll rendelkezésre olyan megbízható bizonyíték, amely alapján alvásjavító hatást ígérhetnénk.",
+      "en": "For this particular product, there is currently no reliable evidence that would allow us to promise any sleep-improving effect.",
+      "de": "Für dieses konkrete Produkt liegen derzeit keine verlässlichen Belege vor, die eine schlafverbessernde Wirkung versprechen ließen."
+    }
+  },
+  {
+    "id": "rendeles",
+    "question": {
+      "hu": "Mikor lehet rendelni?",
+      "en": "When can I order?",
+      "de": "Wann kann ich bestellen?"
+    },
+    "answer": {
+      "hu": "Ez egy bemutató webshop. A fizetés és a rendeléskezelés az éles induláskor válik elérhetővé.",
+      "en": "This is a demo shop. Payment and order processing will become available at launch.",
+      "de": "Dies ist ein Demo-Shop. Zahlung und Bestellabwicklung werden zum offiziellen Start verfügbar."
+    }
+  },
+  {
+    "id": "osztalyok",
+    "question": {
+      "hu": "Mi a különbség az I. és a II. osztályú termék között?",
+      "en": "What is the difference between first and second grade?",
+      "de": "Was ist der Unterschied zwischen 1. und 2. Wahl?"
+    },
+    "answer": {
+      "hu": "Az I. osztályú lepedő hibátlan első minőség. A II. osztályú termék kisebb, a használatot nem befolyásoló esztétikai eltérést tartalmazhat, ezért kedvezőbb áron kínáljuk. A pontos osztályozási szempontokat a gyártói dokumentáció alapján véglegesítjük.",
+      "en": "A first-grade sheet is flawless top quality. A second-grade product may have minor cosmetic deviations that do not affect use, which is why it is offered at a lower price. The exact grading criteria will be finalised based on the manufacturer's documentation.",
+      "de": "Ein Laken 1. Wahl ist makellose Spitzenqualität. Ein Produkt 2. Wahl kann kleine optische Abweichungen aufweisen, die den Gebrauch nicht beeinträchtigen, und wird daher günstiger angeboten. Die genauen Klassifizierungskriterien werden anhand der Herstellerdokumentation festgelegt."
+    }
+  }
+]

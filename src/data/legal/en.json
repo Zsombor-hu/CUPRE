@@ -1,0 +1,201 @@
+{
+  "aszf": {
+    "title": "General Terms and Conditions",
+    "intro": "These General Terms and Conditions (GTC) govern purchases in the CUPRÉ online shop operated by {companyName} (the \"Seller\"). In case of any discrepancy, the Hungarian version prevails. [TO BE CONFIRMED BY A LAWYER]",
+    "sections": [
+      {
+        "heading": "1. Seller details",
+        "paragraphs": [
+          "Name: {companyName} · Registered office: {seat} · Postal address: {postalAddress}",
+          "Email: {email} · Phone: {phone}",
+          "Company registration number: {registryNumber} ({registryCourt}) · Tax number: {taxNumber}",
+          "Hosting provider: {hostName}, {hostAddress}, {hostEmail}"
+        ]
+      },
+      {
+        "heading": "2. Subject, language and filing of the contract",
+        "paragraphs": [
+          "The subject of the contract is the sale of the copper-fibre textile products listed in the online shop. [TO BE FINALISED BY A LAWYER: contract language(s), whether the contract is filed and accessible afterwards.]"
+        ]
+      },
+      {
+        "heading": "3. Products and prices",
+        "paragraphs": [
+          "Product pages state the main characteristics, size, quality grade, material composition and price of each product. Prices are in Hungarian forint (HUF) and include VAT (gross prices).",
+          "Second-grade products may have cosmetic deviations that do not affect use; this is indicated on the product page.",
+          "Coupons: coupon codes can be redeemed at checkout; the fixed discount is deducted from the product prices (not from delivery or cash-on-delivery fees), up to the product total, within the coupon's validity period. One coupon per order; not exchangeable for cash. [TO BE FINALISED BY A LAWYER]"
+        ]
+      },
+      {
+        "heading": "4. Ordering",
+        "paragraphs": [
+          "The customer adds the chosen variant (size, grade) to the cart, enters the delivery details at checkout, accepts the GTC and submits the order with the \"Order with obligation to pay\" button.",
+          "Input errors can be corrected in the form and in the cart before the order is submitted.",
+          "The Seller confirms receipt of the order electronically without delay. [TO BE FINALISED BY A LAWYER: when the contract is concluded.]"
+        ]
+      },
+      {
+        "heading": "5. Payment",
+        "paragraphs": [
+          "Depending on the payment methods enabled, the following options are available:",
+          "Card payment: on the secure payment page of Barion Payment Zrt. ([TO BE COMPLETED: registered office, licence number]). Card details are handled by Barion; the Seller has no access to them. [TO BE VERIFIED BY A LAWYER: Barion details.]",
+          "Bank transfer: to the bank account given in the order confirmation, quoting the order number as reference, within the deadline stated there. Goods are shipped after the payment has been credited.",
+          "Cash on delivery: payment to the courier on delivery; any cash-on-delivery fee is shown at checkout before the order is placed.",
+          "[TO BE FINALISED BY A LAWYER: failed payments, missed deadlines, refund method.]"
+        ]
+      },
+      {
+        "heading": "6. Delivery and performance",
+        "paragraphs": [
+          "Depending on the enabled methods, the shop offers the following delivery options; the current fee and estimated delivery time are shown at checkout before the order is placed:",
+          "Home delivery by courier to the address provided ([TO BE COMPLETED: courier name]).",
+          "Foxpost parcel locker: the parcel can be collected from the locker chosen by the customer; Foxpost sends the collection deadline and the opening code. [TO BE COMPLETED: collection deadline]",
+          "MPL PostaPont / parcel locker: collection at the chosen post office, PostaPont or MPL parcel locker; MPL sends the notification. [TO BE COMPLETED: collection deadline]",
+          "Delivery area: Hungary. Delivery deadline: no more than 30 days. [TO BE FINALISED BY A LAWYER: damaged parcels, failed delivery, uncollected parcels.]"
+        ]
+      },
+      {
+        "heading": "7. Right of withdrawal",
+        "paragraphs": [
+          "Consumers have the right to withdraw from the contract within 14 days of receiving the goods without giving any reason. Details and the model withdrawal form are set out in the Withdrawal information."
+        ]
+      },
+      {
+        "heading": "8. Warranty and guarantee",
+        "paragraphs": [
+          "[TO BE FINALISED BY A LAWYER: information on statutory warranty rights and any guarantee.]"
+        ]
+      },
+      {
+        "heading": "9. Complaints and redress",
+        "paragraphs": [
+          "Complaints can be submitted via {email}, {postalAddress} or {phone}. The Seller responds to written complaints on the merits within 30 days.",
+          "If a complaint is rejected, consumers may turn to the conciliation body competent for their place of residence. The body competent for the Seller's registered office: {conciliationName}, {conciliationAddress}, {conciliationEmail}, {conciliationPhone}.",
+          "Consumers may also contact the consumer protection authority or the courts."
+        ]
+      },
+      {
+        "heading": "10. Other provisions",
+        "paragraphs": [
+          "Effective from: {updated}. [TO BE FINALISED BY A LAWYER.]"
+        ]
+      }
+    ]
+  },
+  "adatvedelem": {
+    "title": "Privacy notice",
+    "intro": "This notice explains how {companyName} processes personal data provided while using the CUPRÉ online shop (Regulation (EU) 2016/679 – GDPR).",
+    "sections": [
+      {
+        "heading": "1. Controller",
+        "paragraphs": [
+          "{companyName}, {seat} · Email: {email} · Phone: {phone}"
+        ]
+      },
+      {
+        "heading": "2. Order fulfilment",
+        "paragraphs": [
+          "Data processed: name, email address, phone number, delivery address, note, ordered products, date and language of the order.",
+          "Purpose: conclusion and performance of the contract, communication. Legal basis: performance of a contract (Art. 6(1)(b) GDPR).",
+          "Retention period: [TO BE FINALISED BY A LAWYER – accounting records must be kept for 8 years under Hungarian accounting law.]"
+        ]
+      },
+      {
+        "heading": "3. Card payment (Barion)",
+        "paragraphs": [
+          "For card payments, the Seller transfers the following data to Barion Payment Zrt. to process the payment: name, email address, order number, the items and total of the order. Card details are entered by the customer directly on the Barion payment page; the Seller neither sees nor stores them.",
+          "Legal basis: performance of a contract (Art. 6(1)(b) GDPR). Barion's own processing is governed by Barion's privacy notice. [TO BE FINALISED BY A LAWYER: Barion's role (independent controller / processor), use of the Barion Pixel.]"
+        ]
+      },
+      {
+        "heading": "4. Customer account",
+        "paragraphs": [
+          "Data processed: name, email address, an irreversible (scrypt) hash of your password, the delivery details saved in your account, account language, the time of registration and last sign-in, and the session cookie needed to stay signed in.",
+          "Purpose: providing the account, faster ordering, viewing previous orders. Legal basis: your consent and the contract for using the account (Art. 6(1)(a) and (b) GDPR).",
+          "Retention: until the account is deleted. You can delete your account at any time on the “My account” page; data of previous orders is still kept to meet accounting obligations."
+        ]
+      },
+      {
+        "heading": "5. Newsletter",
+        "paragraphs": [
+          "Data processed: email address, name (if provided), language, source of the subscription, and the times of consent, confirmation and unsubscription.",
+          "Purpose: sending newsletters and offers. Legal basis: your explicit consent (Art. 6(1)(a) GDPR), confirmed via the link in the confirmation email (double opt-in).",
+          "Retention: until you unsubscribe or withdraw consent. You can unsubscribe via the link in any email or in your account. [TO BE COMPLETED: newsletter service provider as processor.]"
+        ]
+      },
+      {
+        "heading": "6. Customer service and complaints",
+        "paragraphs": [
+          "Records of complaints and copies of replies are kept for the period required by consumer protection law (currently 3 years). Legal basis: compliance with a legal obligation."
+        ]
+      },
+      {
+        "heading": "7. Data stored in your browser",
+        "paragraphs": [
+          "The shop stores the contents of your cart (item number and quantity) in your browser's local storage. When you sign in, a session cookie (cupre_session) identifies your account for up to 30 days. These are strictly necessary for the service and do not require consent. The shop currently uses no analytics or marketing cookies."
+        ]
+      },
+      {
+        "heading": "8. Processors",
+        "paragraphs": [
+          "Hosting provider: {hostName}, {hostAddress}.",
+          "[TO BE COMPLETED: courier, payment provider, email service, accountant.]",
+          "Delivery: depending on the chosen method, [TO BE COMPLETED: courier], FOXPOST Zrt. or Magyar Posta Zrt. (MPL) – data transferred: name, phone number, email address, delivery address or pickup point. [TO BE FINALISED BY A LAWYER]"
+        ]
+      },
+      {
+        "heading": "9. Your rights",
+        "paragraphs": [
+          "You may request access to, rectification or erasure of your personal data or restriction of processing, object to processing and exercise your right to data portability. Please send requests to {email}.",
+          "You may lodge a complaint with the supervisory authority: {naihName}, {naihAddress}, {naihWebsite}, or go to court."
+        ]
+      },
+      {
+        "heading": "10. Data security",
+        "paragraphs": [
+          "[TO BE FINALISED: technical and organisational measures.] Effective from: {updated}."
+        ]
+      }
+    ]
+  },
+  "elallas": {
+    "title": "Withdrawal information",
+    "intro": "As a consumer, you may withdraw from the contract without giving any reason (Hungarian Government Decree 45/2014 implementing Directive 2011/83/EU).",
+    "sections": [
+      {
+        "heading": "Right of withdrawal",
+        "paragraphs": [
+          "You have the right to withdraw from this contract within 14 days without giving any reason. The withdrawal period expires 14 days after the day on which you, or a third party other than the carrier indicated by you, take physical possession of the goods.",
+          "To exercise the right of withdrawal, you must inform us ({companyName}, {postalAddress}, {email}) of your decision by an unequivocal statement (e.g. a letter sent by post or email). You may use the model withdrawal form below.",
+          "To meet the withdrawal deadline, it is sufficient to send your communication before the withdrawal period has expired."
+        ]
+      },
+      {
+        "heading": "Effects of withdrawal",
+        "paragraphs": [
+          "If you withdraw from this contract, we shall reimburse all payments received from you, including the costs of delivery (except supplementary costs resulting from your choice of a type of delivery other than the least expensive standard delivery), without undue delay and in any event not later than 14 days from the day on which we are informed of your decision. We will use the same means of payment as you used for the initial transaction, unless you have expressly agreed otherwise.",
+          "We may withhold reimbursement until we have received the goods back or you have supplied evidence of having sent them back, whichever is earliest.",
+          "You shall send back the goods without undue delay and in any event not later than 14 days from the day on which you communicate your withdrawal. You will bear the direct cost of returning the goods. [TO BE FINALISED BY A LAWYER]",
+          "You are only liable for any diminished value of the goods resulting from handling other than what is necessary to establish the nature, characteristics and functioning of the goods."
+        ]
+      }
+    ],
+    "form": {
+      "title": "Model withdrawal form",
+      "note": "(complete and return this form only if you wish to withdraw from the contract)",
+      "lines": [
+        "To: {companyName}, {postalAddress}, {email}",
+        "I/We hereby give notice that I/We withdraw from my/our contract of sale of the following goods:",
+        "Ordered on / received on:",
+        "Name of consumer(s):",
+        "Address of consumer(s):",
+        "Signature of consumer(s): (only if this form is notified on paper)",
+        "Date:"
+      ]
+    }
+  },
+  "impresszum": {
+    "title": "Legal notice",
+    "intro": "Seller details under Hungarian Act CVIII of 2001 on electronic commerce services."
+  }
+}

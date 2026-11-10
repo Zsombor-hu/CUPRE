@@ -1,0 +1,201 @@
+{
+  "aszf": {
+    "title": "Allgemeine Geschäftsbedingungen",
+    "intro": "Diese Allgemeinen Geschäftsbedingungen (AGB) regeln Einkäufe im CUPRÉ Onlineshop, betrieben von {companyName} (nachfolgend „Verkäufer“). Bei Abweichungen ist die ungarische Fassung maßgeblich. [VON EINEM JURISTEN ZU BESTÄTIGEN]",
+    "sections": [
+      {
+        "heading": "1. Angaben zum Verkäufer",
+        "paragraphs": [
+          "Name: {companyName} · Sitz: {seat} · Postanschrift: {postalAddress}",
+          "E-Mail: {email} · Telefon: {phone}",
+          "Handelsregisternummer: {registryNumber} ({registryCourt}) · Steuernummer: {taxNumber}",
+          "Hosting-Anbieter: {hostName}, {hostAddress}, {hostEmail}"
+        ]
+      },
+      {
+        "heading": "2. Gegenstand, Sprache und Speicherung des Vertrags",
+        "paragraphs": [
+          "Gegenstand des Vertrags ist der Kauf der im Onlineshop angebotenen Textilprodukte mit Kupferfasern. [VON EINEM JURISTEN FESTZULEGEN: Vertragssprache(n), Speicherung und Zugänglichkeit des Vertragstextes.]"
+        ]
+      },
+      {
+        "heading": "3. Produkte und Preise",
+        "paragraphs": [
+          "Auf den Produktseiten sind die wesentlichen Eigenschaften, Größe, Qualitätsklasse, Materialzusammensetzung und Preis angegeben. Die Preise verstehen sich in ungarischen Forint (HUF) inklusive Mehrwertsteuer (Bruttopreise).",
+          "Produkte 2. Wahl können optische Abweichungen aufweisen, die den Gebrauch nicht beeinträchtigen; dies ist auf der Produktseite angegeben.",
+          "Gutscheine: Gutscheincodes können an der Kasse eingelöst werden; der feste Rabatt wird von den Produktpreisen abgezogen (nicht von Versand- oder Nachnahmegebühren), höchstens bis zum Warenwert, innerhalb der Gültigkeitsdauer. Ein Gutschein pro Bestellung; keine Barauszahlung. [VON EINEM JURISTEN FESTZULEGEN]"
+        ]
+      },
+      {
+        "heading": "4. Bestellvorgang",
+        "paragraphs": [
+          "Der Kunde legt die gewählte Variante (Größe, Klasse) in den Warenkorb, gibt an der Kasse die Lieferdaten ein, akzeptiert die AGB und sendet die Bestellung über die Schaltfläche „Zahlungspflichtig bestellen“ ab.",
+          "Eingabefehler können vor dem Absenden im Formular und im Warenkorb korrigiert werden.",
+          "Der Verkäufer bestätigt den Eingang der Bestellung unverzüglich auf elektronischem Weg. [VON EINEM JURISTEN FESTZULEGEN: Zeitpunkt des Vertragsschlusses.]"
+        ]
+      },
+      {
+        "heading": "5. Zahlung",
+        "paragraphs": [
+          "Je nach aktivierten Zahlungsarten stehen folgende Möglichkeiten zur Verfügung:",
+          "Kartenzahlung: auf der sicheren Zahlungsseite der Barion Payment Zrt. ([AUSZUFÜLLEN: Sitz, Lizenznummer]). Die Kartendaten verarbeitet Barion; der Verkäufer hat keinen Zugriff darauf. [VON EINEM JURISTEN ZU PRÜFEN: Angaben zu Barion.]",
+          "Banküberweisung: auf das in der Bestellbestätigung angegebene Konto unter Angabe der Bestellnummer als Verwendungszweck, innerhalb der dort genannten Frist. Der Versand erfolgt nach Zahlungseingang.",
+          "Nachnahme: Zahlung an den Kurier bei der Zustellung; eine etwaige Nachnahmegebühr wird an der Kasse vor dem Absenden der Bestellung angezeigt.",
+          "[VON EINEM JURISTEN FESTZULEGEN: fehlgeschlagene Zahlung, Fristversäumnis, Art der Erstattung.]"
+        ]
+      },
+      {
+        "heading": "6. Lieferung",
+        "paragraphs": [
+          "Je nach aktivierten Versandarten bietet der Shop folgende Optionen; die aktuelle Gebühr und die voraussichtliche Lieferzeit werden vor dem Absenden der Bestellung an der Kasse angezeigt:",
+          "Lieferung per Kurier an die angegebene Adresse ([AUSZUFÜLLEN: Name des Kurierdienstes]).",
+          "Foxpost-Paketautomat: Abholung am vom Kunden gewählten Automaten; Foxpost informiert über Abholfrist und Öffnungscode. [AUSZUFÜLLEN: Abholfrist]",
+          "MPL PostaPont / Paketautomat: Abholung in der gewählten Postfiliale, am PostaPont oder MPL-Paketautomaten; die Benachrichtigung sendet MPL. [AUSZUFÜLLEN: Abholfrist]",
+          "Liefergebiet: Ungarn. Lieferfrist: höchstens 30 Tage. [VON EINEM JURISTEN FESTZULEGEN: beschädigte Pakete, fehlgeschlagene Zustellung, nicht abgeholte Pakete.]"
+        ]
+      },
+      {
+        "heading": "7. Widerrufsrecht",
+        "paragraphs": [
+          "Verbraucher können den Vertrag binnen 14 Tagen ab Erhalt der Ware ohne Angabe von Gründen widerrufen. Einzelheiten und das Muster-Widerrufsformular enthält die Widerrufsbelehrung."
+        ]
+      },
+      {
+        "heading": "8. Gewährleistung und Garantie",
+        "paragraphs": [
+          "[VON EINEM JURISTEN FESTZULEGEN: Informationen zu gesetzlichen Gewährleistungsrechten und ggf. Garantie.]"
+        ]
+      },
+      {
+        "heading": "9. Beschwerden und Streitbeilegung",
+        "paragraphs": [
+          "Beschwerden können an {email}, {postalAddress} oder {phone} gerichtet werden. Schriftliche Beschwerden beantwortet der Verkäufer innerhalb von 30 Tagen in der Sache.",
+          "Wird eine Beschwerde abgelehnt, kann sich der Verbraucher an die für seinen Wohnsitz zuständige Schlichtungsstelle wenden. Für den Sitz des Verkäufers zuständig: {conciliationName}, {conciliationAddress}, {conciliationEmail}, {conciliationPhone}.",
+          "Verbraucher können sich auch an die Verbraucherschutzbehörde oder an die Gerichte wenden."
+        ]
+      },
+      {
+        "heading": "10. Sonstiges",
+        "paragraphs": [
+          "Gültig ab: {updated}. [VON EINEM JURISTEN FESTZULEGEN.]"
+        ]
+      }
+    ]
+  },
+  "adatvedelem": {
+    "title": "Datenschutzerklärung",
+    "intro": "Diese Erklärung beschreibt, wie {companyName} die bei der Nutzung des CUPRÉ Onlineshops angegebenen personenbezogenen Daten verarbeitet (Verordnung (EU) 2016/679 – DSGVO).",
+    "sections": [
+      {
+        "heading": "1. Verantwortlicher",
+        "paragraphs": [
+          "{companyName}, {seat} · E-Mail: {email} · Telefon: {phone}"
+        ]
+      },
+      {
+        "heading": "2. Abwicklung von Bestellungen",
+        "paragraphs": [
+          "Verarbeitete Daten: Name, E-Mail-Adresse, Telefonnummer, Lieferadresse, Anmerkung, bestellte Produkte, Datum und Sprache der Bestellung.",
+          "Zweck: Abschluss und Erfüllung des Vertrags, Kommunikation. Rechtsgrundlage: Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO).",
+          "Speicherdauer: [VON EINEM JURISTEN FESTZULEGEN – Buchhaltungsbelege sind nach ungarischem Recht 8 Jahre aufzubewahren.]"
+        ]
+      },
+      {
+        "heading": "3. Kartenzahlung (Barion)",
+        "paragraphs": [
+          "Bei Kartenzahlung übermittelt der Verkäufer zur Abwicklung der Zahlung folgende Daten an die Barion Payment Zrt.: Name, E-Mail-Adresse, Bestellnummer, Positionen und Gesamtbetrag der Bestellung. Die Kartendaten gibt der Kunde direkt auf der Barion-Zahlungsseite ein; der Verkäufer sieht und speichert sie nicht.",
+          "Rechtsgrundlage: Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO). Für die eigene Datenverarbeitung von Barion gilt deren Datenschutzerklärung. [VON EINEM JURISTEN FESTZULEGEN: Rolle von Barion (eigenständiger Verantwortlicher / Auftragsverarbeiter), Einsatz des Barion Pixels.]"
+        ]
+      },
+      {
+        "heading": "4. Kundenkonto",
+        "paragraphs": [
+          "Verarbeitete Daten: Name, E-Mail-Adresse, ein nicht umkehrbarer (scrypt-)Hash Ihres Passworts, die im Konto gespeicherten Lieferdaten, Kontosprache, Zeitpunkt der Registrierung und der letzten Anmeldung sowie das für die Anmeldung erforderliche Sitzungs-Cookie.",
+          "Zweck: Bereitstellung des Kontos, schnellere Bestellung, Einsicht in frühere Bestellungen. Rechtsgrundlage: Ihre Einwilligung und der Vertrag über die Kontonutzung (Art. 6 Abs. 1 lit. a und b DSGVO).",
+          "Speicherdauer: bis zur Löschung des Kontos. Sie können Ihr Konto jederzeit auf der Seite „Mein Konto“ löschen; die Daten früherer Bestellungen bewahren wir aufgrund buchhalterischer Pflichten weiterhin auf."
+        ]
+      },
+      {
+        "heading": "5. Newsletter",
+        "paragraphs": [
+          "Verarbeitete Daten: E-Mail-Adresse, Name (falls angegeben), Sprache, Quelle der Anmeldung sowie Zeitpunkte von Einwilligung, Bestätigung und Abmeldung.",
+          "Zweck: Versand von Newslettern und Angeboten. Rechtsgrundlage: Ihre ausdrückliche Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), bestätigt über den Link in der Bestätigungs-E-Mail (Double-Opt-in).",
+          "Speicherdauer: bis zur Abmeldung bzw. zum Widerruf der Einwilligung. Die Abmeldung ist über den Link in jeder E-Mail oder im Konto möglich. [AUSZUFÜLLEN: Newsletter-Dienstleister als Auftragsverarbeiter.]"
+        ]
+      },
+      {
+        "heading": "6. Kundenservice und Beschwerden",
+        "paragraphs": [
+          "Beschwerdeprotokolle und Antwortkopien werden für die gesetzlich vorgeschriebene Dauer (derzeit 3 Jahre) aufbewahrt. Rechtsgrundlage: Erfüllung einer rechtlichen Verpflichtung."
+        ]
+      },
+      {
+        "heading": "7. Im Browser gespeicherte Daten",
+        "paragraphs": [
+          "Der Shop speichert den Inhalt Ihres Warenkorbs (Artikelnummer und Menge) im lokalen Speicher Ihres Browsers. Bei der Anmeldung identifiziert ein Sitzungs-Cookie (cupre_session) Ihr Konto für bis zu 30 Tage. Diese sind für den Betrieb unbedingt erforderlich und bedürfen keiner Einwilligung. Analyse- oder Marketing-Cookies werden derzeit nicht verwendet."
+        ]
+      },
+      {
+        "heading": "8. Auftragsverarbeiter",
+        "paragraphs": [
+          "Hosting-Anbieter: {hostName}, {hostAddress}.",
+          "[AUSZUFÜLLEN: Versanddienstleister, Zahlungsanbieter, E-Mail-Dienst, Buchhaltung.]",
+          "Versand: je nach gewählter Versandart [AUSZUFÜLLEN: Kurierdienst], FOXPOST Zrt. oder Magyar Posta Zrt. (MPL) – übermittelte Daten: Name, Telefonnummer, E-Mail-Adresse, Lieferadresse oder Abholstelle. [VON EINEM JURISTEN FESTZULEGEN]"
+        ]
+      },
+      {
+        "heading": "9. Ihre Rechte",
+        "paragraphs": [
+          "Sie können Auskunft über Ihre Daten, deren Berichtigung, Löschung oder die Einschränkung der Verarbeitung verlangen, der Verarbeitung widersprechen und Ihr Recht auf Datenübertragbarkeit ausüben. Anfragen richten Sie bitte an {email}.",
+          "Sie können sich bei der Aufsichtsbehörde beschweren: {naihName}, {naihAddress}, {naihWebsite}, oder den Rechtsweg beschreiten."
+        ]
+      },
+      {
+        "heading": "10. Datensicherheit",
+        "paragraphs": [
+          "[AUSZUFÜLLEN: technische und organisatorische Maßnahmen.] Gültig ab: {updated}."
+        ]
+      }
+    ]
+  },
+  "elallas": {
+    "title": "Widerrufsbelehrung",
+    "intro": "Als Verbraucher können Sie den Vertrag ohne Angabe von Gründen widerrufen (ungarische Regierungsverordnung 45/2014 zur Umsetzung der Richtlinie 2011/83/EU).",
+    "sections": [
+      {
+        "heading": "Widerrufsrecht",
+        "paragraphs": [
+          "Sie haben das Recht, binnen 14 Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt 14 Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die Waren in Besitz genommen haben.",
+          "Um Ihr Widerrufsrecht auszuüben, müssen Sie uns ({companyName}, {postalAddress}, {email}) mittels einer eindeutigen Erklärung (z. B. Brief oder E-Mail) über Ihren Entschluss informieren. Sie können dafür das untenstehende Muster-Widerrufsformular verwenden.",
+          "Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung vor Ablauf der Widerrufsfrist absenden."
+        ]
+      },
+      {
+        "heading": "Folgen des Widerrufs",
+        "paragraphs": [
+          "Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene günstigste Standardlieferung gewählt haben), unverzüglich und spätestens binnen 14 Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart.",
+          "Wir können die Rückzahlung verweigern, bis wir die Waren wieder zurückerhalten haben oder bis Sie den Nachweis erbracht haben, dass Sie die Waren zurückgesandt haben, je nachdem, welches der frühere Zeitpunkt ist.",
+          "Sie haben die Waren unverzüglich und in jedem Fall spätestens binnen 14 Tagen ab dem Tag, an dem Sie uns über den Widerruf unterrichten, zurückzusenden. Sie tragen die unmittelbaren Kosten der Rücksendung. [VON EINEM JURISTEN FESTZULEGEN]",
+          "Sie müssen für einen etwaigen Wertverlust der Waren nur aufkommen, wenn dieser auf einen zur Prüfung der Beschaffenheit, Eigenschaften und Funktionsweise der Waren nicht notwendigen Umgang zurückzuführen ist."
+        ]
+      }
+    ],
+    "form": {
+      "title": "Muster-Widerrufsformular",
+      "note": "(Wenn Sie den Vertrag widerrufen wollen, füllen Sie bitte dieses Formular aus und senden Sie es zurück.)",
+      "lines": [
+        "An: {companyName}, {postalAddress}, {email}",
+        "Hiermit widerrufe(n) ich/wir den von mir/uns abgeschlossenen Vertrag über den Kauf der folgenden Waren:",
+        "Bestellt am / erhalten am:",
+        "Name des/der Verbraucher(s):",
+        "Anschrift des/der Verbraucher(s):",
+        "Unterschrift des/der Verbraucher(s): (nur bei Mitteilung auf Papier)",
+        "Datum:"
+      ]
+    }
+  },
+  "impresszum": {
+    "title": "Impressum",
+    "intro": "Angaben zum Anbieter gemäß dem ungarischen Gesetz CVIII von 2001 über Dienste des elektronischen Geschäftsverkehrs."
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "Next.js route.tsx (általános)": {
+    "prefix": ["nroute", "nextroute"],
+    "scope": "typescriptreact,typescript",
+    "description": "Általános Next.js route.tsx váz: választható HTTP metódusok",
+    "body": [
+      "import { NextResponse } from 'next/server';",
+      "",
+      "export async function ${1|GET,POST,PUT,PATCH,DELETE|}(request: Request) {",
+      "  $0",
+      "  return NextResponse.json({ ok: true }, { status: 200 });",
+      "}"
+    ]
+  },
+  "Next.js route.tsx (GET + POST)": {
+    "prefix": ["nroutegp"],
+    "scope": "typescriptreact,typescript",
+    "description": "Next.js route.tsx váz GET és POST metódussal",
+    "body": [
+      "import { NextResponse } from 'next/server';",
+      "",
+      "export async function GET(request: Request) {",
+      "  $1",
+      "  return NextResponse.json({ ok: true }, { status: 200 });",
+      "}",
+      "",
+      "export async function POST(request: Request) {",
+      "  const body = await request.json().catch(() => null);",
+      "",
+      "  if (!body) {",
+      "    return NextResponse.json({ error: '${2:Érvénytelen kérés}' }, { status: 400 });",
+      "  }",
+      "",
+      "  $0",
+      "  return NextResponse.json({ ok: true }, { status: 201 });",
+      "}"
+    ]
+  },
+  "Next.js route.tsx ([id] dinamikus szegmens)": {
+    "prefix": ["nrouteid", "nextrouteid"],
+    "scope": "typescriptreact,typescript",
+    "description": "Next.js route.tsx váz dinamikus szegmenshez (params Promise)",
+    "body": [
+      "import { NextResponse } from 'next/server';",
+      "",
+      "type Context = { params: Promise<{ ${1:id}: string }> };",
+      "",
+      "export async function ${2|GET,POST,PUT,PATCH,DELETE|}(request: Request, { params }: Context) {",
+      "  const { ${1:id} } = await params;",
+      "",
+      "  $0",
+      "  return NextResponse.json({ ${1:id} }, { status: 200 });",
+      "}"
+    ]
+  }
+}

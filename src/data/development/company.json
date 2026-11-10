@@ -1,0 +1,71 @@
+{
+  "company": {
+    "name": "[KITÖLTENDŐ: cégnév]",
+    "seat": "[KITÖLTENDŐ: székhely]",
+    "postalAddress": "[KITÖLTENDŐ: levelezési cím]",
+    "email": "[KITÖLTENDŐ: e-mail]",
+    "phone": "[KITÖLTENDŐ: telefonszám]",
+    "registryNumber": "[KITÖLTENDŐ: cégjegyzékszám / nyilvántartási szám]",
+    "registryCourt": "[KITÖLTENDŐ: nyilvántartó bíróság / hatóság]",
+    "taxNumber": "[KITÖLTENDŐ: adószám]",
+    "euVatNumber": "[KITÖLTENDŐ: közösségi adószám, ha van]",
+    "representative": "[KITÖLTENDŐ: képviselő neve]"
+  },
+  "hosting": {
+    "name": "[KITÖLTENDŐ: tárhelyszolgáltató neve]",
+    "address": "[KITÖLTENDŐ: tárhelyszolgáltató címe]",
+    "email": "[KITÖLTENDŐ: tárhelyszolgáltató e-mail címe]"
+  },
+  "conciliationBody": {
+    "name": "[KITÖLTENDŐ: a székhely szerint illetékes békéltető testület]",
+    "address": "[KITÖLTENDŐ: békéltető testület címe]",
+    "email": "[KITÖLTENDŐ: békéltető testület e-mail címe]",
+    "phone": "[KITÖLTENDŐ: békéltető testület telefonszáma]"
+  },
+  "dataProtectionAuthority": {
+    "name": "Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH)",
+    "address": "1055 Budapest, Falk Miksa utca 9–11.",
+    "website": "https://naih.hu"
+  },
+  "shop": {
+    "liveOrders": false,
+    "legalUpdated": "[KITÖLTENDŐ: hatálybalépés dátuma]",
+    "shipping": {
+      "home": {
+        "enabled": true,
+        "feeHuf": 1990,
+        "carrierName": "[KITÖLTENDŐ: futárszolgálat]",
+        "deliveryDays": "2–4"
+      },
+      "foxpost": {
+        "enabled": true,
+        "feeHuf": 1290,
+        "deliveryDays": "2–3"
+      },
+      "mplPoint": {
+        "enabled": true,
+        "feeHuf": 1390,
+        "deliveryDays": "2–4"
+      }
+    },
+    "payments": {
+      "card": {
+        "enabled": true,
+        "provider": "mock"
+      },
+      "transfer": {
+        "enabled": true,
+        "accountHolder": "[KITÖLTENDŐ: számlatulajdonos]",
+        "bankName": "[KITÖLTENDŐ: bank neve]",
+        "accountNumber": "[KITÖLTENDŐ: bankszámlaszám]",
+        "iban": "[KITÖLTENDŐ: IBAN]",
+        "swift": "[KITÖLTENDŐ: SWIFT/BIC]",
+        "dueDays": 8
+      },
+      "cod": {
+        "enabled": true,
+        "feeHuf": 990
+      }
+    }
+  }
+}

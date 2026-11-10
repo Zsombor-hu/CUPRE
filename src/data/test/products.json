@@ -1,0 +1,111 @@
+[
+  {
+    "slug": "cupre-original",
+    "featured": true,
+    "image": "/images/product-cupre-original.webp",
+    "imageWidth": 576,
+    "imageHeight": 317,
+    "tag": "CUPRÉ ORIGINAL",
+    "name": {
+      "hu": "CUPRÉ Original",
+      "en": "CUPRÉ Original",
+      "de": "CUPRÉ Original"
+    },
+    "subtitle": {
+      "hu": "Prémium rézszálas lepedő",
+      "en": "Premium copper-fibre sheet",
+      "de": "Premium-Laken mit Kupferfasern"
+    },
+    "imageAlt": {
+      "hu": "CUPRÉ márkázott rézszínű textil – látványterv, nem végleges termékfotó",
+      "en": "CUPRÉ branded copper-coloured textile – design concept, not a final product photo",
+      "de": "CUPRÉ Textil in Kupferfarbe mit Markenzeichen – Entwurf, kein endgültiges Produktfoto"
+    },
+    "description": {
+      "hu": "A lepedőt a fekvőfelületre, a test alá kell teríteni; nem takaróként használjuk. Különleges textil, amely a modern anyagtechnológia és a harmonikus otthon világát kapcsolja össze.",
+      "en": "The sheet is spread on the lying surface, underneath the body; it is not used as a blanket. A distinctive textile that brings together modern material technology and the world of a harmonious home.",
+      "de": "Das Laken wird auf der Liegefläche unter dem Körper ausgebreitet; es wird nicht als Decke verwendet. Ein besonderes Textil, das moderne Materialtechnologie mit der Welt eines harmonischen Zuhauses verbindet."
+    },
+    "points": [
+      {
+        "icon": "↗",
+        "label": {
+          "hu": "150 × 200 cm",
+          "en": "150 × 200 cm",
+          "de": "150 × 200 cm"
+        }
+      },
+      {
+        "icon": "♧",
+        "label": {
+          "hu": "Rézszálas textil",
+          "en": "Copper-fibre textile",
+          "de": "Kupferfaser-Textil"
+        }
+      },
+      {
+        "icon": "✧",
+        "label": {
+          "hu": "Prémium kivitel",
+          "en": "Premium finish",
+          "de": "Premium-Ausführung"
+        }
+      }
+    ],
+    "disclaimer": {
+      "hu": "A képek illusztrációk. A végleges ár, összetétel és rendelhetőség egyeztetés alatt.",
+      "en": "Images are illustrations. Final price, composition and availability are still being finalised.",
+      "de": "Die Bilder sind Illustrationen. Endpreis, Zusammensetzung und Verfügbarkeit werden noch abgestimmt."
+    },
+    "variants": [
+      {
+        "sku": "CO-150x200-I",
+        "size": "150 × 200 cm",
+        "grade": "first",
+        "priceHuf": 24900,
+        "priceNote": {
+          "hu": "Tervezett tesztár",
+          "en": "Planned test price",
+          "de": "Geplanter Testpreis"
+        }
+      },
+      {
+        "sku": "CO-150x200-II",
+        "size": "150 × 200 cm",
+        "grade": "second",
+        "priceHuf": 19900,
+        "priceNote": {
+          "hu": "Helyőrző ár, nem végleges",
+          "en": "Placeholder price, not final",
+          "de": "Platzhalterpreis, nicht endgültig"
+        }
+      }
+    ],
+    "productInfo": {
+      "composition": {
+        "hu": "[KITÖLTENDŐ: szálösszetétel százalékosan, pl. „xx% poliamid, xx% réz” – EU 1007/2011]",
+        "en": "[TO BE COMPLETED: fibre composition in percent, e.g. “xx% polyamide, xx% copper” – EU 1007/2011]",
+        "de": "[AUSZUFÜLLEN: Faserzusammensetzung in Prozent, z. B. „xx % Polyamid, xx % Kupfer“ – EU 1007/2011]"
+      },
+      "care": {
+        "hu": "[KITÖLTENDŐ: mosási és kezelési útmutató a gyártói dokumentáció alapján]",
+        "en": "[TO BE COMPLETED: washing and care instructions based on the manufacturer's documentation]",
+        "de": "[AUSZUFÜLLEN: Wasch- und Pflegehinweise laut Herstellerdokumentation]"
+      },
+      "manufacturer": {
+        "name": "[KITÖLTENDŐ: gyártó neve / márkaneve]",
+        "address": "[KITÖLTENDŐ: gyártó postai és elektronikus elérhetősége]"
+      },
+      "euResponsible": {
+        "name": "[KITÖLTENDŐ: EU-ban letelepedett felelős gazdasági szereplő, ha a gyártó nem uniós]",
+        "address": "[KITÖLTENDŐ: postai és elektronikus elérhetősége]"
+      },
+      "productId": "[KITÖLTENDŐ: típus-, tétel- vagy sorozatszám]",
+      "safety": {
+        "hu": "[KITÖLTENDŐ: figyelmeztetések és biztonsági információk (GPSR, EU 2023/988), pl. elektromos készülékkel való érintkezés, gyermekek használata]",
+        "en": "[TO BE COMPLETED: warnings and safety information (GPSR, EU 2023/988)]",
+        "de": "[AUSZUFÜLLEN: Warn- und Sicherheitshinweise (GPSR, EU 2023/988)]"
+      }
+    }
+  }
+]

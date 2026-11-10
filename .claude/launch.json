@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "cupre-next",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["dev"],
+      "port": 3000
+    },
+    {
+      "name": "cupre-eredeti",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8090", "--directory", "C:/Merkit/Zsombor_Webshop/Eredeti/CUPRE-CODEX-TELJES-ATADAS/CUPRE-CODEX-ATADAS"],
+      "port": 8090
+    }
+  ]
+}

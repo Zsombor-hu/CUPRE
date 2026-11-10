@@ -1,0 +1,63 @@
+{
+  "Next.js page.tsx (általános)": {
+    "prefix": ["npage", "nextpage"],
+    "scope": "typescriptreact",
+    "description": "Általános Next.js page.tsx váz (szerverkomponens)",
+    "body": [
+      "export default function ${1:Page}() {",
+      "  return (",
+      "    <div className=\"p-6\">",
+      "      <h1 className=\"text-2xl font-bold\">${2:Cím}</h1>",
+      "      $0",
+      "    </div>",
+      "  );",
+      "}"
+    ]
+  },
+  "Next.js page.tsx (aszinkron, params)": {
+    "prefix": ["npageasync"],
+    "scope": "typescriptreact",
+    "description": "Next.js page.tsx váz aszinkron komponenssel és params-szal",
+    "body": [
+      "export default async function ${1:Page}({ params }: { params: Promise<{ ${2:id}: string }> }) {",
+      "  const { ${2:id} } = await params;",
+      "",
+      "  return (",
+      "    <div className=\"p-6\">",
+      "      <h1 className=\"text-2xl font-bold\">${3:Cím}</h1>",
+      "      $0",
+      "    </div>",
+      "  );",
+      "}"
+    ]
+  },
+  "Next.js page.tsx (Suspense + async komponens)": {
+    "prefix": ["npagesuspense"],
+    "scope": "typescriptreact",
+    "description": "Next.js page.tsx váz: aszinkron komponens Suspense mögött, HeroUI Spinner fallbackkel",
+    "body": [
+      "import { Suspense } from 'react';",
+      "import { Spinner } from '@heroui/react';",
+      "",
+      "// Az adatlekérés futásidejű, ezért Suspense mögött rendereljük",
+      "async function ${1:Content}() {",
+      "  const data = await ${2:getData}();",
+      "",
+      "  return (",
+      "    $0",
+      "  );",
+      "}",
+      "",
+      "export default function ${3:Page}() {",
+      "  return (",
+      "    <div className=\"p-6\">",
+      "      <h1 className=\"text-2xl font-bold\">${4:Cím}</h1>",
+      "      <Suspense fallback={<Spinner aria-label=\"Betöltés\" />}>",
+      "        <${1:Content} />",
+      "      </Suspense>",
+      "    </div>",
+      "  );",
+      "}"
+    ]
+  }
+}

@@ -1,0 +1,550 @@
+{
+  "meta": {
+    "title": "CUPRÉ | A pihenés új rituáléja",
+    "description": "CUPRÉ – prémium rézszálas textilek, a nyugalom különleges szövete. Ismerd meg a CUPRÉ Original kollekciót.",
+    "productsTitle": "Termékek | CUPRÉ",
+    "productsDescription": "A CUPRÉ rézszálas textilek kínálata méret és minőségi osztály szerint.",
+    "checkoutTitle": "Pénztár | CUPRÉ",
+    "checkoutDescription": "Rendelés leadása a CUPRÉ webshopban.",
+    "accountTitle": "Fiókom | CUPRÉ",
+    "loginTitle": "Belépés | CUPRÉ",
+    "registerTitle": "Regisztráció | CUPRÉ",
+    "passwordTitle": "Jelszó | CUPRÉ",
+    "newsletterTitle": "Hírlevél | CUPRÉ",
+    "paymentTitle": "Fizetés | CUPRÉ"
+  },
+  "language": {
+    "label": "Nyelv",
+    "names": {
+      "hu": "Magyar",
+      "en": "English",
+      "de": "Deutsch"
+    }
+  },
+  "nav": {
+    "home": "Főoldal",
+    "products": "Termékek",
+    "copper": "A réz világa",
+    "technology": "Technológia",
+    "usage": "Használat",
+    "about": "Rólunk",
+    "faq": "GYIK",
+    "mainMenu": "Főmenü",
+    "mobileMenu": "Mobil menü",
+    "homeAria": "CUPRÉ főoldal",
+    "brandSub": [
+      "PRÉMIUM",
+      "RÉZSZÁLAS TEXTILEK"
+    ],
+    "search": "Keresés",
+    "account": "Fiók",
+    "openCart": "Kosár megnyitása",
+    "openMenu": "Menü megnyitása"
+  },
+  "toasts": {
+    "search": "A keresés a termékkatalógus bővítésekor lesz elérhető.",
+    "account": "A vásárlói fiók még nincs aktiválva.",
+    "newsletter": "A feliratkozási rendszer még nincs bekötve.",
+    "emptyCart": "A kosarad még üres."
+  },
+  "hero": {
+    "eyebrow": "CUPRÉ · COPPER LIVING",
+    "title": "A pihenés",
+    "titleAccent": "új rituáléja.",
+    "text": "Prémium rézszálas textilek az otthon különleges pillanataihoz.",
+    "cta": "Fedezd fel a rézlepedőt"
+  },
+  "benefits": {
+    "aria": "A CUPRÉ értékei",
+    "items": [
+      [
+        "Otthoni",
+        "pihenés"
+      ],
+      [
+        "Gondosan választott",
+        "anyagok"
+      ],
+      [
+        "Különleges",
+        "rézszálas textil"
+      ],
+      [
+        "Elegáns, időtálló",
+        "megjelenés"
+      ],
+      [
+        "Figyelmes",
+        "ajándékötlet"
+      ]
+    ]
+  },
+  "product": {
+    "featuredEyebrow": "KIEMELT TERMÉKÜNK",
+    "collectionEyebrow": "CUPRÉ KOLLEKCIÓ",
+    "addToCart": "Kosárba teszem",
+    "back": "← Összes termék",
+    "size": "Méret",
+    "grade": "Osztály",
+    "sku": "Cikkszám",
+    "grades": {
+      "first": "I. osztály",
+      "second": "II. osztály"
+    }
+  },
+  "products": {
+    "eyebrow": "KOLLEKCIÓ",
+    "title": "Termékeink",
+    "text": "Prémium rézszálas textilek, méret és minőségi osztály szerint választható változatokban.",
+    "fromPrice": "{price}-tól"
+  },
+  "gift": {
+    "alt": "CUPRÉ ünnepi ajándékcsomag, rézszálas félhold emblémával és Ajándékozz nyugodt estéket felirattal"
+  },
+  "story": {
+    "eyebrow": "ANYAG · ESZTÉTIKA · HARMÓNIA",
+    "title": "A réz különleges világa",
+    "text": "A rézszálas textilek egyedi karaktere találkozik a kifinomult otthoni környezettel.",
+    "cards": [
+      {
+        "alt": "Anya és lánya egy harmonikus hálószobában, rézszínű textillel – AI-generált hangulatkép",
+        "title": "Különleges textúra",
+        "text": "Fedezd fel a réztartalmú szövés látványát és az anyag történetét."
+      },
+      {
+        "alt": "Világos, harmonikus hálószoba",
+        "title": "Az otthon nyugalma",
+        "text": "Természetes fények, meleg árnyalatok és gondosan választott részletek."
+      },
+      {
+        "alt": "Rézszálas textil és stilizált árnyékolási háló – technológiai illusztráció",
+        "title": "Rézszálas technológia és védelem",
+        "text": "A réztartalmú szövetek árnyékolási és antimikrobiális tulajdonságai vizsgálhatók. A CUPRÉ lepedő konkrét hatásait terméktesztekkel kell igazolni."
+      }
+    ]
+  },
+  "technology": {
+    "alt": "Rézszínű textil és párna részlete, technológiai hangulatillusztráció",
+    "caption": "RÉZSZÁLAK · SZÖVÉS · ANYAGTECHNOLÓGIA",
+    "eyebrow": "AZ ANYAG MÖGÖTTI TECHNOLÓGIA",
+    "title": "Mitől különleges a rézszálas textil?",
+    "intro": "A réz elektromosan vezető fém. Ha réztartalmú szálakat szőnek vagy más módon építenek be egy textilbe, az anyag a hagyományos szövetektől eltérő műszaki tulajdonságokat kaphat. Ezek mértéke a réztartalomtól, a szövés szerkezetétől és a késztermék kialakításától függ.",
+    "facts": [
+      {
+        "title": "Réztartalmú szálak",
+        "text": "A textilben lévő vezető szálak a szövetszerkezet részei. A pontos réztartalmat és az anyagösszetételt a gyártói adatlapnak kell igazolnia."
+      },
+      {
+        "title": "Elektromágneses árnyékolás",
+        "text": "Megfelelő kialakítás esetén a vezető textil bizonyos frekvenciákon csillapíthat elektromágneses jeleket. Az árnyékolás mértéke laboratóriumban, frekvenciánként mérhető. A CUPRÉ Originalra jelenleg nem közlünk igazolt mérési értéket."
+      },
+      {
+        "title": "Réz és mikroorganizmusok",
+        "text": "A réz egyes felületeinek antimikrobiális tulajdonságait vizsgálták. Ez önmagában nem igazolja, hogy a konkrét lepedő antibakteriális, fertőzést előz meg vagy egészségügyi előnyt biztosít."
+      },
+      {
+        "title": "Alvás és közérzet",
+        "text": "Nem áll rendelkezésünkre megfelelő bizonyíték arra, hogy ez a konkrét rézlepedő javítja az alvás minőségét vagy megvéd a környezeti sugárzás egészségügyi hatásaitól. A CUPRÉ a különleges textiltechnológiát és az otthoni pihenés élményét mutatja be."
+      }
+    ],
+    "note": "A műszaki állításokat a Lorix / alapanyaggyártó termékspecifikus dokumentációjának beérkezése után pontosítjuk. A leírás tájékoztató jellegű, nem orvosi ajánlás.",
+    "link": "További kérdések"
+  },
+  "care": {
+    "alt": "Mélyzöld és rézszínű hálószoba rézszínű lepedővel",
+    "eyebrow": "A CUPRÉ VILÁGA",
+    "title": [
+      "A részletekben",
+      "rejlik a harmónia."
+    ],
+    "paragraphs": [
+      "Hiszünk a tudatosan kialakított otthonban, a különleges anyagokban és a pihenésre szánt idő értékében.",
+      "A rézlepedőt a fekvőfelületre kell helyezni, hogy az ember rajta feküdjön, nem pedig takaróként magára húzni. A pontos rétegrendet, használati és kezelési útmutatót a gyártói dokumentáció alapján véglegesítjük."
+    ],
+    "link": "Gyakori kérdések"
+  },
+  "brand": {
+    "eyebrow": "A CUPRÉ TÖRTÉNETE",
+    "title": [
+      "A nyugalom",
+      "különleges szövete."
+    ],
+    "text": "A réz meleg ragyogása. A félhold finom íve. A gondosan szőtt szálak. Ezekből az apró részletekből született a CUPRÉ vizuális világa."
+  },
+  "packaging": {
+    "eyebrow": "GONDOSAN CSOMAGOLVA",
+    "title": "Ajándék már az első pillanattól.",
+    "text": "Mélyzöld papíröv, rézszínű részletek, elegáns kártya. A CUPRÉ Essential csomagolás célja a kifinomult megjelenés felesleges túlzások nélkül.",
+    "muted": "A csomagolási változatok fejlesztés alatt állnak.",
+    "alt": "CUPRÉ csomagolás látványterve"
+  },
+  "faq": {
+    "eyebrow": "TUDNIVALÓK",
+    "title": "Gyakori kérdések"
+  },
+  "newsletter": {
+    "eyebrow": "HÍRLEVÉL",
+    "title": "Iratkozz fel a CUPRÉ hírlevélre",
+    "intro": "Elsőként értesülsz az indulásról, az új kollekciókról és az ajánlatainkról. Vásárlás és regisztráció nélkül is feliratkozhatsz.",
+    "name": "Név (nem kötelező)",
+    "email": "E-mail cím",
+    "consentBefore": "Hozzájárulok, hogy a CUPRÉ hírlevelet küldjön a megadott e-mail címre. Bármikor leiratkozhatok. Részletek az ",
+    "consentLink": "adatkezelési tájékoztatóban",
+    "consentAfter": ".",
+    "submit": "Feliratkozom",
+    "sent": "Elküldtük a megerősítő levelet. A feliratkozás a levélben lévő linkre kattintva válik érvényessé.",
+    "confirmTitle": "Feliratkozás megerősítése",
+    "confirming": "Megerősítés folyamatban…",
+    "confirmed": "Köszönjük! A feliratkozásodat megerősítetted.",
+    "unsubscribeTitle": "Leiratkozás",
+    "unsubscribing": "Leiratkozás folyamatban…",
+    "unsubscribed": "Leiratkoztál a CUPRÉ hírlevélről. Bármikor újra feliratkozhatsz.",
+    "invalid": "A link érvénytelen vagy már nem használható.",
+    "backHome": "Vissza a főoldalra"
+  },
+  "footer": {
+    "tagline": [
+      "Prémium rézszálas textilek.",
+      "A nyugalom különleges szövete."
+    ],
+    "explore": "Felfedezés",
+    "info": "Információ",
+    "contact": "Kapcsolat",
+    "featuredProduct": "CUPRÉ Original",
+    "copper": "A réz világa",
+    "technology": "Technológia",
+    "about": "A márkáról",
+    "usage": "Használat",
+    "faq": "Gyakori kérdések",
+    "packaging": "Csomagolás",
+    "contactText": "A kapcsolati adatok és a jogi dokumentumok az élesítés előtt kerülnek ide.",
+    "legal": "© 2026 CUPRÉ · Fejlesztési prototípus, nem üzemelő webáruház. A fotók és a csomagolások látványtervek."
+  },
+  "cart": {
+    "title": "Kosarad",
+    "aria": "Kosár",
+    "close": "Kosár bezárása",
+    "empty": "A kosarad még üres.",
+    "imageAlt": "{name} látványterv",
+    "decrease": "Mennyiség csökkentése",
+    "increase": "Mennyiség növelése",
+    "pieces": "{qty} db",
+    "total": "Végösszeg:",
+    "inactive": "A vásárlás jelenleg nem aktív. Ez egy interaktív látványterv.",
+    "checkout": "Tovább a pénztárhoz →"
+  },
+  "checkout": {
+    "eyebrow": "PÉNZTÁR",
+    "title": "Rendelés leadása",
+    "shipping": "Szállítási adatok",
+    "fields": {
+      "name": "Név",
+      "email": "E-mail cím",
+      "phone": "Telefonszám",
+      "postcode": "Irányítószám",
+      "city": "Település",
+      "address": "Utca, házszám"
+    },
+    "note": "Megjegyzés (nem kötelező)",
+    "summary": "Rendelésed",
+    "total": "Végösszeg",
+    "submit": "Rendelés leadása",
+    "submitting": "Küldés…",
+    "paymentInactive": "Az online fizetés még nem aktív; a rendelés leadása nem jár fizetési kötelezettséggel.",
+    "thanksEyebrow": "KÖSZÖNJÜK",
+    "thanksTitle": "Rendelésed rögzítettük.",
+    "orderNumber": "Rendelésszám",
+    "thanksText": "Az online fizetés még nem aktív. A rendelés részleteivel kapcsolatban e-mailben keresünk.",
+    "backToProducts": "Vissza a termékekhez",
+    "emptyTitle": "A kosarad még üres.",
+    "emptyText": "Válassz méretet és minőségi osztályt a termékoldalon, majd térj vissza ide.",
+    "viewProducts": "Termékek megtekintése",
+    "errors": {
+      "required": {
+        "name": "Add meg a neved.",
+        "email": "Add meg az e-mail címed.",
+        "phone": "Add meg a telefonszámod.",
+        "postcode": "Add meg az irányítószámot.",
+        "city": "Add meg a települést.",
+        "address": "Add meg a címet."
+      },
+      "invalidEmail": "Az e-mail cím formátuma nem megfelelő.",
+      "emptyCart": "A kosarad üres.",
+      "invalidItems": "A kosár érvénytelen tételt tartalmaz. Frissítsd az oldalt, és próbáld újra.",
+      "invalidRequest": "Érvénytelen kérés.",
+      "network": "A rendelést most nem sikerült elküldeni. Próbáld újra később.",
+      "termsRequired": "A rendeléshez el kell fogadnod az ÁSZF-et.",
+      "invalidPaymentMethod": "Válassz fizetési módot.",
+      "paymentUnavailable": "A választott fizetési mód jelenleg nem érhető el.",
+      "invalidShippingMethod": "Válassz szállítási módot.",
+      "pickupPointRequired": "Válaszd ki az átvételi pontot.",
+      "couponInvalid": "Ez a kuponkód nem érvényes.",
+      "couponNotYetValid": "Ez a kupon még nem váltható be.",
+      "couponExpired": "Ez a kupon lejárt."
+    }
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "Az oldal nem található.",
+    "text": "A keresett oldal nem létezik vagy áthelyezték.",
+    "back": "Vissza a főoldalra"
+  },
+  "legal": {
+    "nav": {
+      "aszf": "ÁSZF",
+      "adatvedelem": "Adatkezelési tájékoztató",
+      "elallas": "Elállási tájékoztató",
+      "impresszum": "Impresszum"
+    },
+    "footerTitle": "Jogi információk",
+    "draftNotice": "Vázlat: ez a dokumentum a fejlesztés során készült keret, jogász által véglegesítendő. A [KITÖLTENDŐ] jelölésű adatok még hiányoznak.",
+    "fields": {
+      "name": "Cégnév",
+      "seat": "Székhely",
+      "postalAddress": "Levelezési cím",
+      "email": "E-mail",
+      "phone": "Telefon",
+      "registryNumber": "Cégjegyzékszám",
+      "registryCourt": "Nyilvántartó",
+      "taxNumber": "Adószám",
+      "euVatNumber": "Közösségi adószám",
+      "representative": "Képviselő"
+    },
+    "hosting": "Tárhelyszolgáltató",
+    "conciliation": "Illetékes békéltető testület",
+    "authority": "Adatvédelmi felügyeleti hatóság"
+  },
+  "productInfo": {
+    "title": "Termékinformációk",
+    "composition": "Anyagösszetétel",
+    "care": "Kezelés",
+    "manufacturer": "Gyártó",
+    "euResponsible": "Felelős személy az EU-ban",
+    "productId": "Termékazonosító",
+    "safety": "Biztonsági információk",
+    "grossNote": "Az árak forintban értendők, és tartalmazzák az áfát."
+  },
+  "checkoutLegal": {
+    "termsBefore": "Elolvastam és elfogadom az ",
+    "termsLink": "Általános Szerződési Feltételeket",
+    "termsAfter": ", és tudomásul vettem az ",
+    "withdrawalLink": "elállási tájékoztatót",
+    "termsEnd": ".",
+    "privacyBefore": "A megadott adatokat a rendelés teljesítéséhez kezeljük, részletek az ",
+    "privacyLink": "adatkezelési tájékoztatóban",
+    "privacyAfter": ".",
+    "submitLive": "Megrendelés fizetési kötelezettséggel",
+    "shipping": "Szállítási díj",
+    "shippingPending": "egyeztetés alatt"
+  },
+  "mail": {
+    "subject": "CUPRÉ – rendelésed visszaigazolása (#{orderId})",
+    "greeting": "Kedves {name}!",
+    "intro": "Köszönjük a rendelésed, a következő adatokkal rögzítettük:",
+    "total": "Végösszeg",
+    "address": "Szállítási cím",
+    "legal": "Az Általános Szerződési Feltételek és az elállási tájékoztató itt érhető el:",
+    "footer": "Ez egy automatikus üzenet. Kérdés esetén írj nekünk: {email}",
+    "greetingAnonymous": "Kedves Érdeklődő!",
+    "newsletterSubject": "CUPRÉ – erősítsd meg a hírlevél-feliratkozásodat",
+    "newsletterIntro": "Köszönjük, hogy feliratkoztál a CUPRÉ hírlevélre! A feliratkozás megerősítéséhez kattints az alábbi linkre:",
+    "newsletterConfirm": "Megerősítés",
+    "newsletterIgnore": "Ha nem te iratkoztál fel, nincs teendőd – megerősítés nélkül nem küldünk hírlevelet. Leiratkozni itt tudsz bármikor",
+    "newsletterUnsubscribe": "Leiratkozás",
+    "resetSubject": "CUPRÉ – jelszó visszaállítása",
+    "resetIntro": "Jelszó-visszaállítást kértél a CUPRÉ fiókodhoz. Az alábbi link 1 óráig érvényes:",
+    "resetLink": "Új jelszó beállítása",
+    "resetIgnore": "Ha nem te kérted, hagyd figyelmen kívül ezt a levelet; a jelszavad nem változik.",
+    "paymentReceivedSubject": "CUPRÉ – fizetésed beérkezett (#{orderId})",
+    "paymentReceivedIntro": "Köszönjük, a(z) #{orderId} rendelésed fizetése ({amount}) sikeresen beérkezett.",
+    "shippedSubject": "CUPRÉ – feladtuk a csomagodat (#{orderId})",
+    "shippedIntro": "Örömmel jelezzük, hogy a(z) #{orderId} rendelésedet feladtuk.",
+    "shippedNote": "Megjegyzés"
+  },
+  "account": {
+    "eyebrow": "CUPRÉ FIÓK",
+    "loginTitle": "Belépés",
+    "loginIntro": "Lépj be a CUPRÉ fiókodba.",
+    "email": "E-mail cím",
+    "password": "Jelszó",
+    "passwordConfirm": "Jelszó még egyszer",
+    "currentPassword": "Jelenlegi jelszó",
+    "newPassword": "Új jelszó",
+    "name": "Név",
+    "passwordHint": "Legalább 8 karakter.",
+    "submitLogin": "Belépés",
+    "forgot": "Elfelejtett jelszó",
+    "noAccount": "Még nincs fiókod?",
+    "registerLink": "Regisztrálj vásárlás nélkül is",
+    "registerTitle": "Regisztráció",
+    "registerIntro": "Fiókot vásárlás nélkül is nyithatsz: elmentheted a szállítási adataidat, és később gyorsabban rendelhetsz.",
+    "submitRegister": "Fiók létrehozása",
+    "haveAccount": "Már van fiókod?",
+    "loginLink": "Lépj be",
+    "privacyBefore": "Megismertem az ",
+    "privacyLink": "adatkezelési tájékoztatót",
+    "privacyAfter": ", és hozzájárulok, hogy a CUPRÉ a fiókomhoz megadott adataimat kezelje.",
+    "newsletterOptIn": "Kérem a CUPRÉ hírlevelet (megerősítő levelet küldünk, bármikor leiratkozhatsz).",
+    "forgotTitle": "Elfelejtett jelszó",
+    "forgotIntro": "Add meg a fiókodhoz tartozó e-mail címet, és küldünk egy linket az új jelszó beállításához.",
+    "submitForgot": "Link küldése",
+    "forgotSent": "Ha ehhez a címhez tartozik fiók, elküldtük a jelszó-visszaállító linket. A link 1 óráig érvényes.",
+    "resetTitle": "Új jelszó beállítása",
+    "submitReset": "Jelszó mentése",
+    "resetDone": "Az új jelszavad elmentettük. Most már beléphetsz vele.",
+    "dashboardTitle": "Fiókom",
+    "hello": "Szia, {name}!",
+    "memberSince": "Regisztrálva: {date}",
+    "profileTitle": "Szállítási adatok",
+    "profileIntro": "Ezekkel az adatokkal töltjük ki előre a pénztárat.",
+    "save": "Mentés",
+    "saved": "Elmentettük.",
+    "newsletterTitle": "Hírlevél",
+    "newsletterStatus": {
+      "none": "Nem iratkoztál fel.",
+      "pending": "Megerősítésre vár – nézd meg a postafiókodat.",
+      "active": "Feliratkoztál a hírlevélre.",
+      "unsubscribed": "Leiratkoztál a hírlevélről."
+    },
+    "newsletterOn": "Feliratkozom",
+    "newsletterOff": "Leiratkozom",
+    "ordersTitle": "Rendeléseim",
+    "noOrders": "Még nincs rendelésed.",
+    "orderLabel": "#{id} · {date}",
+    "passwordTitle": "Jelszó módosítása",
+    "passwordSaved": "Az új jelszavad elmentettük. A többi eszközön ki kell lépned.",
+    "logout": "Kilépés",
+    "deleteTitle": "Fiók törlése",
+    "deleteText": "A fiókod, a belépési adataid és a hírlevél-feliratkozásod véglegesen törlődik. A korábbi rendeléseid adatait a számviteli jogszabályok miatt meg kell őriznünk.",
+    "deleteButton": "Fiók végleges törlése",
+    "deleteConfirm": "Biztosan törlöd a fiókodat? Ez nem vonható vissza.",
+    "deleted": "A fiókodat töröltük.",
+    "loading": "Betöltés…",
+    "loginRequired": "A fiók megtekintéséhez lépj be.",
+    "errors": {
+      "required": "Kötelező mező.",
+      "invalidEmail": "Az e-mail cím formátuma nem megfelelő.",
+      "weakPassword": "A jelszónak legalább 8 karakter hosszúnak kell lennie.",
+      "passwordMismatch": "A két jelszó nem egyezik.",
+      "emailTaken": "Ezzel az e-mail címmel már van fiók.",
+      "invalidCredentials": "Hibás e-mail cím vagy jelszó.",
+      "wrongPassword": "Hibás jelszó.",
+      "invalidToken": "A link érvénytelen vagy lejárt.",
+      "consentRequired": "Ehhez a jelölőnégyzet bejelölése szükséges.",
+      "tooManyAttempts": "Túl sok próbálkozás. Próbáld újra néhány perc múlva.",
+      "unauthorized": "A munkameneted lejárt, lépj be újra.",
+      "invalidRequest": "Érvénytelen kérés.",
+      "network": "A kérést most nem sikerült elküldeni. Próbáld újra később."
+    }
+  },
+  "checkoutAccount": {
+    "loggedInAs": "Belépve: {email}",
+    "loginPrompt": "Van fiókod?",
+    "loginLink": "Lépj be",
+    "loginSuffix": " a gyorsabb rendeléshez.",
+    "newsletterOptIn": "Kérem a CUPRÉ hírlevelet (megerősítő levelet küldünk)."
+  },
+  "newsletterBand": {
+    "title": "Hamarosan érkezik a CUPRÉ.",
+    "text": "Kövess minket, és ismerd meg az első kollekció történetét.",
+    "button": "Értesítést kérek →"
+  },
+  "payment": {
+    "title": "Fizetési mód",
+    "methods": {
+      "card": "Bankkártya",
+      "transfer": "Banki átutalás",
+      "cod": "Utánvét",
+      "none": "–"
+    },
+    "descriptions": {
+      "card": "Biztonságos fizetés a Barion fizetőoldalán. A kártyaadatokat a Barion kezeli, a CUPRÉ nem fér hozzájuk.",
+      "cardMock": "TESZT mód: a fizetést egy tesztoldal szimulálja, valódi terhelés nem történik.",
+      "transfer": "A rendelés után megadjuk a bankszámlaszámot és a közleményt; a csomagot a jóváírás után adjuk fel.",
+      "cod": "Fizetés készpénzzel vagy kártyával a futárnál, átvételkor."
+    },
+    "fee": "+ {fee}",
+    "codFee": "Utánvételi díj",
+    "barionNotice": "A kártyás fizetést a Barion Payment Zrt. biztosítja. A rendelés elküldésével tudomásul veszem, hogy a fizetéshez szükséges adataimat (név, e-mail cím, rendelésszám, végösszeg) a CUPRÉ átadja a Barion Payment Zrt. részére.",
+    "statuses": {
+      "not_required": "nincs teendő",
+      "pending": "fizetés folyamatban",
+      "awaiting_transfer": "átutalásra vár",
+      "awaiting_cod": "fizetés átvételkor",
+      "paid": "fizetve",
+      "failed": "sikertelen fizetés",
+      "canceled": "megszakított fizetés",
+      "expired": "lejárt fizetés"
+    },
+    "transferTitle": "Átutalási adatok",
+    "accountHolder": "Kedvezményezett",
+    "bankName": "Bank",
+    "accountNumber": "Számlaszám",
+    "reference": "Közlemény",
+    "amount": "Fizetendő összeg",
+    "due": "Fizetési határidő: a rendeléstől számított {days} nap.",
+    "codInstruction": "A(z) {amount} összeget a futárnál fizeted ki átvételkor.",
+    "submitCard": "Tovább a fizetéshez",
+    "redirecting": "Átirányítás a fizetőoldalra…",
+    "result": {
+      "eyebrow": "FIZETÉS",
+      "successTitle": "Sikeres fizetés",
+      "successText": "Köszönjük, a fizetés beérkezett. Visszaigazolást e-mailben is küldtünk.",
+      "pendingTitle": "Fizetés folyamatban",
+      "pendingText": "A fizetés feldolgozása még tart. Az oldal automatikusan frissül.",
+      "failedTitle": "A fizetés nem sikerült",
+      "failedText": "A kártyádat nem terheltük meg. Megpróbálhatod újra; kérdés esetén írj nekünk: {email}.",
+      "retry": "Fizetés újrapróbálása",
+      "infoTitle": "Rendelésed rögzítettük",
+      "invalid": "A rendelés nem található, vagy a link érvénytelen.",
+      "orderNumber": "Rendelésszám"
+    },
+    "mock": {
+      "eyebrow": "TESZT",
+      "title": "Teszt fizetőoldal",
+      "text": "Ez csak fejlesztői teszt: valódi fizetés nem történik, kártyaadatot nem kérünk.",
+      "success": "Sikeres fizetés",
+      "fail": "Sikertelen fizetés",
+      "cancel": "Megszakítás",
+      "amount": "Összeg"
+    }
+  },
+  "shipping": {
+    "title": "Szállítási mód",
+    "methods": {
+      "home": "Házhozszállítás futárral",
+      "foxpost": "Foxpost csomagautomata",
+      "mpl_point": "MPL PostaPont / csomagautomata",
+      "none": "–"
+    },
+    "descriptions": {
+      "home": "A megadott címre szállítjuk.",
+      "foxpost": "Átvétel a kiválasztott Foxpost automatából.",
+      "mpl_point": "Átvétel postán, PostaPonton vagy MPL csomagautomatában."
+    },
+    "deliveryDays": "Várható szállítási idő: {days} munkanap",
+    "choosePoint": "Automata kiválasztása",
+    "changePoint": "Másik automata",
+    "foxpostPickerTitle": "Foxpost automata kiválasztása",
+    "close": "Bezárás",
+    "mplManualHint": "Add meg a választott posta, PostaPont vagy MPL csomagautomata nevét és címét. Pontot itt kereshetsz:",
+    "pointName": "Átvételi pont neve",
+    "pointAddress": "Átvételi pont címe",
+    "pickupPoint": "Átvételi pont",
+    "billingAddressNote": "Átvételi pontos szállításnál az alábbi cím a számlázási cím."
+  },
+  "coupon": {
+    "title": "Kuponkód",
+    "placeholder": "Írd be a kuponkódot",
+    "apply": "Beváltás",
+    "remove": "Eltávolítás",
+    "discountLine": "Kedvezmény ({code})"
+  },
+  "orderStatuses": {
+    "new": "Beérkezett",
+    "processing": "Feldolgozás alatt",
+    "shipped": "Feladva",
+    "completed": "Teljesítve",
+    "canceled": "Lemondva"
+  }
+}

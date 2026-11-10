@@ -1,0 +1,64 @@
+{
+  "React komponens (általános)": {
+    "prefix": ["ncomp", "nextcomp"],
+    "scope": "typescriptreact",
+    "description": "Általános React komponens .tsx váz (szerverkomponens, props típussal)",
+    "body": [
+      "type ${1:Component}Props = {",
+      "  ${2:title}: string;",
+      "};",
+      "",
+      "export default function ${1:Component}({ ${2:title} }: ${1:Component}Props) {",
+      "  return (",
+      "    <>",
+      "      $0",
+      "    </>",
+      "  );",
+      "}"
+    ]
+  },
+  "React kliens komponens": {
+    "prefix": ["ncompclient"],
+    "scope": "typescriptreact",
+    "description": "Kliens komponens váz ('use client', useState)",
+    "body": [
+      "'use client';",
+      "",
+      "import { useState } from 'react';",
+      "",
+      "type ${1:Component}Props = {",
+      "  ${2:title}: string;",
+      "};",
+      "",
+      "export default function ${1:Component}({ ${2:title} }: ${1:Component}Props) {",
+      "  const [${3:value}, set${3/(.*)/${1:/capitalize}/}] = useState(${4:''});",
+      "",
+      "  return (",
+      "    <>",
+      "      $0",
+      "    </>",
+      "  );",
+      "}"
+    ]
+  },
+  "React aszinkron szerverkomponens": {
+    "prefix": ["ncompasync"],
+    "scope": "typescriptreact",
+    "description": "Aszinkron szerverkomponens váz (Suspense mögé szánt)",
+    "body": [
+      "type ${1:Component}Props = {",
+      "  ${2:id}: string;",
+      "};",
+      "",
+      "export default async function ${1:Component}({ ${2:id} }: ${1:Component}Props) {",
+      "  const data = await ${3:getData}(${2:id});",
+      "",
+      "  return (",
+      "    <>",
+      "      $0",
+      "    </>",
+      "  );",
+      "}"
+    ]
+  }
+}

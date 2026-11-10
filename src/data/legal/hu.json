@@ -1,0 +1,203 @@
+{
+  "aszf": {
+    "title": "Általános Szerződési Feltételek",
+    "intro": "Jelen Általános Szerződési Feltételek (ÁSZF) a {companyName} (a továbbiakban: Szolgáltató) által üzemeltetett CUPRÉ webáruházban történő vásárlás feltételeit tartalmazzák.",
+    "sections": [
+      {
+        "heading": "1. A Szolgáltató adatai",
+        "paragraphs": [
+          "Név: {companyName} · Székhely: {seat} · Levelezési cím: {postalAddress}",
+          "E-mail: {email} · Telefon: {phone}",
+          "Cégjegyzékszám: {registryNumber} ({registryCourt}) · Adószám: {taxNumber}",
+          "Tárhelyszolgáltató: {hostName}, {hostAddress}, {hostEmail}"
+        ]
+      },
+      {
+        "heading": "2. A szerződés tárgya, nyelve és iktatása",
+        "paragraphs": [
+          "A szerződés tárgya a webáruházban feltüntetett rézszálas textiltermékek adásvétele. A szerződés nyelve magyar.",
+          "[JOGÁSZ ÁLTAL VÉGLEGESÍTENDŐ: iktatják-e a szerződést, hozzáférhető-e utólag; a szerződés elektronikus formában jön létre, nem minősül írásbeli szerződésnek.]"
+        ]
+      },
+      {
+        "heading": "3. Termékek, árak",
+        "paragraphs": [
+          "A termékoldalakon a termék lényeges tulajdonságai, mérete, minőségi osztálya, anyagösszetétele és ára szerepel. Az árak forintban értendők, és az általános forgalmi adót tartalmazzák (bruttó árak).",
+          "A II. osztályú termékek a használatot nem befolyásoló esztétikai eltérést tartalmazhatnak; ezt a termékoldal jelzi.",
+          "Kuponok: a kuponkód a pénztárban váltható be, a rajta feltüntetett fix összegű kedvezményt a termékek árából vonjuk le (a szállítási és utánvételi díjat nem érinti), legfeljebb a termékek áráig, a kupon érvényességi idején belül. Rendelésenként egy kupon használható; készpénzre nem váltható. [JOGÁSZ ÁLTAL VÉGLEGESÍTENDŐ]",
+          "[JOGÁSZ ÁLTAL VÉGLEGESÍTENDŐ: hibás árfeltüntetés kezelése.]"
+        ]
+      },
+      {
+        "heading": "4. A rendelés menete",
+        "paragraphs": [
+          "A vásárló a kívánt változatot (méret, osztály) a kosárba helyezi, majd a pénztárban megadja a szállítási adatait, elfogadja az ÁSZF-et, és a „Megrendelés fizetési kötelezettséggel” gombbal elküldi a rendelést.",
+          "Az adatbeviteli hibákat a vásárló a rendelés elküldése előtt az űrlapon és a kosárban javíthatja.",
+          "A Szolgáltató a rendelés beérkezését haladéktalanul, elektronikus úton visszaigazolja. [JOGÁSZ ÁLTAL VÉGLEGESÍTENDŐ: a szerződés létrejöttének időpontja.]"
+        ]
+      },
+      {
+        "heading": "5. Fizetés",
+        "paragraphs": [
+          "A webáruházban – a bekapcsolt fizetési módoktól függően – az alábbi módokon lehet fizetni:",
+          "Bankkártyás fizetés: a Barion Payment Zrt. ([KITÖLTENDŐ: székhely, MNB engedélyszám]) biztonságos fizetőoldalán. A kártyaadatokat a Barion kezeli; a Szolgáltató azokhoz nem fér hozzá. [JOGÁSZ ÁLTAL ELLENŐRZENDŐ: a Barion adatai.]",
+          "Banki átutalás: a rendelés visszaigazolásában megadott bankszámlára, a rendelésszámot közleményként feltüntetve, a visszaigazolásban szereplő határidőn belül. A terméket a jóváírás után adjuk fel.",
+          "Utánvét: fizetés a futárnál átvételkor; az utánvételi díjat a pénztár a rendelés elküldése előtt feltünteti.",
+          "[JOGÁSZ ÁLTAL VÉGLEGESÍTENDŐ: sikertelen fizetés, határidő elmulasztása, visszatérítés módja.]"
+        ]
+      },
+      {
+        "heading": "6. Szállítás, teljesítési határidő",
+        "paragraphs": [
+          "A webáruház – a bekapcsolt módoktól függően – az alábbi szállítási módokat kínálja; az aktuális díjat és a várható szállítási időt a pénztár a rendelés elküldése előtt feltünteti:",
+          "Házhozszállítás futárszolgálattal a megadott címre ([KITÖLTENDŐ: futárszolgálat neve]).",
+          "Foxpost csomagautomata: a csomag a vásárló által kiválasztott automatában vehető át; az átvételi határidőről és a nyitókódról a Foxpost értesít. [KITÖLTENDŐ: átvételi határidő]",
+          "MPL PostaPont / csomagautomata: átvétel a kiválasztott postán, PostaPonton vagy MPL csomagautomatában; az értesítést az MPL küldi. [KITÖLTENDŐ: átvételi határidő]",
+          "Szállítási terület: Magyarország. Teljesítési határidő: legfeljebb 30 nap. [JOGÁSZ ÁLTAL VÉGLEGESÍTENDŐ: sérült csomag, sikertelen kézbesítés, át nem vett csomag.]"
+        ]
+      },
+      {
+        "heading": "7. Elállási jog",
+        "paragraphs": [
+          "A fogyasztót a termék átvételétől számított 14 napon belül indoklás nélküli elállási jog illeti meg. A részletes feltételeket és a nyilatkozatmintát az Elállási tájékoztató tartalmazza."
+        ]
+      },
+      {
+        "heading": "8. Kellékszavatosság, termékszavatosság, jótállás",
+        "paragraphs": [
+          "[JOGÁSZ ÁLTAL VÉGLEGESÍTENDŐ: a kellékszavatossági és termékszavatossági jogok tájékoztatója (Ptk., 373/2021. (VI. 30.) Korm. rendelet), illetve jótállás, ha alkalmazandó.]"
+        ]
+      },
+      {
+        "heading": "9. Panaszkezelés, jogorvoslat",
+        "paragraphs": [
+          "Panaszát a következő elérhetőségeken jelezheti: {email}, {postalAddress}, {phone}. A Szolgáltató az írásbeli panaszt 30 napon belül érdemben megválaszolja.",
+          "Panasza elutasítása esetén a fogyasztó a lakóhelye szerint illetékes békéltető testülethez fordulhat. A Szolgáltató székhelye szerint illetékes testület: {conciliationName}, {conciliationAddress}, {conciliationEmail}, {conciliationPhone}.",
+          "A fogyasztó panaszával a fogyasztóvédelmi hatósághoz, illetve bírósághoz is fordulhat."
+        ]
+      },
+      {
+        "heading": "10. Egyéb rendelkezések",
+        "paragraphs": [
+          "Hatályos: {updated}. [JOGÁSZ ÁLTAL VÉGLEGESÍTENDŐ.]"
+        ]
+      }
+    ]
+  },
+  "adatvedelem": {
+    "title": "Adatkezelési tájékoztató",
+    "intro": "Ez a tájékoztató bemutatja, hogyan kezeli a {companyName} a CUPRÉ webáruház használata során megadott személyes adatokat (EU 2016/679 rendelet – GDPR).",
+    "sections": [
+      {
+        "heading": "1. Az adatkezelő",
+        "paragraphs": [
+          "{companyName}, {seat} · E-mail: {email} · Telefon: {phone}"
+        ]
+      },
+      {
+        "heading": "2. Rendelés teljesítése",
+        "paragraphs": [
+          "Kezelt adatok: név, e-mail cím, telefonszám, szállítási cím, megjegyzés, a megrendelt termékek, a rendelés időpontja és nyelve.",
+          "Cél: a szerződés megkötése és teljesítése, kapcsolattartás. Jogalap: szerződés teljesítése (GDPR 6. cikk (1) b)).",
+          "Megőrzési idő: [JOGÁSZ ÁLTAL VÉGLEGESÍTENDŐ – a számviteli bizonylatokat a számviteli törvény szerint 8 évig kell megőrizni.]"
+        ]
+      },
+      {
+        "heading": "3. Bankkártyás fizetés (Barion)",
+        "paragraphs": [
+          "Bankkártyás fizetésnél a Szolgáltató a fizetés lebonyolításához a következő adatokat adja át a Barion Payment Zrt. részére: név, e-mail cím, rendelésszám, a rendelés tételei és végösszege. A kártyaadatokat a vásárló közvetlenül a Barion fizetőoldalán adja meg; azokat a Szolgáltató nem látja és nem tárolja.",
+          "Jogalap: szerződés teljesítése (GDPR 6. cikk (1) b)). A Barion saját adatkezeléséről a Barion adatkezelési tájékoztatója rendelkezik. [JOGÁSZ ÁLTAL VÉGLEGESÍTENDŐ: a Barion szerepe (önálló adatkezelő / adatfeldolgozó), a Barion Pixel használata.]"
+        ]
+      },
+      {
+        "heading": "4. Vásárlói fiók",
+        "paragraphs": [
+          "Kezelt adatok: név, e-mail cím, a jelszó visszafejthetetlen (scrypt) lenyomata, a fiókban megadott szállítási adatok, a fiók nyelve, a regisztráció és az utolsó belépés időpontja, valamint a belépéshez szükséges munkamenet-süti.",
+          "Cél: a fiók biztosítása, gyorsabb rendelés, korábbi rendelések megtekintése. Jogalap: az Ön hozzájárulása és a fiókhasználatra vonatkozó szerződés (GDPR 6. cikk (1) a) és b)).",
+          "Megőrzés: a fiók törléséig. A fiókot a „Fiókom” oldalon bármikor törölheti; a korábbi rendelések adatait a számviteli kötelezettség miatt ezután is megőrizzük."
+        ]
+      },
+      {
+        "heading": "5. Hírlevél",
+        "paragraphs": [
+          "Kezelt adatok: e-mail cím, név (ha megadta), nyelv, a feliratkozás forrása, a hozzájárulás, a megerősítés és a leiratkozás időpontja.",
+          "Cél: hírlevél és ajánlatok küldése. Jogalap: az Ön kifejezett hozzájárulása (GDPR 6. cikk (1) a)), amelyet a megerősítő levélben lévő linkkel erősít meg (dupla megerősítés).",
+          "Megőrzés: a leiratkozásig, illetve a hozzájárulás visszavonásáig. Leiratkozni bármelyik levélben lévő linkkel vagy a fiókjában lehet. [KITÖLTENDŐ: a hírlevélküldő szolgáltató mint adatfeldolgozó.]"
+        ]
+      },
+      {
+        "heading": "6. Ügyfélkapcsolat, panaszkezelés",
+        "paragraphs": [
+          "A panaszokról felvett jegyzőkönyvet és a válasz másolatát a Szolgáltató a fogyasztóvédelmi törvény szerint 3 évig (jogszabályváltozás esetén az aktuális ideig) megőrzi. Jogalap: jogi kötelezettség teljesítése."
+        ]
+      },
+      {
+        "heading": "7. A böngészőben tárolt adatok",
+        "paragraphs": [
+          "A webáruház a kosár tartalmát (cikkszám és mennyiség) a böngésző helyi tárolójában (localStorage) őrzi. Belépéskor egy munkamenet-süti (cupre_session) azonosítja a fiókját legfeljebb 30 napig. Ezek a szolgáltatás működéséhez feltétlenül szükségesek, ezért hozzájárulást nem igényelnek. Analitikai vagy marketing célú sütit a webáruház jelenleg nem használ."
+        ]
+      },
+      {
+        "heading": "8. Adatfeldolgozók",
+        "paragraphs": [
+          "Tárhelyszolgáltató: {hostName}, {hostAddress}.",
+          "[KITÖLTENDŐ: futárszolgálat, fizetési szolgáltató, e-mail-küldő szolgáltatás, könyvelő.]",
+          "Szállítás: a választott szállítási módtól függően [KITÖLTENDŐ: futárszolgálat], FOXPOST Zrt. vagy Magyar Posta Zrt. (MPL) – átadott adatok: név, telefonszám, e-mail cím, szállítási cím vagy átvételi pont. [JOGÁSZ ÁLTAL VÉGLEGESÍTENDŐ]"
+        ]
+      },
+      {
+        "heading": "9. Az érintett jogai",
+        "paragraphs": [
+          "Ön kérheti a személyes adataihoz való hozzáférést, azok helyesbítését, törlését vagy kezelésük korlátozását, tiltakozhat az adatkezelés ellen, és élhet az adathordozhatósághoz való jogával. Kérelmét a(z) {email} címre küldheti.",
+          "Panaszával a felügyeleti hatósághoz fordulhat: {naihName}, {naihAddress}, {naihWebsite}, illetve bírósághoz is fordulhat."
+        ]
+      },
+      {
+        "heading": "10. Adatbiztonság",
+        "paragraphs": [
+          "[JOGÁSZ ÉS ÜZEMELTETŐ ÁLTAL VÉGLEGESÍTENDŐ: alkalmazott technikai és szervezési intézkedések.] Hatályos: {updated}."
+        ]
+      }
+    ]
+  },
+  "elallas": {
+    "title": "Elállási tájékoztató",
+    "intro": "Fogyasztóként a 45/2014. (II. 26.) Korm. rendelet alapján indoklás nélkül elállhat a szerződéstől.",
+    "sections": [
+      {
+        "heading": "Az elállási jog",
+        "paragraphs": [
+          "Ön 14 napon belül jogosult indoklás nélkül elállni a szerződéstől. Az elállási határidő attól a naptól számított 14 nap elteltével jár le, amelyen Ön vagy az Ön által megjelölt, a fuvarozótól eltérő harmadik személy a terméket átveszi.",
+          "Elállási jogának gyakorlásához egyértelmű nyilatkozatban (például postán vagy elektronikus levélben) kell tájékoztatnia a következő címen: {companyName}, {postalAddress}, {email}. Ehhez felhasználhatja az alábbi nyilatkozatmintát is.",
+          "Az elállási határidő betartásához elegendő, ha az elállási nyilatkozatot a határidő lejárta előtt elküldi."
+        ]
+      },
+      {
+        "heading": "Az elállás joghatásai",
+        "paragraphs": [
+          "Ha Ön eláll a szerződéstől, haladéktalanul, de legkésőbb az elállásról való tudomásszerzéstől számított 14 napon belül visszatérítjük az Ön által teljesített valamennyi ellenszolgáltatást, ideértve a fuvarozási költséget is (kivéve a legolcsóbb szokásos fuvarozási módtól eltérő fuvarozási mód választásából adódó többletköltséget). A visszatérítés során az eredeti ügylethez használt fizetési módot alkalmazzuk, kivéve, ha Ön más fizetési mód igénybevételéhez kifejezetten a hozzájárulását adja.",
+          "A visszatérítést visszatarthatjuk mindaddig, amíg vissza nem kaptuk a terméket, vagy Ön nem igazolta, hogy azt visszaküldte; a kettő közül a korábbi időpontot kell figyelembe venni.",
+          "Ön köteles a terméket indokolatlan késedelem nélkül, de legkésőbb az elállás közlésétől számított 14 napon belül visszaküldeni vagy átadni a fenti címen. A termék visszaküldésének közvetlen költségét Ön viseli. [JOGÁSZ ÁLTAL VÉGLEGESÍTENDŐ]",
+          "Ön kizárólag akkor vonható felelősségre a termékben bekövetkezett értékcsökkenésért, ha az a termék jellegének, tulajdonságainak és működésének megállapításához szükséges használatot meghaladó használat miatt következett be."
+        ]
+      }
+    ],
+    "form": {
+      "title": "Elállási nyilatkozatminta",
+      "note": "(csak a szerződéstől való elállási szándék esetén töltse ki és juttassa vissza)",
+      "lines": [
+        "Címzett: {companyName}, {postalAddress}, {email}",
+        "Alulírott/ak kijelentem/kijelentjük, hogy gyakorlom/gyakoroljuk elállási jogomat/jogunkat az alábbi termék/ek adásvételére irányuló szerződés tekintetében:",
+        "Szerződéskötés időpontja / átvétel időpontja:",
+        "A fogyasztó(k) neve:",
+        "A fogyasztó(k) címe:",
+        "A fogyasztó(k) aláírása: (kizárólag papíron tett nyilatkozat esetén)",
+        "Kelt:"
+      ]
+    }
+  },
+  "impresszum": {
+    "title": "Impresszum",
+    "intro": "A szolgáltató adatai az elektronikus kereskedelmi szolgáltatásokról szóló 2001. évi CVIII. törvény alapján."
+  }
+}
