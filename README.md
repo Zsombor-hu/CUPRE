@@ -57,6 +57,7 @@ Minden üzleti adat a `src/data/<környezet>/` alatt van; a környezetet az `APP
 Környezetenként:
 
 - `products.json` – termékek (háromnyelvű szövegekkel); minden termék `variants` tömbje a **méret × osztály** (`grade`: `first` = I. osztály, `second` = II. osztály) változatokat tartalmazza saját cikkszámmal (`sku`) és árral (`priceHuf`). A slug és az SKU egyedi kell legyen, különben a build hibát dob.
+- A **development** környezet `products.json` fájlja 11 termékből áll (a CUPRÉ Original + 10 **fiktív** termék: párnahuzat, franciaágyas és egyszemélyes lepedő, matracvédő, pléd, díszpárna, utazó lepedő, fürdőlepedő, ajándékszett, Premium), a listázás és a keresés/szűrés kipróbálásához. A fiktív termékek a meglévő képeket használják, és „Fiktív tesztár” jelölést viselnek; a test és production környezet fájlja változatlanul csak a CUPRÉ Originalt tartalmazza.
 - `faq.json` – GYIK (háromnyelvű); ismétlődő azonosító vagy kérdés esetén a build hibát dob.
 - `products.json` → `productInfo` – kötelező termékadatok: szálösszetétel (EU 1007/2011), kezelés, gyártó, EU-s felelős személy (ha a gyártó nem uniós, különben `null`), termékazonosító, biztonsági információk (GPSR, EU 2023/988). A termékoldal „Termékinformációk” blokkja mutatja.
 - `company.json` – a szolgáltató adatai (impresszum, ÁSZF, adatkezelés), tárhelyszolgáltató, békéltető testület, NAIH, valamint a webshop beállításai: `shop.liveOrders` (élesítéskor `true` → a gomb „Megrendelés fizetési kötelezettséggel”), `shop.shippingFeeHuf` (szállítási díj, `null` = még nincs), `shop.legalUpdated` (a jogi dokumentumok hatálya).
@@ -79,7 +80,7 @@ Egyenként be/kikapcsolható, módonként fix díjjal, környezetenként a `comp
 
 ## Rendeléskezelés (admin)
 
-**`/admin/rendelesek`** (közös admin menü: Rendelések · Kuponok · Hírlevél; belépés `ADMIN_PASSWORD`-del a `/admin/hirlevel` oldalon):
+**`/admin/rendelesek`** (közös admin menü: Rendelések · Kuponok · Hírlevél; belépés `ADMIN_PASSWORD`-del a **`/admin`** oldalon; az admin saját, önálló HeroUI-s root layoutot kap: `src/app/(admin)`):
 
 - Lista állapot-fülekkel (Beérkezett / Feldolgozás alatt / Feladva / Teljesítve / Lemondva, darabszámmal), keresés rendelésszámra, névre, e-mailre; **CSV export** a szűrőkkel.
 - Részletek: vásárló, tételek, szállítás (átvételi ponttal), fizetés (mód, állapot, azonosító, kupon), állapotnapló és fizetési események.
@@ -90,7 +91,7 @@ Egyenként be/kikapcsolható, módonként fix díjjal, környezetenként a `comp
 ## Kuponok (akciók)
 
 - **Fix összegű** kupon, **érvényességi idővel** (tól–ig, napra pontosan, budapesti idő szerint; üresen hagyva nincs korlát), be/kikapcsolható.
-- Kezelés: **`/admin/kuponok`** (ugyanazzal az `ADMIN_PASSWORD`-del, mint a hírlevél admin): létrehozás, be/kikapcsolás, törlés, felhasználási számláló. Az adatok a környezet SQLite adatbázisában (`coupons` tábla).
+- Kezelés: **`/admin/kuponok`** (ugyanazzal az `ADMIN_PASSWORD`-del, mint az admin): létrehozás, be/kikapcsolás, törlés, felhasználási számláló. Az adatok a környezet SQLite adatbázisában (`coupons` tábla).
 - Beváltás a pénztár összesítőjében (`/api/coupons/check`, próbálkozás-korláttal); a rendeléskor a szerver **újra ellenőrzi**. A kód kis- és nagybetűtől független.
 - A kedvezmény csak a termékek árából vonódik le, legfeljebb annak összegéig; a szállítási és utánvételi díjat nem érinti. Rendelésenként egy kupon. A rendelés tárolja a kódot és a levont összeget (`coupon_code`, `discount_huf`); a levélben is megjelenik.
 - Barion kártyás fizetésnél kuponos rendelésnél egyetlen összesítő tétel megy át (a tételek összege így biztosan egyezik a végösszeggel).
@@ -124,7 +125,7 @@ Három mód, egyenként be/kikapcsolható környezetenként a `company.json` →
 
 - **Biztonság:** a jelszó `scrypt` hash-ként (sóval) tárolódik; a munkamenet véletlen tokenje httpOnly sütiben van (`cupre_session`, 30 nap), az adatbázisban csak a SHA-256 hash-e. Jelszócsere és jelszó-visszaállítás után minden munkamenet megszűnik. A belépés, a regisztráció, a jelszó-emlékeztető és a feliratkozás próbálkozásai korlátozottak (`src/lib/rate-limit.ts`, folyamaton belüli – több szerverpéldánynál közös tárra kell cserélni). A jelszó-emlékeztető nem árulja el, létezik-e fiók egy címhez.
 - **Rendelés és fiók:** belépett ügyfélnél a pénztár előtölti a szállítási adatokat, a rendelés a fiókhoz kötődik. A rendelés a szállítási adatokat pillanatképként is tárolja; egy vendégrendelés egy regisztrált e-mail címmel nem írja felül a fiók profilját.
-- **Hírlevél:** dupla megerősítés (opt-in) – a feliratkozás a levélben lévő linkre kattintva lesz aktív. Feliratkozni a `/hirlevel` oldalon (a főoldali „Értesítést kérek” gomb ide visz), regisztrációkor, a fiókban és a pénztárban lehet. Kiküldés külső szolgáltatóval: az admin oldalról az **aktív** feliratkozók CSV-ben exportálhatók.
+- **Hírlevél:** dupla megerősítés (opt-in) – a feliratkozás a levélben lévő linkre kattintva lesz aktív. Feliratkozni a `/hirlevel` oldalon (a főoldali „Értesítést kérek” gomb ide visz), regisztrációkor, a fiókban és a pénztárban lehet. Kiküldés külső szolgáltatóval: az admin oldalról az **aktív** feliratkozók CSV-ben és Excelben (.xlsx) exportálhatók (a rendelések is: `?format=xlsx`).
 - **Fióktörlés:** a fiók, a munkamenetek és a hírlevél-feliratkozás törlődik; a rendelések a számviteli megőrzés miatt megmaradnak (rendelés nélküli ügyfélsor is törlődik).
 - **Admin:** az `ADMIN_PASSWORD` környezeti változóval kapcsol be (legalább 12 karakter), lásd `.env.example`. Fejlesztéshez a `.env.development.local` tartalmaz egy véletlen jelszót (nincs verziókezelésben).
 
@@ -139,7 +140,7 @@ Három mód, egyenként be/kikapcsolható környezetenként a `company.json` →
 
 A jogi szövegekben a `{companyName}`, `{email}`, `{conciliationName}` stb. helyettesítőket a `company.json` adataival tölti ki a rendszer (`src/services/company-service.ts` → `getLegalTokens`). **A szövegek vázlatok:** a `[KITÖLTENDŐ]` és `[JOGÁSZ ÁLTAL VÉGLEGESÍTENDŐ]` jelölésű részeket élesítés előtt jogásszal kell véglegesíteni; amíg ez nem történik meg, minden jogi oldal tetején figyelmeztetés látszik. A láblécben mindegyik oldal linkje szerepel; a pénztárban kötelező az ÁSZF elfogadása, az adatkezelési tájékoztató pedig linkkel van megjelölve (hozzájárulás nem kell, a jogalap a szerződés teljesítése).
 
-A JSON-ok build közben kerülnek a statikus oldalakba: production/test környezetben módosítás után újra kell buildelni; `pnpm dev` alatt azonnal látszik. A rendelés árát mindig a szerver számolja a `products.json`-ból, a kliens által küldött árat nem fogadja el.
+A `products.json`, `faq.json` és `company.json` módosítása **build és újraindítás nélkül** is érvényesül: a megjelenítő oldalak adatai időalapú gyorsítótárból (`src/services/cached-data.ts`, `CATALOG_LIFE`: 30 mp) jönnek, így a változás a következő 1–2 oldalbetöltés után (kb. fél percen belül) látszik; `pnpm dev` alatt azonnal. Új termék oldala az első látogatáskor készül el, a törölt termék 404-et ad. Újrabuild csak a `src/data/i18n/` szótárak és a `src/data/legal/` jogi szövegek módosításához kell (ezek a kódba vannak fordítva). Hibás JSON-nál az érintett oldal hibát ad, ezért módosítás után érdemes ellenőrizni. A rendelés árát mindig a szerver számolja a `products.json`-ból, a kliens által küldött árat nem fogadja el.
 
 ## Képek (`public/images/`)
 

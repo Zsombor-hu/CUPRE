@@ -107,5 +107,1194 @@
         "de": "[AUSZUFÜLLEN: Warn- und Sicherheitshinweise (GPSR, EU 2023/988)]"
       }
     }
+  },
+  {
+    "slug": "cupre-parnahuzat",
+    "featured": false,
+    "image": "/images/story-texture.webp",
+    "imageWidth": 1536,
+    "imageHeight": 1024,
+    "tag": "CUPRÉ PILLOW",
+    "name": {
+      "hu": "CUPRÉ Pillow",
+      "en": "CUPRÉ Pillow",
+      "de": "CUPRÉ Pillow"
+    },
+    "subtitle": {
+      "hu": "Rézszálas párnahuzat",
+      "en": "Copper-fibre pillowcase",
+      "de": "Kissenbezug mit Kupferfasern"
+    },
+    "imageAlt": {
+      "hu": "CUPRÉ Pillow – látványterv, nem végleges termékfotó",
+      "en": "CUPRÉ Pillow – design concept, not a final product photo",
+      "de": "CUPRÉ Pillow – Entwurf, kein endgültiges Produktfoto"
+    },
+    "description": {
+      "hu": "Cipzáras párnahuzat a CUPRÉ lepedő szövetéből, hogy az egész ágyneműgarnitúra egységes legyen.",
+      "en": "A zipped pillowcase made from the same fabric as the CUPRÉ sheet, so the whole bedding set matches.",
+      "de": "Ein Kissenbezug mit Reißverschluss aus dem Stoff des CUPRÉ Lakens, damit das ganze Bettwäsche-Set einheitlich wirkt."
+    },
+    "points": [
+      {
+        "icon": "↗",
+        "label": {
+          "hu": "50 × 70 cm",
+          "en": "50 × 70 cm",
+          "de": "50 × 70 cm"
+        }
+      },
+      {
+        "icon": "♧",
+        "label": {
+          "hu": "Rézszálas textil",
+          "en": "Copper-fibre textile",
+          "de": "Kupferfaser-Textil"
+        }
+      },
+      {
+        "icon": "✧",
+        "label": {
+          "hu": "Prémium kivitel",
+          "en": "Premium finish",
+          "de": "Premium-Ausführung"
+        }
+      }
+    ],
+    "disclaimer": {
+      "hu": "A képek illusztrációk. A végleges ár, összetétel és rendelhetőség egyeztetés alatt.",
+      "en": "Images are illustrations. Final price, composition and availability are still being finalised.",
+      "de": "Die Bilder sind Illustrationen. Endpreis, Zusammensetzung und Verfügbarkeit werden noch abgestimmt."
+    },
+    "variants": [
+      {
+        "sku": "CP-50x70-I",
+        "size": "50 × 70 cm",
+        "grade": "first",
+        "priceHuf": 8900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CP-50x70-II",
+        "size": "50 × 70 cm",
+        "grade": "second",
+        "priceHuf": 6900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CP-70x80-I",
+        "size": "70 × 80 cm",
+        "grade": "first",
+        "priceHuf": 10900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CP-70x80-II",
+        "size": "70 × 80 cm",
+        "grade": "second",
+        "priceHuf": 8400,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      }
+    ],
+    "productInfo": {
+      "composition": {
+        "hu": "[KITÖLTENDŐ: szálösszetétel százalékosan, pl. „xx% poliamid, xx% réz” – EU 1007/2011]",
+        "en": "[TO BE COMPLETED: fibre composition in percent, e.g. “xx% polyamide, xx% copper” – EU 1007/2011]",
+        "de": "[AUSZUFÜLLEN: Faserzusammensetzung in Prozent, z. B. „xx % Polyamid, xx % Kupfer“ – EU 1007/2011]"
+      },
+      "care": {
+        "hu": "[KITÖLTENDŐ: mosási és kezelési útmutató a gyártói dokumentáció alapján]",
+        "en": "[TO BE COMPLETED: washing and care instructions based on the manufacturer's documentation]",
+        "de": "[AUSZUFÜLLEN: Wasch- und Pflegehinweise laut Herstellerdokumentation]"
+      },
+      "manufacturer": {
+        "name": "[KITÖLTENDŐ: gyártó neve / márkaneve]",
+        "address": "[KITÖLTENDŐ: gyártó postai és elektronikus elérhetősége]"
+      },
+      "euResponsible": {
+        "name": "[KITÖLTENDŐ: EU-ban letelepedett felelős gazdasági szereplő, ha a gyártó nem uniós]",
+        "address": "[KITÖLTENDŐ: postai és elektronikus elérhetősége]"
+      },
+      "productId": "[KITÖLTENDŐ: típus-, tétel- vagy sorozatszám]",
+      "safety": {
+        "hu": "[KITÖLTENDŐ: figyelmeztetések és biztonsági információk (GPSR, EU 2023/988), pl. elektromos készülékkel való érintkezés, gyermekek használata]",
+        "en": "[TO BE COMPLETED: warnings and safety information (GPSR, EU 2023/988)]",
+        "de": "[AUSZUFÜLLEN: Warn- und Sicherheitshinweise (GPSR, EU 2023/988)]"
+      }
+    }
+  },
+  {
+    "slug": "cupre-dupla-lepedo",
+    "featured": false,
+    "image": "/images/story-home.webp",
+    "imageWidth": 1346,
+    "imageHeight": 761,
+    "tag": "CUPRÉ LUX",
+    "name": {
+      "hu": "CUPRÉ Lux",
+      "en": "CUPRÉ Lux",
+      "de": "CUPRÉ Lux"
+    },
+    "subtitle": {
+      "hu": "Rézszálas lepedő franciaágyra",
+      "en": "Copper-fibre sheet for double beds",
+      "de": "Laken mit Kupferfasern für Doppelbetten"
+    },
+    "imageAlt": {
+      "hu": "CUPRÉ Lux – látványterv, nem végleges termékfotó",
+      "en": "CUPRÉ Lux – design concept, not a final product photo",
+      "de": "CUPRÉ Lux – Entwurf, kein endgültiges Produktfoto"
+    },
+    "description": {
+      "hu": "A CUPRÉ Original nagyobb testvére franciaágyra: ugyanaz a különleges textil, tágasabb méretben.",
+      "en": "The bigger sibling of CUPRÉ Original for double beds: the same distinctive textile in a more generous size.",
+      "de": "Das größere Geschwister von CUPRÉ Original für Doppelbetten: dasselbe besondere Textil in großzügigerem Format."
+    },
+    "points": [
+      {
+        "icon": "↗",
+        "label": {
+          "hu": "160 × 200 cm",
+          "en": "160 × 200 cm",
+          "de": "160 × 200 cm"
+        }
+      },
+      {
+        "icon": "♧",
+        "label": {
+          "hu": "Rézszálas textil",
+          "en": "Copper-fibre textile",
+          "de": "Kupferfaser-Textil"
+        }
+      },
+      {
+        "icon": "✧",
+        "label": {
+          "hu": "Prémium kivitel",
+          "en": "Premium finish",
+          "de": "Premium-Ausführung"
+        }
+      }
+    ],
+    "disclaimer": {
+      "hu": "A képek illusztrációk. A végleges ár, összetétel és rendelhetőség egyeztetés alatt.",
+      "en": "Images are illustrations. Final price, composition and availability are still being finalised.",
+      "de": "Die Bilder sind Illustrationen. Endpreis, Zusammensetzung und Verfügbarkeit werden noch abgestimmt."
+    },
+    "variants": [
+      {
+        "sku": "CL-160x200-I",
+        "size": "160 × 200 cm",
+        "grade": "first",
+        "priceHuf": 36900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CL-160x200-II",
+        "size": "160 × 200 cm",
+        "grade": "second",
+        "priceHuf": 29900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CL-180x200-I",
+        "size": "180 × 200 cm",
+        "grade": "first",
+        "priceHuf": 39900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CL-180x200-II",
+        "size": "180 × 200 cm",
+        "grade": "second",
+        "priceHuf": 31900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      }
+    ],
+    "productInfo": {
+      "composition": {
+        "hu": "[KITÖLTENDŐ: szálösszetétel százalékosan, pl. „xx% poliamid, xx% réz” – EU 1007/2011]",
+        "en": "[TO BE COMPLETED: fibre composition in percent, e.g. “xx% polyamide, xx% copper” – EU 1007/2011]",
+        "de": "[AUSZUFÜLLEN: Faserzusammensetzung in Prozent, z. B. „xx % Polyamid, xx % Kupfer“ – EU 1007/2011]"
+      },
+      "care": {
+        "hu": "[KITÖLTENDŐ: mosási és kezelési útmutató a gyártói dokumentáció alapján]",
+        "en": "[TO BE COMPLETED: washing and care instructions based on the manufacturer's documentation]",
+        "de": "[AUSZUFÜLLEN: Wasch- und Pflegehinweise laut Herstellerdokumentation]"
+      },
+      "manufacturer": {
+        "name": "[KITÖLTENDŐ: gyártó neve / márkaneve]",
+        "address": "[KITÖLTENDŐ: gyártó postai és elektronikus elérhetősége]"
+      },
+      "euResponsible": {
+        "name": "[KITÖLTENDŐ: EU-ban letelepedett felelős gazdasági szereplő, ha a gyártó nem uniós]",
+        "address": "[KITÖLTENDŐ: postai és elektronikus elérhetősége]"
+      },
+      "productId": "[KITÖLTENDŐ: típus-, tétel- vagy sorozatszám]",
+      "safety": {
+        "hu": "[KITÖLTENDŐ: figyelmeztetések és biztonsági információk (GPSR, EU 2023/988), pl. elektromos készülékkel való érintkezés, gyermekek használata]",
+        "en": "[TO BE COMPLETED: warnings and safety information (GPSR, EU 2023/988)]",
+        "de": "[AUSZUFÜLLEN: Warn- und Sicherheitshinweise (GPSR, EU 2023/988)]"
+      }
+    }
+  },
+  {
+    "slug": "cupre-egyszemelyes-lepedo",
+    "featured": false,
+    "image": "/images/care-bedroom.webp",
+    "imageWidth": 1241,
+    "imageHeight": 1268,
+    "tag": "CUPRÉ SINGLE",
+    "name": {
+      "hu": "CUPRÉ Single",
+      "en": "CUPRÉ Single",
+      "de": "CUPRÉ Single"
+    },
+    "subtitle": {
+      "hu": "Rézszálas lepedő egyszemélyes ágyra",
+      "en": "Copper-fibre sheet for single beds",
+      "de": "Laken mit Kupferfasern für Einzelbetten"
+    },
+    "imageAlt": {
+      "hu": "CUPRÉ Single – látványterv, nem végleges termékfotó",
+      "en": "CUPRÉ Single – design concept, not a final product photo",
+      "de": "CUPRÉ Single – Entwurf, kein endgültiges Produktfoto"
+    },
+    "description": {
+      "hu": "Kompakt méretű lepedő egyszemélyes ágyakra, vendégszobába vagy kanapéágyra.",
+      "en": "A compact sheet for single beds, guest rooms or sofa beds.",
+      "de": "Ein kompaktes Laken für Einzelbetten, Gästezimmer oder Schlafsofas."
+    },
+    "points": [
+      {
+        "icon": "↗",
+        "label": {
+          "hu": "90 × 200 cm",
+          "en": "90 × 200 cm",
+          "de": "90 × 200 cm"
+        }
+      },
+      {
+        "icon": "♧",
+        "label": {
+          "hu": "Rézszálas textil",
+          "en": "Copper-fibre textile",
+          "de": "Kupferfaser-Textil"
+        }
+      },
+      {
+        "icon": "✧",
+        "label": {
+          "hu": "Prémium kivitel",
+          "en": "Premium finish",
+          "de": "Premium-Ausführung"
+        }
+      }
+    ],
+    "disclaimer": {
+      "hu": "A képek illusztrációk. A végleges ár, összetétel és rendelhetőség egyeztetés alatt.",
+      "en": "Images are illustrations. Final price, composition and availability are still being finalised.",
+      "de": "Die Bilder sind Illustrationen. Endpreis, Zusammensetzung und Verfügbarkeit werden noch abgestimmt."
+    },
+    "variants": [
+      {
+        "sku": "CS-90x200-I",
+        "size": "90 × 200 cm",
+        "grade": "first",
+        "priceHuf": 19900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CS-90x200-II",
+        "size": "90 × 200 cm",
+        "grade": "second",
+        "priceHuf": 15900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      }
+    ],
+    "productInfo": {
+      "composition": {
+        "hu": "[KITÖLTENDŐ: szálösszetétel százalékosan, pl. „xx% poliamid, xx% réz” – EU 1007/2011]",
+        "en": "[TO BE COMPLETED: fibre composition in percent, e.g. “xx% polyamide, xx% copper” – EU 1007/2011]",
+        "de": "[AUSZUFÜLLEN: Faserzusammensetzung in Prozent, z. B. „xx % Polyamid, xx % Kupfer“ – EU 1007/2011]"
+      },
+      "care": {
+        "hu": "[KITÖLTENDŐ: mosási és kezelési útmutató a gyártói dokumentáció alapján]",
+        "en": "[TO BE COMPLETED: washing and care instructions based on the manufacturer's documentation]",
+        "de": "[AUSZUFÜLLEN: Wasch- und Pflegehinweise laut Herstellerdokumentation]"
+      },
+      "manufacturer": {
+        "name": "[KITÖLTENDŐ: gyártó neve / márkaneve]",
+        "address": "[KITÖLTENDŐ: gyártó postai és elektronikus elérhetősége]"
+      },
+      "euResponsible": {
+        "name": "[KITÖLTENDŐ: EU-ban letelepedett felelős gazdasági szereplő, ha a gyártó nem uniós]",
+        "address": "[KITÖLTENDŐ: postai és elektronikus elérhetősége]"
+      },
+      "productId": "[KITÖLTENDŐ: típus-, tétel- vagy sorozatszám]",
+      "safety": {
+        "hu": "[KITÖLTENDŐ: figyelmeztetések és biztonsági információk (GPSR, EU 2023/988), pl. elektromos készülékkel való érintkezés, gyermekek használata]",
+        "en": "[TO BE COMPLETED: warnings and safety information (GPSR, EU 2023/988)]",
+        "de": "[AUSZUFÜLLEN: Warn- und Sicherheitshinweise (GPSR, EU 2023/988)]"
+      }
+    }
+  },
+  {
+    "slug": "cupre-matracvedo",
+    "featured": false,
+    "image": "/images/technology-detail.webp",
+    "imageWidth": 1536,
+    "imageHeight": 1024,
+    "tag": "CUPRÉ BASE",
+    "name": {
+      "hu": "CUPRÉ Base",
+      "en": "CUPRÉ Base",
+      "de": "CUPRÉ Base"
+    },
+    "subtitle": {
+      "hu": "Rézszálas matracvédő",
+      "en": "Copper-fibre mattress protector",
+      "de": "Matratzenschoner mit Kupferfasern"
+    },
+    "imageAlt": {
+      "hu": "CUPRÉ Base – látványterv, nem végleges termékfotó",
+      "en": "CUPRÉ Base – design concept, not a final product photo",
+      "de": "CUPRÉ Base – Entwurf, kein endgültiges Produktfoto"
+    },
+    "description": {
+      "hu": "Gumipántos matracvédő, amely a lepedő alá kerül. Állítható mélységű, így a legtöbb matracra illeszkedik.",
+      "en": "An elasticated mattress protector that goes under the sheet. The adjustable depth fits most mattresses.",
+      "de": "Ein Matratzenschoner mit Spanngummi, der unter das Laken kommt. Die einstellbare Tiefe passt auf die meisten Matratzen."
+    },
+    "points": [
+      {
+        "icon": "↗",
+        "label": {
+          "hu": "160 × 200 cm",
+          "en": "160 × 200 cm",
+          "de": "160 × 200 cm"
+        }
+      },
+      {
+        "icon": "♧",
+        "label": {
+          "hu": "Rézszálas textil",
+          "en": "Copper-fibre textile",
+          "de": "Kupferfaser-Textil"
+        }
+      },
+      {
+        "icon": "✧",
+        "label": {
+          "hu": "Prémium kivitel",
+          "en": "Premium finish",
+          "de": "Premium-Ausführung"
+        }
+      }
+    ],
+    "disclaimer": {
+      "hu": "A képek illusztrációk. A végleges ár, összetétel és rendelhetőség egyeztetés alatt.",
+      "en": "Images are illustrations. Final price, composition and availability are still being finalised.",
+      "de": "Die Bilder sind Illustrationen. Endpreis, Zusammensetzung und Verfügbarkeit werden noch abgestimmt."
+    },
+    "variants": [
+      {
+        "sku": "CB-160x200-I",
+        "size": "160 × 200 cm",
+        "grade": "first",
+        "priceHuf": 42900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CB-160x200-II",
+        "size": "160 × 200 cm",
+        "grade": "second",
+        "priceHuf": 34900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CB-180x200-I",
+        "size": "180 × 200 cm",
+        "grade": "first",
+        "priceHuf": 46900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CB-180x200-II",
+        "size": "180 × 200 cm",
+        "grade": "second",
+        "priceHuf": 37900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      }
+    ],
+    "productInfo": {
+      "composition": {
+        "hu": "[KITÖLTENDŐ: szálösszetétel százalékosan, pl. „xx% poliamid, xx% réz” – EU 1007/2011]",
+        "en": "[TO BE COMPLETED: fibre composition in percent, e.g. “xx% polyamide, xx% copper” – EU 1007/2011]",
+        "de": "[AUSZUFÜLLEN: Faserzusammensetzung in Prozent, z. B. „xx % Polyamid, xx % Kupfer“ – EU 1007/2011]"
+      },
+      "care": {
+        "hu": "[KITÖLTENDŐ: mosási és kezelési útmutató a gyártói dokumentáció alapján]",
+        "en": "[TO BE COMPLETED: washing and care instructions based on the manufacturer's documentation]",
+        "de": "[AUSZUFÜLLEN: Wasch- und Pflegehinweise laut Herstellerdokumentation]"
+      },
+      "manufacturer": {
+        "name": "[KITÖLTENDŐ: gyártó neve / márkaneve]",
+        "address": "[KITÖLTENDŐ: gyártó postai és elektronikus elérhetősége]"
+      },
+      "euResponsible": {
+        "name": "[KITÖLTENDŐ: EU-ban letelepedett felelős gazdasági szereplő, ha a gyártó nem uniós]",
+        "address": "[KITÖLTENDŐ: postai és elektronikus elérhetősége]"
+      },
+      "productId": "[KITÖLTENDŐ: típus-, tétel- vagy sorozatszám]",
+      "safety": {
+        "hu": "[KITÖLTENDŐ: figyelmeztetések és biztonsági információk (GPSR, EU 2023/988), pl. elektromos készülékkel való érintkezés, gyermekek használata]",
+        "en": "[TO BE COMPLETED: warnings and safety information (GPSR, EU 2023/988)]",
+        "de": "[AUSZUFÜLLEN: Warn- und Sicherheitshinweise (GPSR, EU 2023/988)]"
+      }
+    }
+  },
+  {
+    "slug": "cupre-ples",
+    "featured": false,
+    "image": "/images/hero-bedroom.webp",
+    "imageWidth": 1672,
+    "imageHeight": 941,
+    "tag": "CUPRÉ PLAID",
+    "name": {
+      "hu": "CUPRÉ Plaid",
+      "en": "CUPRÉ Plaid",
+      "de": "CUPRÉ Plaid"
+    },
+    "subtitle": {
+      "hu": "Dekor pléd",
+      "en": "Decorative throw",
+      "de": "Dekorative Decke"
+    },
+    "imageAlt": {
+      "hu": "CUPRÉ Plaid – látványterv, nem végleges termékfotó",
+      "en": "CUPRÉ Plaid – design concept, not a final product photo",
+      "de": "CUPRÉ Plaid – Entwurf, kein endgültiges Produktfoto"
+    },
+    "description": {
+      "hu": "Puha dekor pléd a kanapéra vagy az ágy végére – a lepedőhöz illő réz és mélyzöld árnyalatokban.",
+      "en": "A soft decorative throw for the sofa or the foot of the bed, in copper and deep green tones that match the sheet.",
+      "de": "Eine weiche Dekodecke für das Sofa oder das Bettende – in Kupfer- und Tiefgrüntönen passend zum Laken."
+    },
+    "points": [
+      {
+        "icon": "↗",
+        "label": {
+          "hu": "130 × 170 cm",
+          "en": "130 × 170 cm",
+          "de": "130 × 170 cm"
+        }
+      },
+      {
+        "icon": "♧",
+        "label": {
+          "hu": "Rézszálas textil",
+          "en": "Copper-fibre textile",
+          "de": "Kupferfaser-Textil"
+        }
+      },
+      {
+        "icon": "✧",
+        "label": {
+          "hu": "Prémium kivitel",
+          "en": "Premium finish",
+          "de": "Premium-Ausführung"
+        }
+      }
+    ],
+    "disclaimer": {
+      "hu": "A képek illusztrációk. A végleges ár, összetétel és rendelhetőség egyeztetés alatt.",
+      "en": "Images are illustrations. Final price, composition and availability are still being finalised.",
+      "de": "Die Bilder sind Illustrationen. Endpreis, Zusammensetzung und Verfügbarkeit werden noch abgestimmt."
+    },
+    "variants": [
+      {
+        "sku": "CP2-130x170-I",
+        "size": "130 × 170 cm",
+        "grade": "first",
+        "priceHuf": 24900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CP2-130x170-II",
+        "size": "130 × 170 cm",
+        "grade": "second",
+        "priceHuf": 19900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      }
+    ],
+    "productInfo": {
+      "composition": {
+        "hu": "[KITÖLTENDŐ: szálösszetétel százalékosan, pl. „xx% poliamid, xx% réz” – EU 1007/2011]",
+        "en": "[TO BE COMPLETED: fibre composition in percent, e.g. “xx% polyamide, xx% copper” – EU 1007/2011]",
+        "de": "[AUSZUFÜLLEN: Faserzusammensetzung in Prozent, z. B. „xx % Polyamid, xx % Kupfer“ – EU 1007/2011]"
+      },
+      "care": {
+        "hu": "[KITÖLTENDŐ: mosási és kezelési útmutató a gyártói dokumentáció alapján]",
+        "en": "[TO BE COMPLETED: washing and care instructions based on the manufacturer's documentation]",
+        "de": "[AUSZUFÜLLEN: Wasch- und Pflegehinweise laut Herstellerdokumentation]"
+      },
+      "manufacturer": {
+        "name": "[KITÖLTENDŐ: gyártó neve / márkaneve]",
+        "address": "[KITÖLTENDŐ: gyártó postai és elektronikus elérhetősége]"
+      },
+      "euResponsible": {
+        "name": "[KITÖLTENDŐ: EU-ban letelepedett felelős gazdasági szereplő, ha a gyártó nem uniós]",
+        "address": "[KITÖLTENDŐ: postai és elektronikus elérhetősége]"
+      },
+      "productId": "[KITÖLTENDŐ: típus-, tétel- vagy sorozatszám]",
+      "safety": {
+        "hu": "[KITÖLTENDŐ: figyelmeztetések és biztonsági információk (GPSR, EU 2023/988), pl. elektromos készülékkel való érintkezés, gyermekek használata]",
+        "en": "[TO BE COMPLETED: warnings and safety information (GPSR, EU 2023/988)]",
+        "de": "[AUSZUFÜLLEN: Warn- und Sicherheitshinweise (GPSR, EU 2023/988)]"
+      }
+    }
+  },
+  {
+    "slug": "cupre-diszparna",
+    "featured": false,
+    "image": "/images/story-protection.webp",
+    "imageWidth": 1000,
+    "imageHeight": 465,
+    "tag": "CUPRÉ CUSHION",
+    "name": {
+      "hu": "CUPRÉ Cushion",
+      "en": "CUPRÉ Cushion",
+      "de": "CUPRÉ Cushion"
+    },
+    "subtitle": {
+      "hu": "Díszpárna huzat",
+      "en": "Decorative cushion cover",
+      "de": "Zierkissenbezug"
+    },
+    "imageAlt": {
+      "hu": "CUPRÉ Cushion – látványterv, nem végleges termékfotó",
+      "en": "CUPRÉ Cushion – design concept, not a final product photo",
+      "de": "CUPRÉ Cushion – Entwurf, kein endgültiges Produktfoto"
+    },
+    "description": {
+      "hu": "Díszpárnahuzat rejtett cipzárral, a CUPRÉ holdsarló mintájával hímezve.",
+      "en": "A decorative cushion cover with a hidden zip, embroidered with the CUPRÉ crescent motif.",
+      "de": "Ein Zierkissenbezug mit verdecktem Reißverschluss, bestickt mit dem CUPRÉ Halbmond-Motiv."
+    },
+    "points": [
+      {
+        "icon": "↗",
+        "label": {
+          "hu": "45 × 45 cm",
+          "en": "45 × 45 cm",
+          "de": "45 × 45 cm"
+        }
+      },
+      {
+        "icon": "♧",
+        "label": {
+          "hu": "Rézszálas textil",
+          "en": "Copper-fibre textile",
+          "de": "Kupferfaser-Textil"
+        }
+      },
+      {
+        "icon": "✧",
+        "label": {
+          "hu": "Prémium kivitel",
+          "en": "Premium finish",
+          "de": "Premium-Ausführung"
+        }
+      }
+    ],
+    "disclaimer": {
+      "hu": "A képek illusztrációk. A végleges ár, összetétel és rendelhetőség egyeztetés alatt.",
+      "en": "Images are illustrations. Final price, composition and availability are still being finalised.",
+      "de": "Die Bilder sind Illustrationen. Endpreis, Zusammensetzung und Verfügbarkeit werden noch abgestimmt."
+    },
+    "variants": [
+      {
+        "sku": "CC-45x45-I",
+        "size": "45 × 45 cm",
+        "grade": "first",
+        "priceHuf": 6900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CC-45x45-II",
+        "size": "45 × 45 cm",
+        "grade": "second",
+        "priceHuf": 5400,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CC-50x50-I",
+        "size": "50 × 50 cm",
+        "grade": "first",
+        "priceHuf": 7900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CC-50x50-II",
+        "size": "50 × 50 cm",
+        "grade": "second",
+        "priceHuf": 6200,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      }
+    ],
+    "productInfo": {
+      "composition": {
+        "hu": "[KITÖLTENDŐ: szálösszetétel százalékosan, pl. „xx% poliamid, xx% réz” – EU 1007/2011]",
+        "en": "[TO BE COMPLETED: fibre composition in percent, e.g. “xx% polyamide, xx% copper” – EU 1007/2011]",
+        "de": "[AUSZUFÜLLEN: Faserzusammensetzung in Prozent, z. B. „xx % Polyamid, xx % Kupfer“ – EU 1007/2011]"
+      },
+      "care": {
+        "hu": "[KITÖLTENDŐ: mosási és kezelési útmutató a gyártói dokumentáció alapján]",
+        "en": "[TO BE COMPLETED: washing and care instructions based on the manufacturer's documentation]",
+        "de": "[AUSZUFÜLLEN: Wasch- und Pflegehinweise laut Herstellerdokumentation]"
+      },
+      "manufacturer": {
+        "name": "[KITÖLTENDŐ: gyártó neve / márkaneve]",
+        "address": "[KITÖLTENDŐ: gyártó postai és elektronikus elérhetősége]"
+      },
+      "euResponsible": {
+        "name": "[KITÖLTENDŐ: EU-ban letelepedett felelős gazdasági szereplő, ha a gyártó nem uniós]",
+        "address": "[KITÖLTENDŐ: postai és elektronikus elérhetősége]"
+      },
+      "productId": "[KITÖLTENDŐ: típus-, tétel- vagy sorozatszám]",
+      "safety": {
+        "hu": "[KITÖLTENDŐ: figyelmeztetések és biztonsági információk (GPSR, EU 2023/988), pl. elektromos készülékkel való érintkezés, gyermekek használata]",
+        "en": "[TO BE COMPLETED: warnings and safety information (GPSR, EU 2023/988)]",
+        "de": "[AUSZUFÜLLEN: Warn- und Sicherheitshinweise (GPSR, EU 2023/988)]"
+      }
+    }
+  },
+  {
+    "slug": "cupre-utazo-lepedo",
+    "featured": false,
+    "image": "/images/product-cupre-original.webp",
+    "imageWidth": 576,
+    "imageHeight": 317,
+    "tag": "CUPRÉ TRAVEL",
+    "name": {
+      "hu": "CUPRÉ Travel",
+      "en": "CUPRÉ Travel",
+      "de": "CUPRÉ Travel"
+    },
+    "subtitle": {
+      "hu": "Utazó lepedő",
+      "en": "Travel sheet",
+      "de": "Reiselaken"
+    },
+    "imageAlt": {
+      "hu": "CUPRÉ Travel – látványterv, nem végleges termékfotó",
+      "en": "CUPRÉ Travel – design concept, not a final product photo",
+      "de": "CUPRÉ Travel – Entwurf, kein endgültiges Produktfoto"
+    },
+    "description": {
+      "hu": "Könnyen összehajtható, kis helyen elférő lepedő utazáshoz, szállodába vagy kempingbe, külön tokban.",
+      "en": "An easy-to-fold, compact sheet for travel, hotels or camping, supplied with its own pouch.",
+      "de": "Ein leicht faltbares, kompaktes Laken für Reisen, Hotels oder Camping, mit eigener Tasche."
+    },
+    "points": [
+      {
+        "icon": "↗",
+        "label": {
+          "hu": "100 × 200 cm",
+          "en": "100 × 200 cm",
+          "de": "100 × 200 cm"
+        }
+      },
+      {
+        "icon": "♧",
+        "label": {
+          "hu": "Rézszálas textil",
+          "en": "Copper-fibre textile",
+          "de": "Kupferfaser-Textil"
+        }
+      },
+      {
+        "icon": "✧",
+        "label": {
+          "hu": "Prémium kivitel",
+          "en": "Premium finish",
+          "de": "Premium-Ausführung"
+        }
+      }
+    ],
+    "disclaimer": {
+      "hu": "A képek illusztrációk. A végleges ár, összetétel és rendelhetőség egyeztetés alatt.",
+      "en": "Images are illustrations. Final price, composition and availability are still being finalised.",
+      "de": "Die Bilder sind Illustrationen. Endpreis, Zusammensetzung und Verfügbarkeit werden noch abgestimmt."
+    },
+    "variants": [
+      {
+        "sku": "CT-100x200-I",
+        "size": "100 × 200 cm",
+        "grade": "first",
+        "priceHuf": 17900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CT-100x200-II",
+        "size": "100 × 200 cm",
+        "grade": "second",
+        "priceHuf": 14400,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      }
+    ],
+    "productInfo": {
+      "composition": {
+        "hu": "[KITÖLTENDŐ: szálösszetétel százalékosan, pl. „xx% poliamid, xx% réz” – EU 1007/2011]",
+        "en": "[TO BE COMPLETED: fibre composition in percent, e.g. “xx% polyamide, xx% copper” – EU 1007/2011]",
+        "de": "[AUSZUFÜLLEN: Faserzusammensetzung in Prozent, z. B. „xx % Polyamid, xx % Kupfer“ – EU 1007/2011]"
+      },
+      "care": {
+        "hu": "[KITÖLTENDŐ: mosási és kezelési útmutató a gyártói dokumentáció alapján]",
+        "en": "[TO BE COMPLETED: washing and care instructions based on the manufacturer's documentation]",
+        "de": "[AUSZUFÜLLEN: Wasch- und Pflegehinweise laut Herstellerdokumentation]"
+      },
+      "manufacturer": {
+        "name": "[KITÖLTENDŐ: gyártó neve / márkaneve]",
+        "address": "[KITÖLTENDŐ: gyártó postai és elektronikus elérhetősége]"
+      },
+      "euResponsible": {
+        "name": "[KITÖLTENDŐ: EU-ban letelepedett felelős gazdasági szereplő, ha a gyártó nem uniós]",
+        "address": "[KITÖLTENDŐ: postai és elektronikus elérhetősége]"
+      },
+      "productId": "[KITÖLTENDŐ: típus-, tétel- vagy sorozatszám]",
+      "safety": {
+        "hu": "[KITÖLTENDŐ: figyelmeztetések és biztonsági információk (GPSR, EU 2023/988), pl. elektromos készülékkel való érintkezés, gyermekek használata]",
+        "en": "[TO BE COMPLETED: warnings and safety information (GPSR, EU 2023/988)]",
+        "de": "[AUSZUFÜLLEN: Warn- und Sicherheitshinweise (GPSR, EU 2023/988)]"
+      }
+    }
+  },
+  {
+    "slug": "cupre-fuerdolepedo",
+    "featured": false,
+    "image": "/images/story-home.webp",
+    "imageWidth": 1346,
+    "imageHeight": 761,
+    "tag": "CUPRÉ BATH",
+    "name": {
+      "hu": "CUPRÉ Bath",
+      "en": "CUPRÉ Bath",
+      "de": "CUPRÉ Bath"
+    },
+    "subtitle": {
+      "hu": "Fürdőlepedő",
+      "en": "Bath sheet",
+      "de": "Badetuch"
+    },
+    "imageAlt": {
+      "hu": "CUPRÉ Bath – látványterv, nem végleges termékfotó",
+      "en": "CUPRÉ Bath – design concept, not a final product photo",
+      "de": "CUPRÉ Bath – Entwurf, kein endgültiges Produktfoto"
+    },
+    "description": {
+      "hu": "Nagyméretű, nedvszívó fürdőlepedő finom réz színű szegéllyel.",
+      "en": "A large, absorbent bath sheet with a fine copper-coloured border.",
+      "de": "Ein großes, saugfähiges Badetuch mit feiner kupferfarbener Borte."
+    },
+    "points": [
+      {
+        "icon": "↗",
+        "label": {
+          "hu": "100 × 150 cm",
+          "en": "100 × 150 cm",
+          "de": "100 × 150 cm"
+        }
+      },
+      {
+        "icon": "♧",
+        "label": {
+          "hu": "Rézszálas textil",
+          "en": "Copper-fibre textile",
+          "de": "Kupferfaser-Textil"
+        }
+      },
+      {
+        "icon": "✧",
+        "label": {
+          "hu": "Prémium kivitel",
+          "en": "Premium finish",
+          "de": "Premium-Ausführung"
+        }
+      }
+    ],
+    "disclaimer": {
+      "hu": "A képek illusztrációk. A végleges ár, összetétel és rendelhetőség egyeztetés alatt.",
+      "en": "Images are illustrations. Final price, composition and availability are still being finalised.",
+      "de": "Die Bilder sind Illustrationen. Endpreis, Zusammensetzung und Verfügbarkeit werden noch abgestimmt."
+    },
+    "variants": [
+      {
+        "sku": "CBA-100x150-I",
+        "size": "100 × 150 cm",
+        "grade": "first",
+        "priceHuf": 14900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CBA-100x150-II",
+        "size": "100 × 150 cm",
+        "grade": "second",
+        "priceHuf": 11900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      }
+    ],
+    "productInfo": {
+      "composition": {
+        "hu": "[KITÖLTENDŐ: szálösszetétel százalékosan, pl. „xx% poliamid, xx% réz” – EU 1007/2011]",
+        "en": "[TO BE COMPLETED: fibre composition in percent, e.g. “xx% polyamide, xx% copper” – EU 1007/2011]",
+        "de": "[AUSZUFÜLLEN: Faserzusammensetzung in Prozent, z. B. „xx % Polyamid, xx % Kupfer“ – EU 1007/2011]"
+      },
+      "care": {
+        "hu": "[KITÖLTENDŐ: mosási és kezelési útmutató a gyártói dokumentáció alapján]",
+        "en": "[TO BE COMPLETED: washing and care instructions based on the manufacturer's documentation]",
+        "de": "[AUSZUFÜLLEN: Wasch- und Pflegehinweise laut Herstellerdokumentation]"
+      },
+      "manufacturer": {
+        "name": "[KITÖLTENDŐ: gyártó neve / márkaneve]",
+        "address": "[KITÖLTENDŐ: gyártó postai és elektronikus elérhetősége]"
+      },
+      "euResponsible": {
+        "name": "[KITÖLTENDŐ: EU-ban letelepedett felelős gazdasági szereplő, ha a gyártó nem uniós]",
+        "address": "[KITÖLTENDŐ: postai és elektronikus elérhetősége]"
+      },
+      "productId": "[KITÖLTENDŐ: típus-, tétel- vagy sorozatszám]",
+      "safety": {
+        "hu": "[KITÖLTENDŐ: figyelmeztetések és biztonsági információk (GPSR, EU 2023/988), pl. elektromos készülékkel való érintkezés, gyermekek használata]",
+        "en": "[TO BE COMPLETED: warnings and safety information (GPSR, EU 2023/988)]",
+        "de": "[AUSZUFÜLLEN: Warn- und Sicherheitshinweise (GPSR, EU 2023/988)]"
+      }
+    }
+  },
+  {
+    "slug": "cupre-ajandekszett",
+    "featured": false,
+    "image": "/images/care-bedroom.webp",
+    "imageWidth": 1241,
+    "imageHeight": 1268,
+    "tag": "CUPRÉ GIFT SET",
+    "name": {
+      "hu": "CUPRÉ Ajándékszett",
+      "en": "CUPRÉ Gift Set",
+      "de": "CUPRÉ Geschenkset"
+    },
+    "subtitle": {
+      "hu": "Lepedő és két párnahuzat díszdobozban",
+      "en": "Sheet and two pillowcases in a gift box",
+      "de": "Laken und zwei Kissenbezüge in der Geschenkbox"
+    },
+    "imageAlt": {
+      "hu": "CUPRÉ Ajándékszett – látványterv, nem végleges termékfotó",
+      "en": "CUPRÉ Gift Set – design concept, not a final product photo",
+      "de": "CUPRÉ Geschenkset – Entwurf, kein endgültiges Produktfoto"
+    },
+    "description": {
+      "hu": "A CUPRÉ Original lepedő két párnahuzattal, mélyzöld díszdobozban, ajándékkártyával.",
+      "en": "The CUPRÉ Original sheet with two pillowcases in a deep green gift box, with a gift card.",
+      "de": "Das CUPRÉ Original Laken mit zwei Kissenbezügen in einer tiefgrünen Geschenkbox, mit Geschenkkarte."
+    },
+    "points": [
+      {
+        "icon": "↗",
+        "label": {
+          "hu": "150 × 200 cm + 2 × 50 × 70 cm",
+          "en": "150 × 200 cm + 2 × 50 × 70 cm",
+          "de": "150 × 200 cm + 2 × 50 × 70 cm"
+        }
+      },
+      {
+        "icon": "♧",
+        "label": {
+          "hu": "Rézszálas textil",
+          "en": "Copper-fibre textile",
+          "de": "Kupferfaser-Textil"
+        }
+      },
+      {
+        "icon": "✧",
+        "label": {
+          "hu": "Prémium kivitel",
+          "en": "Premium finish",
+          "de": "Premium-Ausführung"
+        }
+      }
+    ],
+    "disclaimer": {
+      "hu": "A képek illusztrációk. A végleges ár, összetétel és rendelhetőség egyeztetés alatt.",
+      "en": "Images are illustrations. Final price, composition and availability are still being finalised.",
+      "de": "Die Bilder sind Illustrationen. Endpreis, Zusammensetzung und Verfügbarkeit werden noch abgestimmt."
+    },
+    "variants": [
+      {
+        "sku": "CG-150x200p2x50x70-I",
+        "size": "150 × 200 cm + 2 × 50 × 70 cm",
+        "grade": "first",
+        "priceHuf": 44900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      }
+    ],
+    "productInfo": {
+      "composition": {
+        "hu": "[KITÖLTENDŐ: szálösszetétel százalékosan, pl. „xx% poliamid, xx% réz” – EU 1007/2011]",
+        "en": "[TO BE COMPLETED: fibre composition in percent, e.g. “xx% polyamide, xx% copper” – EU 1007/2011]",
+        "de": "[AUSZUFÜLLEN: Faserzusammensetzung in Prozent, z. B. „xx % Polyamid, xx % Kupfer“ – EU 1007/2011]"
+      },
+      "care": {
+        "hu": "[KITÖLTENDŐ: mosási és kezelési útmutató a gyártói dokumentáció alapján]",
+        "en": "[TO BE COMPLETED: washing and care instructions based on the manufacturer's documentation]",
+        "de": "[AUSZUFÜLLEN: Wasch- und Pflegehinweise laut Herstellerdokumentation]"
+      },
+      "manufacturer": {
+        "name": "[KITÖLTENDŐ: gyártó neve / márkaneve]",
+        "address": "[KITÖLTENDŐ: gyártó postai és elektronikus elérhetősége]"
+      },
+      "euResponsible": {
+        "name": "[KITÖLTENDŐ: EU-ban letelepedett felelős gazdasági szereplő, ha a gyártó nem uniós]",
+        "address": "[KITÖLTENDŐ: postai és elektronikus elérhetősége]"
+      },
+      "productId": "[KITÖLTENDŐ: típus-, tétel- vagy sorozatszám]",
+      "safety": {
+        "hu": "[KITÖLTENDŐ: figyelmeztetések és biztonsági információk (GPSR, EU 2023/988), pl. elektromos készülékkel való érintkezés, gyermekek használata]",
+        "en": "[TO BE COMPLETED: warnings and safety information (GPSR, EU 2023/988)]",
+        "de": "[AUSZUFÜLLEN: Warn- und Sicherheitshinweise (GPSR, EU 2023/988)]"
+      }
+    }
+  },
+  {
+    "slug": "cupre-premium-lepedo",
+    "featured": false,
+    "image": "/images/hero-bedroom.webp",
+    "imageWidth": 1672,
+    "imageHeight": 941,
+    "tag": "CUPRÉ PREMIUM",
+    "name": {
+      "hu": "CUPRÉ Premium",
+      "en": "CUPRÉ Premium",
+      "de": "CUPRÉ Premium"
+    },
+    "subtitle": {
+      "hu": "Sűrűbb szövésű rézszálas lepedő",
+      "en": "Tighter-weave copper-fibre sheet",
+      "de": "Laken mit Kupferfasern in dichterer Webung"
+    },
+    "imageAlt": {
+      "hu": "CUPRÉ Premium – látványterv, nem végleges termékfotó",
+      "en": "CUPRÉ Premium – design concept, not a final product photo",
+      "de": "CUPRÉ Premium – Entwurf, kein endgültiges Produktfoto"
+    },
+    "description": {
+      "hu": "A CUPRÉ Original sűrűbb szövésű változata, fényesebb felülettel.",
+      "en": "A tighter-weave version of CUPRÉ Original with a more lustrous surface.",
+      "de": "Eine dichter gewebte Variante von CUPRÉ Original mit glänzenderer Oberfläche."
+    },
+    "points": [
+      {
+        "icon": "↗",
+        "label": {
+          "hu": "150 × 200 cm",
+          "en": "150 × 200 cm",
+          "de": "150 × 200 cm"
+        }
+      },
+      {
+        "icon": "♧",
+        "label": {
+          "hu": "Rézszálas textil",
+          "en": "Copper-fibre textile",
+          "de": "Kupferfaser-Textil"
+        }
+      },
+      {
+        "icon": "✧",
+        "label": {
+          "hu": "Prémium kivitel",
+          "en": "Premium finish",
+          "de": "Premium-Ausführung"
+        }
+      }
+    ],
+    "disclaimer": {
+      "hu": "A képek illusztrációk. A végleges ár, összetétel és rendelhetőség egyeztetés alatt.",
+      "en": "Images are illustrations. Final price, composition and availability are still being finalised.",
+      "de": "Die Bilder sind Illustrationen. Endpreis, Zusammensetzung und Verfügbarkeit werden noch abgestimmt."
+    },
+    "variants": [
+      {
+        "sku": "CPR-150x200-I",
+        "size": "150 × 200 cm",
+        "grade": "first",
+        "priceHuf": 32900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CPR-150x200-II",
+        "size": "150 × 200 cm",
+        "grade": "second",
+        "priceHuf": 26400,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CPR-180x200-I",
+        "size": "180 × 200 cm",
+        "grade": "first",
+        "priceHuf": 36900,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      },
+      {
+        "sku": "CPR-180x200-II",
+        "size": "180 × 200 cm",
+        "grade": "second",
+        "priceHuf": 29400,
+        "priceNote": {
+          "hu": "Fiktív tesztár",
+          "en": "Fictional test price",
+          "de": "Fiktiver Testpreis"
+        }
+      }
+    ],
+    "productInfo": {
+      "composition": {
+        "hu": "[KITÖLTENDŐ: szálösszetétel százalékosan, pl. „xx% poliamid, xx% réz” – EU 1007/2011]",
+        "en": "[TO BE COMPLETED: fibre composition in percent, e.g. “xx% polyamide, xx% copper” – EU 1007/2011]",
+        "de": "[AUSZUFÜLLEN: Faserzusammensetzung in Prozent, z. B. „xx % Polyamid, xx % Kupfer“ – EU 1007/2011]"
+      },
+      "care": {
+        "hu": "[KITÖLTENDŐ: mosási és kezelési útmutató a gyártói dokumentáció alapján]",
+        "en": "[TO BE COMPLETED: washing and care instructions based on the manufacturer's documentation]",
+        "de": "[AUSZUFÜLLEN: Wasch- und Pflegehinweise laut Herstellerdokumentation]"
+      },
+      "manufacturer": {
+        "name": "[KITÖLTENDŐ: gyártó neve / márkaneve]",
+        "address": "[KITÖLTENDŐ: gyártó postai és elektronikus elérhetősége]"
+      },
+      "euResponsible": {
+        "name": "[KITÖLTENDŐ: EU-ban letelepedett felelős gazdasági szereplő, ha a gyártó nem uniós]",
+        "address": "[KITÖLTENDŐ: postai és elektronikus elérhetősége]"
+      },
+      "productId": "[KITÖLTENDŐ: típus-, tétel- vagy sorozatszám]",
+      "safety": {
+        "hu": "[KITÖLTENDŐ: figyelmeztetések és biztonsági információk (GPSR, EU 2023/988), pl. elektromos készülékkel való érintkezés, gyermekek használata]",
+        "en": "[TO BE COMPLETED: warnings and safety information (GPSR, EU 2023/988)]",
+        "de": "[AUSZUFÜLLEN: Warn- und Sicherheitshinweise (GPSR, EU 2023/988)]"
+      }
+    }
   }
 ]

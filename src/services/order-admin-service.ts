@@ -1,3 +1,4 @@
+import { buildXlsx } from "@/lib/xlsx";
 import "server-only";
 import { getCustomerDb, inTransaction } from "@/services/customer-db";
 import { applyPaymentStatus } from "@/services/payment-service";
@@ -192,13 +193,22 @@ function csvField(value: string | number | null): string {
   return `"${safe.replace(/"/g, '""')}"`;
 }
 
+// Az export táblázata: fejléc + sorok (CSV-hez és Excelhez közös)
+export function ordersTable(filter: AdminOrderFilter): { header: string[]; rows: (string | number | null)[][] } {
+  const header = ["id", "created_at", "status", "payment_method", "payment_status", "shipping_method", "total_huf", "coupon", "name", "email", "city", "lang"];
+  const rows = listOrders(filter).map((o) => [o.id, o.createdAt, o.status, o.paymentMethod, o.paymentStatus, o.shippingMethod, o.totalHuf, o.couponCode, o.name, o.email, o.city, o.lang]);
+  return { header, rows };
+}
+
 // Rendelések CSV-ben (könyveléshez, futárnak), UTF-8 BOM-mal
 export function ordersCsv(filter: AdminOrderFilter): string {
-  const header = ["id", "created_at", "status", "payment_method", "payment_status", "shipping_method", "total_huf", "coupon", "name", "email", "city", "lang"];
-  const lines = listOrders(filter).map((o) =>
-    [o.id, o.createdAt, o.status, o.paymentMethod, o.paymentStatus, o.shippingMethod, o.totalHuf, o.couponCode, o.name, o.email, o.city, o.lang]
-      .map(csvField)
-      .join(","),
-  );
+  const { header, rows } = ordersTable(filter);
+  const lines = rows.map((row) => row.map(csvField).join(","));
   return `﻿${[header.join(","), ...lines].join("\r\n")}\r\n`;
+}
+
+// Rendelések Excel (.xlsx) fájlban
+export function ordersXlsx(filter: AdminOrderFilter): Buffer {
+  const { header, rows } = ordersTable(filter);
+  return buildXlsx("Rendelések", header, rows);
 }

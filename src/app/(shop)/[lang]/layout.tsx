@@ -6,7 +6,7 @@ import SiteHeader from "@/components/cupre/site-header";
 import SiteFooter from "@/components/cupre/site-footer";
 import CartDrawer from "@/components/cupre/cart-drawer";
 import Toast from "@/components/cupre/toast";
-import { getCatalogVariants } from "@/services/product-service";
+import { getCachedCatalogVariants } from "@/services/cached-data";
 import { getDictionary } from "@/services/dictionary-service";
 import { LOCALES, hasLocale, localePath } from "@/lib/i18n";
 import "../cupre.css";
@@ -49,7 +49,7 @@ export default async function ShopLayout({ children, params }: LayoutProps<"/[la
     notFound();
   }
   const dict = getDictionary(lang);
-  const catalog = getCatalogVariants(lang);
+  const catalog = await getCachedCatalogVariants(lang);
   return (
     <html lang={lang}>
       <body>

@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { LegalLayout } from "@/components/cupre/legal-page";
 import { legalMetadata } from "@/components/cupre/legal-route";
 import { getDictionary } from "@/services/dictionary-service";
-import { getCompanyInfo } from "@/services/company-service";
+import { getCachedCompanyInfo } from "@/services/cached-data";
 import { getImprintText } from "@/services/legal-service";
 import { hasLocale } from "@/lib/i18n";
 import type { CompanyDetails } from "@/types/company";
@@ -36,7 +36,7 @@ export default async function ImprintPage({ params }: PageProps<"/[lang]/impress
   }
   const dict = getDictionary(lang);
   const text = getImprintText(lang);
-  const info = getCompanyInfo();
+  const info = await getCachedCompanyInfo();
   return (
     <LegalLayout dict={dict} lang={lang} current="impresszum" title={text.title} intro={text.intro}>
       <dl className="legal-facts">

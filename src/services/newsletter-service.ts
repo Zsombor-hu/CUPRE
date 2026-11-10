@@ -1,3 +1,4 @@
+import { buildXlsx } from "@/lib/xlsx";
 import "server-only";
 import { createToken, hashToken } from "@/services/auth-service";
 import { getCustomerDb } from "@/services/customer-db";
@@ -138,13 +139,22 @@ function csvField(value: string): string {
   return `"${safe.replace(/"/g, '""')}"`;
 }
 
+// Az export táblázata: fejléc + sorok (CSV-hez és Excelhez közös)
+function subscribersTable(status?: NewsletterStatus): { header: string[]; rows: string[][] } {
+  const header = ["email", "name", "lang", "status", "source", "consent_at", "confirmed_at", "unsubscribed_at"];
+  const rows = listSubscribers(status).map((s) => [s.email, s.name, s.lang, s.status, s.source, s.consentAt, s.confirmedAt ?? "", s.unsubscribedAt ?? ""]);
+  return { header, rows };
+}
+
 // Admin: CSV export (a külső hírlevélküldő szolgáltatóba importáláshoz); UTF-8 BOM-mal, hogy az Excel is jól olvassa
 export function subscribersCsv(status?: NewsletterStatus): string {
-  const header = ["email", "name", "lang", "status", "source", "consent_at", "confirmed_at", "unsubscribed_at"];
-  const lines = listSubscribers(status).map((s) =>
-    [s.email, s.name, s.lang, s.status, s.source, s.consentAt, s.confirmedAt ?? "", s.unsubscribedAt ?? ""]
-      .map(csvField)
-      .join(","),
-  );
+  const { header, rows } = subscribersTable(status);
+  const lines = rows.map((row) => row.map(csvField).join(","));
   return `﻿${[header.join(","), ...lines].join("\r\n")}\r\n`;
+}
+
+// Admin: feliratkozók Excel (.xlsx) fájlban
+export function subscribersXlsx(status?: NewsletterStatus): Buffer {
+  const { header, rows } = subscribersTable(status);
+  return buildXlsx("Feliratkozók", header, rows);
 }

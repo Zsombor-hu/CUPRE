@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 // Belső admin oldal a kuponokhoz (ADMIN_PASSWORD-del védett, a tartalmat a kliens tölti be)
 export default function CouponAdminPage() {
   return (
-    <div className="flex flex-1 justify-center p-6">
+    <>
       <CouponAdmin />
-    </div>
+    </>
   );
 }

@@ -1,9 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import Link from "next/link";
-import { Button, Card } from "@heroui/react";
-import AdminNav from "@/components/admin/admin-nav";
+import { Button, Card, buttonVariants } from "@heroui/react";
+import AdminRedirect from "@/components/admin/admin-redirect";
 import { ORDER_STATUSES, type AdminOrderDetail, type AdminOrderListItem, type OrderStatus } from "@/types/admin-order";
 
 // Rendelésállapotok magyar felirata
@@ -287,29 +286,17 @@ export default function OrdersAdmin() {
   if (state.kind === "disabled") {
     return <p className="p-6">Az admin felület nincs bekapcsolva (ADMIN_PASSWORD).</p>;
   }
-  // Belépés szükséges (a belépő űrlap a hírlevél admin oldalon van)
+  // Belépés szükséges: vissza a /admin belépő oldalra
   if (state.kind === "login") {
-    return (
-      <Card className="w-full max-w-sm">
-        <Card.Header>
-          <Card.Title>Belépés szükséges</Card.Title>
-          <Card.Description>
-            <Link href="/admin/hirlevel" className="underline">
-              Admin belépés
-            </Link>
-          </Card.Description>
-        </Card.Header>
-      </Card>
-    );
+    return <AdminRedirect />;
   }
 
   const { counts, orders } = state.data;
   const total = Object.values(counts).reduce((sum, count) => sum + count, 0);
   return (
-    <div className="flex w-full max-w-6xl flex-col gap-4">
+    <div className="flex w-full flex-col gap-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-2xl font-semibold">Rendelések</h1>
-        <AdminNav />
       </div>
       <div className="flex flex-wrap gap-2 text-sm">
         {(["all", ...ORDER_STATUSES] as const).map((option) => (
@@ -339,8 +326,11 @@ export default function OrdersAdmin() {
         <Button type="submit" size="sm">
           Keresés
         </Button>
-        <a className="rounded-lg border border-foreground/20 px-4 py-2 text-sm" href={`/api/admin/orders/export?${queryString}`}>
+        <a className={buttonVariants({ variant: "secondary", size: "sm" })} href={`/api/admin/orders/export?${queryString}`}>
           CSV letöltése
+        </a>
+        <a className={buttonVariants({ variant: "secondary", size: "sm" })} href={`/api/admin/orders/export?${queryString}&format=xlsx`}>
+          Excel letöltése
         </a>
       </form>
       {selected !== null ? (

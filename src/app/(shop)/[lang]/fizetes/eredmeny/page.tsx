@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import AccountShell from "@/components/cupre/account-shell";
 import PaymentResult from "@/components/cupre/payment-result";
 import { privatePageMetadata, resolvePageLang } from "@/components/cupre/page-meta";
-import { getCompanyInfo } from "@/services/company-service";
+import { getCachedCompanyInfo } from "@/services/cached-data";
 
 // Nyelvfüggő oldalcím (nem indexelt)
 export async function generateMetadata({ params }: PageProps<"/[lang]/fizetes/eredmeny">) {
@@ -15,7 +15,7 @@ export default async function PaymentResultPage({ params }: PageProps<"/[lang]/f
   return (
     <AccountShell eyebrow={dict.payment.result.eyebrow} title={dict.payment.title}>
       <Suspense fallback={<p className="muted">{dict.account.loading}</p>}>
-        <PaymentResult contactEmail={getCompanyInfo().company.email} />
+        <PaymentResult contactEmail={(await getCachedCompanyInfo()).company.email} />
       </Suspense>
     </AccountShell>
   );

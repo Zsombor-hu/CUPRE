@@ -1,9 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import Link from "next/link";
 import { Button, Card } from "@heroui/react";
-import AdminNav from "@/components/admin/admin-nav";
+import AdminRedirect from "@/components/admin/admin-redirect";
 import type { Coupon } from "@/types/coupon";
 
 // Betöltési állapot: betöltés, letiltott admin, belépés szükséges, vagy betöltött lista
@@ -119,25 +118,15 @@ export default function CouponAdmin() {
   if (state.kind === "disabled") {
     return <p className="p-6">Az admin felület nincs bekapcsolva (ADMIN_PASSWORD).</p>;
   }
-  // Belépés szükséges (a belépő űrlap a hírlevél admin oldalon van)
+  // Belépés szükséges: vissza a /admin belépő oldalra
   if (state.kind === "login") {
-    return (
-      <Card className="w-full max-w-sm">
-        <Card.Header>
-          <Card.Title>Belépés szükséges</Card.Title>
-          <Card.Description>
-            Lépj be az admin felületre: <Link href="/admin/hirlevel" className="underline">Admin belépés</Link>
-          </Card.Description>
-        </Card.Header>
-      </Card>
-    );
+    return <AdminRedirect />;
   }
 
   return (
-    <div className="flex w-full max-w-6xl flex-col gap-4">
+    <div className="flex w-full flex-col gap-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-2xl font-semibold">Kuponok</h1>
-        <AdminNav />
       </div>
       <Card>
         <Card.Header>

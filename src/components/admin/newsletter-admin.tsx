@@ -1,8 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import AdminNav from "@/components/admin/admin-nav";
-import { Button, Card } from "@heroui/react";
+import AdminRedirect from "@/components/admin/admin-redirect";
+import { Card, buttonVariants } from "@heroui/react";
 import type { NewsletterStatus, NewsletterSubscriber } from "@/types/account";
 
 // A lista API válasza
@@ -36,53 +36,6 @@ function shortDate(value: string | null): string {
   }
   const date = new Date(`${value.replace(" ", "T")}Z`);
   return Number.isNaN(date.getTime()) ? value : date.toLocaleString("hu-HU");
-}
-
-// Admin belépő űrlap (ADMIN_PASSWORD)
-function AdminLogin({ onSuccess }: { onSuccess: () => void }) {
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState<string | null>(null);
-
-  // Belépés
-  async function submit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const response = await fetch("/api/admin/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password }),
-    });
-    // Sikertelen belépés: túl sok próbálkozás vagy hibás jelszó
-    if (!response.ok) {
-      setError(response.status === 429 ? "Túl sok próbálkozás, várj néhány percet." : "Hibás jelszó.");
-      return;
-    }
-    onSuccess();
-  }
-
-  return (
-    <Card className="w-full max-w-sm">
-      <Card.Header>
-        <Card.Title>CUPRÉ admin</Card.Title>
-        <Card.Description>Hírlevél-feliratkozók kezelése</Card.Description>
-      </Card.Header>
-      <Card.Content>
-        <form className="flex flex-col gap-3" onSubmit={submit}>
-          <label className="flex flex-col gap-1 text-sm">
-            Admin jelszó
-            <input
-              className="rounded-lg border border-foreground/20 bg-transparent px-3 py-2"
-              type="password"
-              autoComplete="current-password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-            />
-          </label>
-          {error ? <p className="text-sm text-red-600">{error}</p> : null}
-          <Button type="submit">Belépés</Button>
-        </form>
-      </Card.Content>
-    </Card>
-  );
 }
 
 // Hírlevél admin: számlálók, szűrés, lista, törlés, CSV export
@@ -123,12 +76,6 @@ export default function NewsletterAdmin() {
     await load();
   }
 
-  // Kilépés
-  async function logout() {
-    await fetch("/api/admin/logout", { method: "POST" });
-    setState({ kind: "login" });
-  }
-
   // Betöltés közben
   if (state.kind === "loading") {
     return <p className="p-6">Betöltés…</p>;
@@ -149,26 +96,22 @@ export default function NewsletterAdmin() {
   }
   // Belépés szükséges
   if (state.kind === "login") {
-    return <AdminLogin onSuccess={() => void load()} />;
+    return <AdminRedirect />;
   }
 
   const { counts, subscribers } = state.data;
   const exportStatus = filter === "all" ? "all" : filter;
   return (
-    <div className="flex w-full max-w-6xl flex-col gap-4">
+    <div className="flex w-full flex-col gap-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-2xl font-semibold">Hírlevél-feliratkozók</h1>
-        <AdminNav />
         <div className="flex gap-2">
-          <a
-            className="rounded-lg border border-foreground/20 px-4 py-2 text-sm"
-            href={`/api/admin/newsletter/export?status=${exportStatus}`}
-          >
+          <a className={buttonVariants({ variant: "secondary", size: "sm" })} href={`/api/admin/newsletter/export?status=${exportStatus}`}>
             CSV letöltése ({filter === "all" ? "mind" : STATUS_LABELS[filter].toLowerCase()})
           </a>
-          <Button variant="secondary" onPress={() => void logout()}>
-            Kilépés
-          </Button>
+          <a className={buttonVariants({ variant: "secondary", size: "sm" })} href={`/api/admin/newsletter/export?status=${exportStatus}&format=xlsx`}>
+            Excel letöltése
+          </a>
         </div>
       </div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">

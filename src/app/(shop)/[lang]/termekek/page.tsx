@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProducts } from "@/services/product-service";
+import { getCachedProducts } from "@/services/cached-data";
 import { getDictionary } from "@/services/dictionary-service";
 import { formatPrice, hasLocale, interpolate, localePath, LOCALES } from "@/lib/i18n";
 
@@ -29,7 +29,7 @@ export default async function ProductsPage({ params }: PageProps<"/[lang]/termek
     notFound();
   }
   const dict = getDictionary(lang);
-  const products = getProducts(lang);
+  const products = await getCachedProducts(lang);
   return (
     <main>
       <section className="copper-story products-section">

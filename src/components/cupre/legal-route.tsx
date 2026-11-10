@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import LegalPage from "@/components/cupre/legal-page";
 import { getDictionary } from "@/services/dictionary-service";
-import { getLegalDocument } from "@/services/legal-service";
+import { getCachedLegalDocument } from "@/services/cached-data";
 import { LOCALES, hasLocale, localePath } from "@/lib/i18n";
 import type { LegalDocumentKey, LegalPageKey } from "@/types/legal";
 
@@ -28,7 +28,7 @@ export async function legalDocumentMetadata(
   if (!hasLocale(lang)) {
     return {};
   }
-  return legalMetadata(lang, key, getLegalDocument(lang, key).title);
+  return legalMetadata(lang, key, (await getCachedLegalDocument(lang, key)).title);
 }
 
 // Szöveges jogi dokumentum oldala (ÁSZF, adatkezelés, elállás) az URL nyelvén
@@ -44,12 +44,13 @@ export async function LegalDocumentRoute({
   if (!hasLocale(lang)) {
     notFound();
   }
+  const doc = await getCachedLegalDocument(lang, documentKey);
   return (
     <LegalPage
       dict={getDictionary(lang)}
       lang={lang}
       current={documentKey}
-      doc={getLegalDocument(lang, documentKey)}
+      doc={doc}
     />
   );
 }

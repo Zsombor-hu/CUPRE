@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CheckoutForm from "@/components/cupre/checkout-form";
 import { getDictionary } from "@/services/dictionary-service";
-import { getCompanyInfo } from "@/services/company-service";
-import { paymentOptions } from "@/services/payment-service";
-import { shippingOptions } from "@/services/shipping-service";
+import { getCachedCheckoutOptions, getCachedCompanyInfo } from "@/services/cached-data";
 import { hasLocale } from "@/lib/i18n";
 
 // Nyelvfüggő oldalcím; a pénztár nem kerül a keresőkbe
@@ -26,7 +24,8 @@ export default async function CheckoutPage({ params }: PageProps<"/[lang]/penzta
     notFound();
   }
   const dict = getDictionary(lang);
-  const company = getCompanyInfo();
+  const company = await getCachedCompanyInfo();
+  const options = await getCachedCheckoutOptions();
   return (
     <main>
       <section className="checkout-section">
@@ -38,8 +37,8 @@ export default async function CheckoutPage({ params }: PageProps<"/[lang]/penzta
           <CheckoutForm
             settings={{
               liveOrders: company.shop.liveOrders,
-              shippingOptions: shippingOptions(),
-              paymentOptions: paymentOptions(),
+              shippingOptions: options.shippingOptions,
+              paymentOptions: options.paymentOptions,
             }}
           />
         </div>

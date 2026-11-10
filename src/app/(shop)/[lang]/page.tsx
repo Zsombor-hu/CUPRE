@@ -10,8 +10,7 @@ import BrandStory from "@/components/cupre/brand-story";
 import Packaging from "@/components/cupre/packaging";
 import Faq from "@/components/cupre/faq";
 import Newsletter from "@/components/cupre/newsletter";
-import { getFeaturedProduct } from "@/services/product-service";
-import { getFaqItems } from "@/services/faq-service";
+import { getCachedFaqItems, getCachedFeaturedProduct } from "@/services/cached-data";
 import { getDictionary } from "@/services/dictionary-service";
 import { hasLocale } from "@/lib/i18n";
 
@@ -24,18 +23,20 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
     notFound();
   }
   const dict = getDictionary(lang);
+  const featured = await getCachedFeaturedProduct(lang);
+  const faqItems = await getCachedFaqItems(lang);
   return (
     <main>
       <Hero dict={dict} />
       <Benefits dict={dict} />
-      <ProductSection product={getFeaturedProduct(lang)} />
+      <ProductSection product={featured} />
       <GiftBanner dict={dict} />
       <CopperStory dict={dict} />
       <Technology dict={dict} lang={lang} />
       <Care dict={dict} lang={lang} />
       <BrandStory dict={dict} />
       <Packaging dict={dict} />
-      <Faq dict={dict} items={getFaqItems(lang)} />
+      <Faq dict={dict} items={faqItems} />
       <Newsletter dict={dict} lang={lang} />
     </main>
   );

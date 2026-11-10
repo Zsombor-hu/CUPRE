@@ -76,9 +76,11 @@
         <tr><td>Éles</td><td><code>pnpm build</code> + <code>pnpm start</code></td><td>:3002</td><td><code>src/data/production/</code></td></tr>
       </table>
       <div class="note">
-        <strong>Fontos:</strong> a JSON adatfájlok tartalma a teszt és az éles környezetben a <em>build</em> során kerül
-        az oldalakba. Ha módosítja a termékeket, a GYIK-et vagy a cégadatokat, utána újra kell buildelni
-        (<code>pnpm build</code>) és újraindítani. Fejlesztési módban a változás azonnal látszik.
+        <strong>Fontos:</strong> a termékek, a GYIK és a cégadatok (<code>products.json</code>, <code>faq.json</code>,
+        <code>company.json</code>) módosítása teszt és éles környezetben <em>újrabuild és újraindítás nélkül</em> érvényesül:
+        a változás a fájl mentése után kb. fél percen belül (1–2 oldalbetöltés után) megjelenik. A rendelésnél az árat és a
+        díjakat a szerver mindig az aktuális fájlból számolja. Újrabuild csak a felületi szövegek
+        (<code>src/data/i18n/</code>) és a jogi szövegek (<code>src/data/legal/</code>) módosításához kell.
       </div>
       <h3>Környezeti változók</h3>
       <table>
@@ -144,16 +146,16 @@
         <tr><th style="width:30%">Oldal</th><th>Cím</th></tr>
         <tr><td>Rendelések</td><td><code>/admin/rendelesek</code></td></tr>
         <tr><td>Kuponok</td><td><code>/admin/kuponok</code></td></tr>
-        <tr><td>Hírlevél-feliratkozók</td><td><code>/admin/hirlevel</code> – itt van a belépő űrlap is</td></tr>
+        <tr><td>Hírlevél-feliratkozók</td><td><code>/admin/hirlevel</code></td></tr>
       </table>
-      <p><strong>Belépés:</strong> nyissa meg a <code>/admin/hirlevel</code> oldalt, és adja meg az <code>ADMIN_PASSWORD</code> jelszót. A munkamenet 8 óráig érvényes. Túl sok hibás próbálkozás után néhány percig nem lehet belépni.</p>
+      <p><strong>Belépés:</strong> nyissa meg a <code>/admin</code> oldalt (ez a belépő oldal), és adja meg az <code>ADMIN_PASSWORD</code> jelszót. A munkamenet 8 óráig érvényes. Túl sok hibás próbálkozás után néhány percig nem lehet belépni.</p>
       <div class="note warn">Az admin jelszót ne ossza meg e-mailben; éles környezetben a szerver környezeti változójában tárolja.</div>
     </section>
 
     <section id="rendelesek">
       <h2>7. Rendelések kezelése</h2>
       <h3>Lista</h3>
-      <p>A felső fülekkel állapot szerint szűrhet (darabszámmal), a keresőmezőben rendelésszámra, névre vagy e-mail címre kereshet. A <strong>CSV letöltése</strong> az éppen beállított szűrővel exportál.</p>
+      <p>A felső fülekkel állapot szerint szűrhet (darabszámmal), a keresőmezőben rendelésszámra, névre vagy e-mail címre kereshet. A <strong>CSV letöltése</strong> és az <strong>Excel letöltése</strong> gomb az éppen beállított szűrővel exportál (az Excel .xlsx fájl fejléccel, szűrővel).</p>
       <h3>Rendelés részletei</h3>
       <p>Egy sorra kattintva megnyílnak a részletek: vásárló, tételek, szállítás (átvételi ponttal), fizetés (mód, állapot, Barion azonosító, kupon), valamint az állapot- és fizetési napló.</p>
       <h3>Rendelésállapotok</h3>
@@ -197,7 +199,7 @@
         <img src="img/hirlevel.png" alt="Hírlevél-feliratkozás" />
         <figcaption>Hírlevél-feliratkozás kifejezett hozzájárulással.</figcaption>
       </figure>
-      <p>Az admin oldalon látja a feliratkozókat állapot szerint (Aktív / Megerősítésre vár / Leiratkozott), törölhet, és CSV-t tölthet le a hírlevélküldő szolgáltatóba (alapértelmezésben csak az aktív címekkel).</p>
+      <p>Az admin oldalon látja a feliratkozókat állapot szerint (Aktív / Megerősítésre vár / Leiratkozott), törölhet, és CSV-t vagy Excel (.xlsx) fájlt tölthet le a hírlevélküldő szolgáltatóba (alapértelmezésben csak az aktív címekkel).</p>
       <div class="note">Hírlevelet csak az „Aktív” (megerősített) címekre küldjön. Ha a vásárló a hírlevélküldő szolgáltatónál iratkozik le, azt itt is jelölje vagy törölje.</div>
     </section>
 
@@ -277,7 +279,7 @@
       <h2>16. Gyakori kérdések, hibaelhárítás</h2>
       <table>
         <tr><th style="width:38%">Jelenség</th><th>Teendő</th></tr>
-        <tr><td>Módosítottam a termékeket, de az oldalon nem látszik.</td><td>Teszt/éles környezetben újra kell buildelni és indítani (<code>pnpm build</code>, <code>pnpm start</code>).</td></tr>
+        <tr><td>Módosítottam a termékeket, de az oldalon nem látszik.</td><td>Várjon kb. fél percet, és töltse újra az oldalt kétszer. Ha így sem változik, ellenőrizze, hogy a megfelelő környezet mappáját szerkesztette-e (<code>src/data/test/</code> vagy <code>production/</code>), és hogy a JSON szintaxisa hibátlan-e.</td></tr>
         <tr><td>A build hibát jelez egy JSON fájlra.</td><td>Hiányzik egy fordítás, duplikált a slug / cikkszám / GYIK-kérdés, vagy hibás a JSON szintaxis. A hibaüzenet megnevezi a fájlt.</td></tr>
         <tr><td>Nem jelenik meg a kártyás fizetés.</td><td>Ellenőrizze a <code>card.enabled</code> értéket, a Barion kulcsokat és a https <code>SITE_URL</code>-t; a <code>mock</code> élesben tiltott.</td></tr>
         <tr><td>Az admin oldal szerint „nincs bekapcsolva”.</td><td>Állítsa be az <code>ADMIN_PASSWORD</code> változót (legalább 12 karakter), majd indítsa újra a szervert.</td></tr>
