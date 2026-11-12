@@ -37,9 +37,11 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/termeke
   if (!product) {
     notFound();
   }
+  // A terméklistára visszavezető link csak több termék esetén értelmes
+  const showBack = (await getCachedProductSlugs()).length > 1;
   return (
     <main>
-      <ProductDetail product={product} />
+      <ProductDetail product={product} showBack={showBack} />
     </main>
   );
 }

@@ -50,12 +50,14 @@ export default async function ShopLayout({ children, params }: LayoutProps<"/[la
   }
   const dict = getDictionary(lang);
   const catalog = await getCachedCatalogVariants(lang);
+  // A „Termékek” menüpont csak akkor kell, ha egynél több termék van
+  const showProductsNav = new Set(catalog.map((variant) => variant.productSlug)).size > 1;
   return (
     <html lang={lang}>
       <body>
         <I18nProvider lang={lang} dict={dict}>
           <ShopProvider catalog={catalog}>
-            <SiteHeader />
+            <SiteHeader showProductsNav={showProductsNav} />
             {children}
             <SiteFooter dict={dict} lang={lang} />
             <CartDrawer />

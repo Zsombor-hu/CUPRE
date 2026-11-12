@@ -87,6 +87,8 @@
     "size": "Größe",
     "grade": "Klasse",
     "sku": "Artikelnummer",
+    "variant": "Variante",
+    "secondGradeNote": "Artikel 2. Wahl können optische bzw. Druckfehler aufweisen; diese betreffen nur das Aussehen, nicht die Funktion.",
     "grades": {
       "first": "1. Wahl",
       "second": "2. Wahl"

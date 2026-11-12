@@ -87,6 +87,8 @@
     "size": "Size",
     "grade": "Grade",
     "sku": "SKU",
+    "variant": "Option",
+    "secondGradeNote": "Second-grade products may show cosmetic or printing imperfections; these affect appearance only and do not impair function.",
     "grades": {
       "first": "First grade",
       "second": "Second grade"

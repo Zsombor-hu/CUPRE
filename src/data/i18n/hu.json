@@ -87,6 +87,8 @@
     "size": "Méret",
     "grade": "Osztály",
     "sku": "Cikkszám",
+    "variant": "Változat",
+    "secondGradeNote": "A másodosztályú termékek optikai, nyomtatási eltérést tartalmazhatnak; ez a minőségben jelent különbséget, a használhatóságot (funkciót) nem érinti.",
     "grades": {
       "first": "I. osztály",
       "second": "II. osztály"

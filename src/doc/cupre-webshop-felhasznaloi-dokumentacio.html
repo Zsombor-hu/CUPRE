@@ -121,13 +121,14 @@
         <tr><td><code>featured</code></td><td><code>true</code>: ez a termék jelenik meg a főoldal „Kiemelt termékünk” blokkjában.</td></tr>
         <tr><td><code>name</code>, <code>subtitle</code>, <code>description</code>, <code>points</code></td><td>Név, alcím, leírás, kiemelt jellemzők (ikon + felirat).</td></tr>
         <tr><td><code>image</code>, <code>imageAlt</code></td><td>Kép a <code>public/images/</code> mappából és a leíró szöveg.</td></tr>
-        <tr><td><code>variants</code></td><td>Megvásárolható változatok: <code>sku</code> (egyedi cikkszám), <code>size</code>, <code>grade</code> (<code>first</code> = I. osztály, <code>second</code> = II. osztály), <code>priceHuf</code> (bruttó), <code>priceNote</code>.</td></tr>
+        <tr><td><code>variants</code></td><td>Megvásárolható változatok: <code>sku</code> (egyedi cikkszám), <code>size</code>, <code>grade</code> (<code>first</code> = I. osztály, <code>second</code> = II. osztály), <code>priceHuf</code> (bruttó), <code>priceNote</code>. A termékoldalon a változatok egyetlen listában választhatók (pl. „100 × 200 cm, I. osztály · 28 900 Ft”). Ha van másodosztályú változat, az oldalon kis betűs tájékoztatás jelenik meg az optikai, nyomtatási eltérések lehetőségéről (a funkciót nem érintik).</td></tr>
         <tr><td><code>productInfo</code></td><td>Kötelező termékadatok: szálösszetétel, kezelés, gyártó, EU-s felelős személy, termékazonosító, biztonsági információk.</td></tr>
       </table>
       <figure>
         <img src="img/termekoldal.png" alt="Termékoldal" />
         <figcaption>A termékoldal: a változatválasztó a <code>variants</code>, az alsó blokk a <code>productInfo</code> mezőből épül.</figcaption>
       </figure>
+      <p><strong>Egy termékkel indulás:</strong> jelenleg a katalógus egyetlen terméket (CUPRÉ Original) tartalmaz, három változattal: 100 × 200 cm I. osztály (28 900 Ft), 100 × 200 cm II. osztály (21 900 Ft) és 150 × 200 cm II. osztály (24 900 Ft). A fejlécben a „Termékek” menüpont, valamint a termékoldalon a „← Összes termék” link csak akkor jelenik meg, ha a <code>products.json</code> egynél több terméket tartalmaz; a <code>/termekek</code> oldal ettől függetlenül megmarad.</p>
       <h3>GYIK (faq.json)</h3>
       <p>Kérdés–válasz párok három nyelven, opcionális hivatkozással. Ismétlődő kérdést a rendszer nem enged (build hiba).</p>
     </section>
@@ -242,7 +243,7 @@
     <section id="vasarlo">
       <h2>13. A vásárló szemével</h2>
       <ol>
-        <li><strong>Termék kiválasztása:</strong> a termékoldalon méret és osztály, majd „Kosárba teszem”. A kosár a böngészőben megmarad.</li>
+        <li><strong>Termék kiválasztása:</strong> a termékoldalon a változat (méret és osztály, árral), majd „Kosárba teszem”. A kosár a böngészőben megmarad.</li>
         <li><strong>Pénztár:</strong> szállítási adatok, szállítási mód (átvételi pont), fizetési mód, opcionális kuponkód, az ÁSZF elfogadása, opcionális hírlevél.</li>
         <li><strong>Fizetés:</strong> kártyánál a Barion oldalán; átutalásnál a megjelenő adatokkal; utánvétnél átvételkor.</li>
         <li><strong>Visszaigazolás:</strong> oldalon és e-mailben, a vásárló nyelvén.</li>

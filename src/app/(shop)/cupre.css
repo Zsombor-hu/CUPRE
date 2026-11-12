@@ -279,3 +279,7 @@ a.icon-button{display:inline-block}
 /* Rézszálas réteg ábra: a kép saját feliratot tartalmaz, ezért teljes magasságban, vágás nélkül jelenik meg. */
 .technology-visual img{height:auto;object-fit:contain}
 @media(max-width:850px){.technology-visual img{height:auto}}
+.product-grade-note{font-size:8px;margin-top:6px}
+/* Oldalváltáskor a Next a main tetejére görget; a ragadós fejléc (78px, mobilon 70px) ne takarja el a tartalom elejét */
+main{scroll-margin-top:78px}
+@media(max-width:850px){main{scroll-margin-top:70px}}

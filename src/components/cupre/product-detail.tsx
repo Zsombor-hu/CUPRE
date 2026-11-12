@@ -6,42 +6,27 @@ import Link from "next/link";
 import { useShop } from "@/hooks/use-shop";
 import { useI18n } from "@/hooks/use-i18n";
 import { formatPrice, localePath } from "@/lib/i18n";
-import type { Product, ProductGrade } from "@/types/product";
+import type { Product } from "@/types/product";
 
-// Az osztályválasztó gombjainak sorrendje
-const GRADES: ProductGrade[] = ["first", "second"];
-
-// Termékoldal: kép, leírás, méret- és osztályválasztó; az ár és a cikkszám a kiválasztott változatot követi
-export default function ProductDetail({ product }: { product: Product }) {
+// Termékoldal: kép, leírás és változatválasztó (méret + osztály egy listában); az ár és a cikkszám a kiválasztott változatot követi.
+// A „vissza a terméklistához” link csak akkor jelenik meg, ha a katalógus több terméket tartalmaz
+export default function ProductDetail({ product, showBack }: { product: Product; showBack: boolean }) {
   const { addToCart } = useShop();
   const { lang, dict } = useI18n();
-  const sizes = [...new Set(product.variants.map((variant) => variant.size))];
-  const [size, setSize] = useState(product.variants[0].size);
-  const [grade, setGrade] = useState<ProductGrade>(product.variants[0].grade);
-
-  const gradesForSize = product.variants.filter((variant) => variant.size === size).map((variant) => variant.grade);
-  const selected =
-    product.variants.find((variant) => variant.size === size && variant.grade === grade) ??
-    product.variants.find((variant) => variant.size === size) ??
-    product.variants[0];
-
-  // Méretváltáskor, ha az adott méretben nincs meg a választott osztály, az első elérhetőre váltunk
-  function selectSize(nextSize: string) {
-    setSize(nextSize);
-    const available = product.variants.filter((variant) => variant.size === nextSize).map((variant) => variant.grade);
-    // A korábbi osztály megtartása, ha ebben a méretben is létezik
-    if (!available.includes(grade)) {
-      setGrade(available[0]);
-    }
-  }
+  const [selectedSku, setSelectedSku] = useState(product.variants[0].sku);
+  const selected = product.variants.find((variant) => variant.sku === selectedSku) ?? product.variants[0];
+  // Másodosztályú változat esetén kis betűs tájékoztatás a lehetséges optikai eltérésekről
+  const hasSecondGrade = product.variants.some((variant) => variant.grade === "second");
 
   return (
     <section className="product-section product-page">
-      <div className="wrap">
-        <Link className="product-back" href={localePath(lang, "/termekek")}>
-          {dict.product.back}
-        </Link>
-      </div>
+      {showBack ? (
+        <div className="wrap">
+          <Link className="product-back" href={localePath(lang, "/termekek")}>
+            {dict.product.back}
+          </Link>
+        </div>
+      ) : null}
       <div className="wrap product-grid">
         <div className="product-photo photo-frame">
           <Image
@@ -69,35 +54,18 @@ export default function ProductDetail({ product }: { product: Product }) {
             ))}
           </div>
           <div className="variant-picker">
-            <div className="variant-group" role="group" aria-label={dict.product.size}>
-              <span className="variant-label">{dict.product.size}</span>
+            <div className="variant-group" role="group" aria-label={dict.product.variant}>
+              <span className="variant-label">{dict.product.variant}</span>
               <div className="variant-options">
-                {sizes.map((option) => (
+                {product.variants.map((variant) => (
                   <button
-                    key={option}
+                    key={variant.sku}
                     type="button"
                     className="variant-option"
-                    aria-pressed={option === size}
-                    onClick={() => selectSize(option)}
+                    aria-pressed={variant.sku === selected.sku}
+                    onClick={() => setSelectedSku(variant.sku)}
                   >
-                    {option}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div className="variant-group" role="group" aria-label={dict.product.grade}>
-              <span className="variant-label">{dict.product.grade}</span>
-              <div className="variant-options">
-                {GRADES.map((option) => (
-                  <button
-                    key={option}
-                    type="button"
-                    className="variant-option"
-                    aria-pressed={option === selected.grade}
-                    disabled={!gradesForSize.includes(option)}
-                    onClick={() => setGrade(option)}
-                  >
-                    {dict.product.grades[option]}
+                    {variant.size}, {dict.product.grades[variant.grade]} · {formatPrice(variant.priceHuf, lang)}
                   </button>
                 ))}
               </div>
@@ -117,6 +85,7 @@ export default function ProductDetail({ product }: { product: Product }) {
           <p className="product-disclaimer">
             {dict.productInfo.grossNote} {product.disclaimer}
           </p>
+          {hasSecondGrade ? <p className="product-disclaimer product-grade-note">{dict.product.secondGradeNote}</p> : null}
         </div>
       </div>
       <div className="wrap">

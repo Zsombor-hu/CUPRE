@@ -20,11 +20,13 @@ function isActive(path: string, basePath: string): boolean {
 }
 
 // Ragadós fejléc: logó, desktop menü, nyelvválasztó, ikon gombok (keresés, fiók, kosár) és a mobil hamburger menü
-export default function SiteHeader() {
+export default function SiteHeader({ showProductsNav }: { showProductsNav: boolean }) {
   const { cartQty, openCart, showToast } = useShop();
   const { lang, dict } = useI18n();
   const [menuOpen, setMenuOpen] = useState(false);
   const basePath = stripLocale(usePathname());
+  // A terméklista menüpontja csak több termék esetén jelenik meg
+  const navItems = MAIN_NAV.filter((item) => showProductsNav || item.path !== "/termekek");
 
   return (
     <header className="header" id="top">
@@ -39,7 +41,7 @@ export default function SiteHeader() {
           </span>
         </Link>
         <nav aria-label={dict.nav.mainMenu} className="desktop-nav">
-          {MAIN_NAV.map((item) => (
+          {navItems.map((item) => (
             <Link
               key={item.path}
               href={localePath(lang, item.path)}
@@ -89,7 +91,7 @@ export default function SiteHeader() {
         </div>
       </div>
       <nav aria-label={dict.nav.mobileMenu} className={menuOpen ? "mobile-nav open" : "mobile-nav"} id="mobileNav">
-        {MAIN_NAV.map((item) => (
+        {navItems.map((item) => (
           <Link key={item.path} href={localePath(lang, item.path)} onClick={() => setMenuOpen(false)}>
             {dict.nav[item.labelKey]}
           </Link>
