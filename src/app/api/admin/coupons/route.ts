@@ -4,7 +4,7 @@ import { formError, okResponse, readJson } from "@/services/api-helpers";
 
 // Admin jogosultság ellenőrzése: letiltott admin → 403, munkamenet nélkül → 401, egyébként null
 async function requireAdmin(): Promise<Response | null> {
-  // Beállított ADMIN_PASSWORD nélkül az admin felület tiltott
+  // Beállított ADMIN_USER_1…5 nélkül az admin felület tiltott
   if (!adminPasswordConfigured()) {
     return formError("unauthorized", 403);
   }

@@ -75,6 +75,7 @@ export type AccountErrorCode =
   | "passwordMismatch"
   | "emailTaken"
   | "invalidCredentials"
+  | "invalidCaptcha"
   | "wrongPassword"
   | "invalidToken"
   | "consentRequired"

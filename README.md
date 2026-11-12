@@ -80,7 +80,7 @@ Egyenként be/kikapcsolható, módonként fix díjjal, környezetenként a `comp
 
 ## Rendeléskezelés (admin)
 
-**`/admin/rendelesek`** (közös admin menü: Rendelések · Kuponok · Hírlevél; belépés `ADMIN_PASSWORD`-del a **`/admin`** oldalon; az admin saját, önálló HeroUI-s root layoutot kap: `src/app/(admin)`):
+**`/admin/rendelesek`** (közös admin menü: Rendelések · Kuponok · Hírlevél; belépés felhasználónévvel, jelszóval és összeadós captchával a **`/admin`** oldalon; az admin saját, önálló HeroUI-s root layoutot kap: `src/app/(admin)`):
 
 - Lista állapot-fülekkel (Beérkezett / Feldolgozás alatt / Feladva / Teljesítve / Lemondva, darabszámmal), keresés rendelésszámra, névre, e-mailre; **CSV export** a szűrőkkel.
 - Részletek: vásárló, tételek, szállítás (átvételi ponttal), fizetés (mód, állapot, azonosító, kupon), állapotnapló és fizetési események.
@@ -91,7 +91,7 @@ Egyenként be/kikapcsolható, módonként fix díjjal, környezetenként a `comp
 ## Kuponok (akciók)
 
 - **Fix összegű** kupon, **érvényességi idővel** (tól–ig, napra pontosan, budapesti idő szerint; üresen hagyva nincs korlát), be/kikapcsolható.
-- Kezelés: **`/admin/kuponok`** (ugyanazzal az `ADMIN_PASSWORD`-del, mint az admin): létrehozás, be/kikapcsolás, törlés, felhasználási számláló. Az adatok a környezet SQLite adatbázisában (`coupons` tábla).
+- Kezelés: **`/admin/kuponok`** (ugyanazzal az felhasználónévvel, jelszóval és összeadós captchával, mint az admin): létrehozás, be/kikapcsolás, törlés, felhasználási számláló. Az adatok a környezet SQLite adatbázisában (`coupons` tábla).
 - Beváltás a pénztár összesítőjében (`/api/coupons/check`, próbálkozás-korláttal); a rendeléskor a szerver **újra ellenőrzi**. A kód kis- és nagybetűtől független.
 - A kedvezmény csak a termékek árából vonódik le, legfeljebb annak összegéig; a szállítási és utánvételi díjat nem érinti. Rendelésenként egy kupon. A rendelés tárolja a kódot és a levont összeget (`coupon_code`, `discount_huf`); a levélben is megjelenik.
 - Barion kártyás fizetésnél kuponos rendelésnél egyetlen összesítő tétel megy át (a tételek összege így biztosan egyezik a végösszeggel).
@@ -127,7 +127,7 @@ Három mód, egyenként be/kikapcsolható környezetenként a `company.json` →
 - **Rendelés és fiók:** belépett ügyfélnél a pénztár előtölti a szállítási adatokat, a rendelés a fiókhoz kötődik. A rendelés a szállítási adatokat pillanatképként is tárolja; egy vendégrendelés egy regisztrált e-mail címmel nem írja felül a fiók profilját.
 - **Hírlevél:** dupla megerősítés (opt-in) – a feliratkozás a levélben lévő linkre kattintva lesz aktív. Feliratkozni a `/hirlevel` oldalon (a főoldali „Értesítést kérek” gomb ide visz), regisztrációkor, a fiókban és a pénztárban lehet. Kiküldés külső szolgáltatóval: az admin oldalról az **aktív** feliratkozók CSV-ben és Excelben (.xlsx) exportálhatók (a rendelések is: `?format=xlsx`).
 - **Fióktörlés:** a fiók, a munkamenetek és a hírlevél-feliratkozás törlődik; a rendelések a számviteli megőrzés miatt megmaradnak (rendelés nélküli ügyfélsor is törlődik).
-- **Admin:** az `ADMIN_PASSWORD` környezeti változóval kapcsol be (legalább 12 karakter), lásd `.env.example`. Fejlesztéshez a `.env.development.local` tartalmaz egy véletlen jelszót (nincs verziókezelésben).
+- **Admin:** az `ADMIN_USER_1`…`ADMIN_USER_5` környezeti változókkal kapcsol be (`felhasználónév:jelszó`, a jelszó legalább 12 karakter; legfeljebb 5 felhasználó), lásd `.env.example`. Fejlesztéshez a `.env.development.local` tartalmaz egy véletlen jelszót (nincs verziókezelésben).
 
 ## Jogi oldalak
 
@@ -167,7 +167,7 @@ A `products.json`, `faq.json` és `company.json` módosítása **build és újra
 - Visszaigazoló e-mail: a `sendMail` cseréje valódi küldésre (SMTP vagy e-mail API), `SITE_URL` környezeti változó beállítása a levél linkjeihez.
 - Számlázás (pl. Számlázz.hu / Billingo bekötés) és visszatérítés (Barion refund) – még nincs.
 - Cookie-hozzájárulás: most nem kell (csak a működéshez szükséges kosártárolás van); analitika/marketing bekötésekor kötelező.
-- `ADMIN_PASSWORD` és `SITE_URL` beállítása a test és production szerveren (a `SITE_URL` https-sel biztonságos sütiket is bekapcsol).
+- `ADMIN_USER_1…5` és `SITE_URL` beállítása a test és production szerveren (a `SITE_URL` https-sel biztonságos sütiket is bekapcsol).
 - Hírlevélküldő szolgáltató (pl. Brevo, Mailchimp) kiválasztása; a leiratkozások szinkronizálása vele (most CSV-export van).
 - A regisztrációkor megadott e-mail címet a rendszer nem ellenőrzi külön levéllel (a hírlevélnél van megerősítés).
 - Fizetés: Barion szerződés és fiók; sandbox kulcsokkal végigpróbálni (a valódi Barion hívás még nincs tesztelve, csak a teszt-szolgáltató); a Barion által előírt logó-megjelenítés és a **Barion Pixel** követelményeinek ellenőrzése (süti-hozzájárulás!); a callback paraméter nevének (`paymentId`) egyeztetése a dokumentációval; bankszámlaadatok és utánvételi díj kitöltése; a `payments` kapcsolók beállítása test/production alatt.

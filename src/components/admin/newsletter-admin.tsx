@@ -47,7 +47,7 @@ export default function NewsletterAdmin() {
   const load = useCallback(async () => {
     const query = filter === "all" ? "" : `?status=${filter}`;
     const response = await fetch(`/api/admin/newsletter${query}`, { cache: "no-store" });
-    // 403: nincs ADMIN_PASSWORD beállítva; 401: belépés szükséges
+    // 403: nincs ADMIN_USER_1…5 beállítva; 401: belépés szükséges
     if (response.status === 403) {
       setState({ kind: "disabled" });
       return;
@@ -87,7 +87,7 @@ export default function NewsletterAdmin() {
         <Card.Header>
           <Card.Title>Az admin felület nincs bekapcsolva</Card.Title>
           <Card.Description>
-            Állítsd be az ADMIN_PASSWORD környezeti változót (legalább 12 karakter) a környezet .env fájljában, majd
+            Állítsd be az ADMIN_USER_1…5 környezeti változót (legalább 12 karakter) a környezet .env fájljában, majd
             indítsd újra a szervert.
           </Card.Description>
         </Card.Header>

@@ -30,7 +30,7 @@ export default function SiteHeader() {
     <header className="header" id="top">
       <div className="nav wrap">
         <Link aria-label={dict.nav.homeAria} className="brand" href={localePath(lang, "/#top")}>
-          <Image alt="" src={IMAGES.logo} width={160} height={141} quality={90} preload />
+          <Image alt="" src={IMAGES.logo} width={160} height={150} unoptimized preload />
           <span className="wordmark">CUPRÉ</span>
           <span className="brand-sub">
             {dict.nav.brandSub[0]}

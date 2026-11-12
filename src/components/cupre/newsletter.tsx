@@ -8,7 +8,7 @@ export default function Newsletter({ dict, lang }: { dict: Dictionary; lang: Loc
   return (
     <section className="newsletter">
       <div className="wrap newsletter-inner">
-        <Image alt="" src={IMAGES.logo} width={160} height={141} quality={90} />
+        <Image alt="" src={IMAGES.logo} width={160} height={150} unoptimized />
         <div>
           <h2>{dict.newsletterBand.title}</h2>
           <p>{dict.newsletterBand.text}</p>

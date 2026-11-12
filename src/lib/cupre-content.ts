@@ -21,12 +21,12 @@ export const MAIN_NAV: { path: string; labelKey: keyof Dictionary["nav"] }[] = [
 
 // Képek egységes elérési útjai a public/images mappában (a termékképek útvonala a products.json-ban van)
 export const IMAGES = {
-  logo: "/images/logo-crescent.png",
+  logo: "/images/logo-moon.svg",
   giftBanner: "/images/gift-banner.png",
   storyTexture: "/images/story-texture.webp",
   storyHome: "/images/story-home.webp",
   storyProtection: "/images/story-protection.webp",
-  technology: "/images/technology-detail.webp",
+  technology: "/images/technology-layer.png",
   care: "/images/care-bedroom.webp",
   packaging: "/images/product-cupre-original.webp",
 } as const;

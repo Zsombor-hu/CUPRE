@@ -7,7 +7,7 @@ export default function BrandStory({ dict }: { dict: Dictionary }) {
   return (
     <section className="brand-section" id="marka">
       <div className="wrap brand-panel">
-        <Image alt="" src={IMAGES.logo} width={160} height={141} quality={90} />
+        <Image alt="" src={IMAGES.logo} width={160} height={150} unoptimized />
         <div className="eyebrow light">{dict.brand.eyebrow}</div>
         <h2>
           {dict.brand.title[0]}

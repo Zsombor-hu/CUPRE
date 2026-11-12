@@ -38,13 +38,13 @@ function statusLabel(coupon: Coupon): string {
 const INPUT = "rounded-lg border border-foreground/20 bg-transparent px-3 py-2";
 
 // Kupon admin: új fix összegű kupon létrehozása (érvényesség tól–ig), lista, be/kikapcsolás, törlés.
-// Belépés és jogosultság a hírlevél adminnal közös (ADMIN_PASSWORD).
+// Belépés és jogosultság a hírlevél adminnal közös (ADMIN_USER_1…5).
 export default function CouponAdmin() {
   const [state, setState] = useState<State>({ kind: "loading" });
   const [form, setForm] = useState(EMPTY_FORM);
   const [error, setError] = useState<string | null>(null);
 
-  // Lista betöltése; 403: nincs ADMIN_PASSWORD, 401: belépés szükséges
+  // Lista betöltése; 403: nincs ADMIN_USER_1…5, 401: belépés szükséges
   const load = useCallback(async () => {
     const response = await fetch("/api/admin/coupons", { cache: "no-store" });
     // Letiltott admin felület
@@ -116,7 +116,7 @@ export default function CouponAdmin() {
   }
   // Letiltott admin
   if (state.kind === "disabled") {
-    return <p className="p-6">Az admin felület nincs bekapcsolva (ADMIN_PASSWORD).</p>;
+    return <p className="p-6">Az admin felület nincs bekapcsolva (ADMIN_USER_1…5).</p>;
   }
   // Belépés szükséges: vissza a /admin belépő oldalra
   if (state.kind === "login") {

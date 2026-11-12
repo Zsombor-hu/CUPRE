@@ -256,7 +256,7 @@ export default function OrdersAdmin() {
   }
   const queryString = params.toString();
 
-  // Lista betöltése; 403: nincs ADMIN_PASSWORD, 401: belépés szükséges
+  // Lista betöltése; 403: nincs ADMIN_USER_1…5, 401: belépés szükséges
   const load = useCallback(async () => {
     const response = await fetch(`/api/admin/orders?${queryString}`, { cache: "no-store" });
     // Letiltott admin
@@ -284,7 +284,7 @@ export default function OrdersAdmin() {
   }
   // Letiltott admin
   if (state.kind === "disabled") {
-    return <p className="p-6">Az admin felület nincs bekapcsolva (ADMIN_PASSWORD).</p>;
+    return <p className="p-6">Az admin felület nincs bekapcsolva (ADMIN_USER_1…5).</p>;
   }
   // Belépés szükséges: vissza a /admin belépő oldalra
   if (state.kind === "login") {

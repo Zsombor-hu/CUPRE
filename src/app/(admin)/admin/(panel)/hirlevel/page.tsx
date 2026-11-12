@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-// Belső admin oldal a hírlevél-feliratkozókhoz (ADMIN_PASSWORD-del védett, a tartalmat a kliens tölti be)
+// Belső admin oldal a hírlevél-feliratkozókhoz (admin felhasználóval védett, a tartalmat a kliens tölti be)
 export default function NewsletterAdminPage() {
   return (
     <>

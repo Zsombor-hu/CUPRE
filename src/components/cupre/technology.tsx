@@ -17,7 +17,6 @@ export default function Technology({ dict, lang }: { dict: Dictionary; lang: Loc
             quality={90}
             sizes="(max-width: 850px) 100vw, 45vw"
           />
-          <div className="tech-visual-caption">{dict.technology.caption}</div>
         </div>
         <div className="technology-copy">
           <div className="eyebrow">{dict.technology.eyebrow}</div>

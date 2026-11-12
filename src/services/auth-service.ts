@@ -1,5 +1,5 @@
 import "server-only";
-import { createHash, randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
+import { createHash, createHmac, randomBytes, randomInt, scryptSync, timingSafeEqual } from "node:crypto";
 import { cookies } from "next/headers";
 import { getCustomerDb } from "@/services/customer-db";
 
@@ -128,22 +128,107 @@ export function revokeAccountSessions(accountId: number): void {
   getCustomerDb().prepare("DELETE FROM sessions WHERE kind = 'customer' AND account_id = ?").run(accountId);
 }
 
-// Admin jelszó a környezeti változóból; ha nincs beállítva, az admin felület le van tiltva
-export function adminPasswordConfigured(): boolean {
-  return (process.env.ADMIN_PASSWORD ?? "").length >= 12;
+// Legfeljebb ennyi admin felhasználó léphet be (ADMIN_USER_1 … ADMIN_USER_5)
+export const MAX_ADMIN_USERS = 5;
+
+// Admin jelszó minimális hossza
+const MIN_ADMIN_PASSWORD_LENGTH = 12;
+
+// Admin felhasználó: név és jelszó
+type AdminUser = { name: string; password: string };
+
+// Az admin felhasználók a környezeti változókból: ADMIN_USER_1="név:jelszó" … ADMIN_USER_5; a jelszó legalább 12 karakter
+function adminUsers(): AdminUser[] {
+  const users: AdminUser[] = [];
+  // Az öt lehetséges hely végigolvasása
+  for (let index = 1; index <= MAX_ADMIN_USERS; index += 1) {
+    const raw = process.env[`ADMIN_USER_${index}`] ?? "";
+    const separator = raw.indexOf(":");
+    const name = separator > 0 ? raw.slice(0, separator).trim() : "";
+    const password = separator > 0 ? raw.slice(separator + 1) : "";
+    // Csak teljes, elég hosszú jelszóval megadott felhasználót fogadunk el
+    if (name && password.length >= MIN_ADMIN_PASSWORD_LENGTH) {
+      users.push({ name, password });
+    }
+  }
+  return users;
 }
 
-// Admin belépés: a megadott jelszót állandó idejű összehasonlítással ellenőrizzük
-export async function signInAdmin(plain: string): Promise<boolean> {
-  const expected = process.env.ADMIN_PASSWORD ?? "";
-  // Beállított jelszó nélkül nincs admin belépés
-  if (!adminPasswordConfigured()) {
+// Be van-e állítva legalább egy admin felhasználó; nélkülük az admin felület le van tiltva
+export function adminPasswordConfigured(): boolean {
+  return adminUsers().length > 0;
+}
+
+// Állandó idejű szövegegyezés (hash-eken keresztül, hogy a hossz se szivárogjon)
+function safeEqual(a: string, b: string): boolean {
+  return timingSafeEqual(createHash("sha256").update(a).digest(), createHash("sha256").update(b).digest());
+}
+
+// Captcha aláírásához használt titok: az admin hitelesítő adatokból származik, így nem kell külön beállítani
+function captchaSecret(): string {
+  const material = adminUsers()
+    .map((user) => `${user.name}:${user.password}`)
+    .join("|");
+  return createHash("sha256").update(`cupre-admin-captcha|${material}`).digest("hex");
+}
+
+// Captcha érvényessége
+const CAPTCHA_TTL_MS = 5 * 60 * 1000;
+
+// Már felhasznált captcha azonosítók (egyszeri használat), lejáratukig megőrizve
+const globalForCaptcha = globalThis as typeof globalThis & { cupreUsedCaptchas?: Map<string, number> };
+const usedCaptchas = (globalForCaptcha.cupreUsedCaptchas ??= new Map<string, number>());
+
+// Aláírás a feladvány megoldására: HMAC(titok, azonosító|lejárat|eredmény)
+function captchaSignature(id: string, expires: number, answer: number): string {
+  return createHmac("sha256", captchaSecret()).update(`${id}|${expires}|${answer}`).digest("base64url");
+}
+
+// Új összeadós feladvány: a kérdés két véletlen szám összege; a token a megoldást csak aláírva tartalmazza
+export function createAdminCaptcha(): { question: string; token: string } {
+  const a = randomInt(2, 20);
+  const b = randomInt(2, 20);
+  const id = randomBytes(8).toString("base64url");
+  const expires = Date.now() + CAPTCHA_TTL_MS;
+  return { question: `${a} + ${b}`, token: `${id}.${expires}.${captchaSignature(id, expires, a + b)}` };
+}
+
+// Captcha ellenőrzése: érvényes aláírás, nem járt le, helyes a válasz, és még nem használták fel
+export function verifyAdminCaptcha(token: string, answer: string): boolean {
+  const [id, expiresText, signature] = token.split(".");
+  const expires = Number(expiresText);
+  const value = Number(answer.trim());
+  // Hibás formátumú token vagy válasz
+  if (!id || !signature || !Number.isInteger(expires) || !Number.isInteger(value)) {
     return false;
   }
-  const a = createHash("sha256").update(plain).digest();
-  const b = createHash("sha256").update(expected).digest();
-  // Hibás jelszónál nem jön létre munkamenet
-  if (!timingSafeEqual(a, b)) {
+  const now = Date.now();
+  // Lejárt azonosítók takarítása, hogy a tár ne nőjön korlátlanul
+  for (const [usedId, usedExpires] of usedCaptchas) {
+    if (usedExpires <= now) {
+      usedCaptchas.delete(usedId);
+    }
+  }
+  // Lejárt vagy már felhasznált feladvány
+  if (expires <= now || usedCaptchas.has(id)) {
+    return false;
+  }
+  // A feladványt sikeres és sikertelen próbálkozás után is eldobjuk
+  usedCaptchas.set(id, expires);
+  return safeEqual(signature, captchaSignature(id, expires, value));
+}
+
+// Admin belépés: felhasználónév + jelszó; minden felhasználót végigellenőrzünk, hogy a válaszidő ne áruljon el semmit
+export async function signInAdmin(name: string, plain: string): Promise<boolean> {
+  let matched = false;
+  // Mindkét adatot állandó idejű összehasonlítással vetjük össze
+  for (const user of adminUsers()) {
+    const nameOk = safeEqual(user.name.toLowerCase(), name.trim().toLowerCase());
+    const passwordOk = safeEqual(user.password, plain);
+    matched = (nameOk && passwordOk) || matched;
+  }
+  // Hibás adatoknál nem jön létre munkamenet
+  if (!matched) {
     return false;
   }
   await startSession("admin", null);
