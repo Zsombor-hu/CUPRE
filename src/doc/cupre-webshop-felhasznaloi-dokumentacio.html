@@ -13,8 +13,8 @@
         <div class="eyebrow">CUPRÉ webshop</div>
         <h1>Felhasználói<br /><em>dokumentáció</em></h1>
         <p>
-          Kézikönyv a webáruház üzemeltetéséhez: beállítások, termékek, rendelések, kuponok, hírlevél, fizetés,
-          szállítás és a vásárlói folyamat.
+          Kézikönyv a webáruház üzemeltetéséhez: beállítások, termékek és készlet, rendelések, számlázás, vásárlók, kuponok,
+          hírlevél, fizetés, szállítás és a vásárlói folyamat.
         </p>
         <p class="meta">Változat: 2026. november · a fejlesztési állapotot írja le</p>
       </div>
@@ -34,6 +34,9 @@
         <li><a href="#nyelvek">Nyelvek és szövegek</a></li>
         <li><a href="#admin">Admin felület</a></li>
         <li><a href="#rendelesek">Rendelések kezelése</a></li>
+        <li><a href="#keszlet">Termékek és készlet (admin)</a></li>
+        <li><a href="#szamlazas">Számlázás</a></li>
+        <li><a href="#vasarlok">Vásárlók (admin)</a></li>
         <li><a href="#kuponok">Kuponok</a></li>
         <li><a href="#hirlevel">Hírlevél</a></li>
         <li><a href="#fizetes">Fizetési módok</a></li>
@@ -42,6 +45,7 @@
         <li><a href="#vasarlo">A vásárló szemével</a></li>
         <li><a href="#jogi">Jogi oldalak</a></li>
         <li><a href="#mentes">Adatok, mentés, biztonság</a></li>
+        <li><a href="#naplo">Admin napló</a></li>
         <li><a href="#hibak">Gyakori kérdések, hibaelhárítás</a></li>
         <li><a href="#eles">Élesítési ellenőrzőlista</a></li>
       </ol>
@@ -129,6 +133,7 @@
         <figcaption>A termékoldal: a változatválasztó a <code>variants</code>, az alsó blokk a <code>productInfo</code> mezőből épül.</figcaption>
       </figure>
       <p><strong>Egy termékkel indulás:</strong> jelenleg a katalógus egyetlen terméket (CUPRÉ Original) tartalmaz, három változattal: 100 × 200 cm I. osztály (28 900 Ft), 100 × 200 cm II. osztály (21 900 Ft) és 150 × 200 cm II. osztály (24 900 Ft). A fejlécben a „Termékek” menüpont, valamint a termékoldalon a „← Összes termék” link csak akkor jelenik meg, ha a <code>products.json</code> egynél több terméket tartalmaz; a <code>/termekek</code> oldal ettől függetlenül megmarad.</p>
+      <div class="note">Az <strong>árat</strong>, a termék és a változatok <strong>bekapcsolását</strong>, a <strong>kiemelést</strong> és a <strong>készletet</strong> az admin <strong>Termékek és készlet</strong> oldalán (<code>/admin/termekek</code>) is módosíthatja, build és fájlszerkesztés nélkül. Ez az érték felülírja a <code>products.json</code> megfelelő mezőjét (a <code>priceHuf</code>, a <code>featured</code>); a leírások, képek és fordítások továbbra is a fájlban vannak. A részleteket a 7/A. fejezet tartalmazza.</div>
       <h3>GYIK (faq.json)</h3>
       <p>Kérdés–válasz párok három nyelven, opcionális hivatkozással. Ismétlődő kérdést a rendszer nem enged (build hiba).</p>
     </section>
@@ -145,11 +150,27 @@
       <p>Az admin oldalak a bal felső sarokban lévő <strong>hamburger gombbal</strong> (☰) nyitható, balról becsúszó menüből érhetők el; a menü alján látszik a belépett felhasználó neve és a <strong>Kilépés</strong> gomb.</p>
       <table>
         <tr><th style="width:30%">Oldal</th><th>Cím</th></tr>
+        <tr><td>Áttekintés (belépés után ez nyílik meg)</td><td><code>/admin/attekintes</code></td></tr>
         <tr><td>Rendelések</td><td><code>/admin/rendelesek</code></td></tr>
+        <tr><td>Termékek és készlet</td><td><code>/admin/termekek</code></td></tr>
+        <tr><td>Vásárlók</td><td><code>/admin/vasarlok</code></td></tr>
         <tr><td>Kuponok</td><td><code>/admin/kuponok</code></td></tr>
         <tr><td>Hírlevél-feliratkozók</td><td><code>/admin/hirlevel</code></td></tr>
+        <tr><td>Napló</td><td><code>/admin/naplo</code></td></tr>
         <tr><td>Beállítások</td><td><code>/admin/beallitasok</code></td></tr>
       </table>
+      <h3>Áttekintés</h3>
+      <p>Belépés után az <strong>Áttekintés</strong> oldal nyílik meg; az adatai percenként frissülnek, és a <strong>Frissítés</strong> gombbal azonnal is.</p>
+      <ul>
+        <li><strong>Bevétel:</strong> a mai nap, az utolsó 7 és az utolsó 30 nap összege és rendelésszáma. A bevétel a <em>nem lemondott</em> rendelések végösszege (szállítási és utánvételi díjjal), budapesti idő szerint.</li>
+        <li><strong>Teendők:</strong> új rendelések, feldolgozás alatt lévők, átutalásra váró és utánvétes rendelések (összeggel), a „fizetve, de nincs számla” rendelések és az alacsony készletű változatok száma. Mindegyik sorra kattintva a megfelelően szűrt lista nyílik meg.</li>
+        <li><strong>Napi bevétel grafikon</strong> az utolsó 30 napról (az oszlop fölé állva a nap összege és rendelésszáma látszik).</li>
+        <li><strong>Legkelendőbb változatok</strong> (30 nap), <strong>alacsony készlet</strong> és a <strong>legutóbbi rendelések</strong>.</li>
+      </ul>
+      <h3>Visszajelzések</h3>
+      <p>A műveletek eredményéről a jobb alsó sarokban megjelenő <strong>értesítések</strong> (zöld: siker, piros: hiba) tájékoztatnak. A végleges vagy következményekkel járó műveletek (törlés, lemondás, számlakiállítás, fiók letiltása, anonimizálás) előtt <strong>megerősítő ablak</strong> kérdez rá; a <strong>Mégsem</strong> gombbal, az Esc billentyűvel vagy az ablakon kívülre kattintva elvethető.</p>
+      <h3>Másolás és gyors elérés</h3>
+      <p>A vásárló e-mail címe, telefonszáma és címe mellett <strong>másolás gomb</strong> van (a vágólapra másol, és értesítést ad); az e-mail cím <code>mailto:</code>, a telefonszám <code>tel:</code> hivatkozás, így a kattintás a levelezőt vagy a hívást indítja.</p>
       <p><strong>Belépés:</strong> nyissa meg a <code>/admin</code> oldalt (ez a belépő oldal), adja meg a felhasználónevét és jelszavát (az <code>ADMIN_USER_1…5</code> változók egyike), valamint válaszolja meg az ellenőrző kérdést (egyszerű összeadás). A munkamenet 8 óráig érvényes. Túl sok hibás próbálkozás után néhány percig nem lehet belépni. A belépő oldalon a jobb felső sarokban a nyelv és a téma is választható.</p>
       <div class="note warn">Az admin jelszót ne ossza meg e-mailben; éles környezetben a szerver környezeti változójában tárolja. Minden kezelő kapjon saját felhasználót, így a beállításai is külön mentődnek.</div>
       <h3>Beállítások (felhasználónként)</h3>
@@ -173,17 +194,17 @@
     <section id="rendelesek">
       <h2>7. Rendelések kezelése</h2>
       <h3>Lista</h3>
-      <p>A felső szűrőgombokkal állapot szerint szűrhet (darabszámmal; a kiválasztott gomb kiemelt színű), a keresőmezőben rendelésszámra, névre vagy e-mail címre kereshet. A <strong>CSV letöltése</strong> és az <strong>Excel letöltése</strong> gomb az éppen beállított szűrővel exportál (az Excel .xlsx fájl fejléccel, szűrővel). A lista alapértelmezésben a legújabb rendeléssel kezdődik; bármely oszlop szerint rendezhető (lásd 6. fejezet, Táblázatok). A lista a legutóbbi 500 rendelést tartalmazza.</p>
+      <p>A felső szűrőgombokkal állapot szerint szűrhet (darabszámmal; a kiválasztott gomb kiemelt színű), a keresőmezőben rendelésszámra, névre, e-mail címre, csomagkövetési vagy számlaszámra kereshet. A szűrők (állapot, fizetési állapot, „fizetve, számla nélkül”, keresőszó) a címsorban is megjelennek, ezért az oldal hivatkozása elmenthető és megosztható; a szűrő a címke melletti ✕-szel törölhető. A <strong>CSV letöltése</strong> és az <strong>Excel letöltése</strong> gomb az éppen beállított szűrővel exportál (az Excel .xlsx fájl fejléccel, szűrővel). A lista alapértelmezésben a legújabb rendeléssel kezdődik; bármely oszlop szerint rendezhető (lásd 6. fejezet, Táblázatok). A lista a legutóbbi 500 rendelést tartalmazza. Az utolsó oszlopban a <strong>Következő lépés</strong> gomb áll: egy kattintással a szokásos sorrend szerinti következő állapotba teszi a rendelést (Beérkezett → Feldolgozás → Feladva → Teljesítve). A feladáshoz csomagkövetési szám is tartozik, ezért ott a gomb a rendelés részleteit nyitja meg.</p>
       <h3>Rendelés részletei</h3>
-      <p>Egy sorra (mobilon kártyára) kattintva a részletek <strong>felugró ablakban</strong> nyílnak meg: vásárló, tételek, szállítás (átvételi ponttal), fizetés (mód, állapot, Barion azonosító, kupon), valamint az állapot- és fizetési napló. Itt módosíthatja az állapotot és rögzítheti a fizetés beérkezését. Az ablak a jobb felső X-szel, az Esc billentyűvel vagy az ablakon kívülre kattintva zárható.</p>
+      <p>Egy sorra (mobilon kártyára) kattintva a részletek <strong>felugró ablakban</strong> nyílnak meg: vásárló (másolás gombokkal és a vásárló adatlapjára mutató hivatkozással), szállítás (átvételi ponttal), fizetés (mód, állapot, Barion azonosító, kupon), csomagkövetés, számla, tételek, belső megjegyzés és az <strong>előzmények</strong>: időrendben az állapotváltások, fizetési események és admin műveletek, a módosítást végző admin nevével. Itt módosíthatja az állapotot, rögzítheti a fizetés beérkezését, a követési számot és a számlát. Az ablak a jobb felső X-szel, az Esc billentyűvel vagy az ablakon kívülre kattintva zárható.</p>
       <h3>Rendelésállapotok</h3>
       <table>
         <tr><th style="width:22%">Állapot</th><th>Mikor használja</th></tr>
         <tr><td>Beérkezett</td><td>Új rendelés (automatikus).</td></tr>
         <tr><td>Feldolgozás alatt</td><td>Összekészítés alatt.</td></tr>
-        <tr><td>Feladva</td><td>Átadta a futárnak / automatába. <strong>A vásárló értesítő levelet kap</strong>; a megjegyzés mezőbe írt szöveg (pl. csomagkövetési szám) a levélben is megjelenik.</td></tr>
+        <tr><td>Feladva</td><td>Átadta a futárnak / automatába. <strong>A vásárló értesítő levelet kap</strong>, benne a csomagkövetési számmal (és követési linkkel); a megjegyzés mezőbe írt szöveg is megjelenik a levélben.</td></tr>
         <tr><td>Teljesítve</td><td>A vásárló átvette.</td></tr>
-        <tr><td>Lemondva</td><td>Elállás vagy lemondás. (A visszatérítést jelenleg kézzel kell intézni.)</td></tr>
+        <tr><td>Lemondva</td><td>Elállás vagy lemondás. A rendelés által <strong>lefoglalt készlet visszakerül</strong>. A vásárló nem kap automatikus levelet, és a visszatérítést jelenleg kézzel kell intézni. Lemondás előtt megerősítést kér a rendszer; a lemondott rendelés visszaállításakor a készlet újra levonódik.</td></tr>
       </table>
       <h3>Fizetés beérkezett</h3>
       <p>Átutalásos és utánvétes rendelésnél a <strong>Fizetés beérkezett</strong> gombbal rögzíti a beérkezést; a vásárló értesítést kap. Kártyás fizetésnél ez nem szükséges és nem is lehetséges – az állapotot a Barion adja.</p>
@@ -195,6 +216,53 @@
         <tr><td>fizetve</td><td>Kifizetett rendelés.</td></tr>
         <tr><td>sikertelen / megszakítva / lejárt</td><td>A kártyás fizetés nem sikerült; a vásárló az eredményoldalról újrapróbálhatja.</td></tr>
       </table>
+      <h3>Csomagkövetési szám</h3>
+      <p>A részletek <strong>Csomagkövetés</strong> blokkjában külön mezőben rögzíthető a szám (feladáskor ugyanott, a „Feladás” gomb mellett is megadható). A szám bekerül a vásárló értesítő levelébe; a Foxpost és az MPL PostaPont szállításnál a levél és az admin felület <strong>követési hivatkozást</strong> is ad. Más címet a <code>company.json</code> szállítási módjánál a <code>trackingUrl</code> mezővel lehet beállítani (a <code>{code}</code> helyére kerül a követési szám).</p>
+      <h3>Belső megjegyzés</h3>
+      <p>A <strong>Belső megjegyzés</strong> mező szövegét csak az adminok látják, a vásárló semmilyen levélben vagy oldalon nem. Állapotváltástól független, bármikor menthető (pl. „telefonon egyeztetett átvétel”).</p>
+    </section>
+
+    <section id="keszlet">
+      <h2>7/A. Termékek és készlet (admin)</h2>
+      <p>A <code>/admin/termekek</code> oldalon termékenként és változatonként állítható, ami a mindennapi üzemeltetéshez kell. A változtatás <strong>legfeljebb fél percen belül</strong> megjelenik a webshopban, nincs szükség build-re vagy fájlszerkesztésre.</p>
+      <table>
+        <tr><th style="width:26%">Mező</th><th>Jelentés</th></tr>
+        <tr><td>Ár (Ft)</td><td>Felülírja a <code>products.json</code> árát. Üresen hagyva az alapár érvényes (az oldal az alapárat is mutatja). Pozitív egész forint lehet.</td></tr>
+        <tr><td>Készlet (db)</td><td>Üresen hagyva <strong>nincs nyilvántartás</strong>, a változat korlátlanul rendelhető. Ha szám áll benne, a rendszer követi: rendeléskor csökken, lemondáskor visszanő. A <strong>+1</strong> és <strong>+10</strong> gomb az áru beérkezését könnyíti meg. A készlet a Mentés gombbal rögzül.</td></tr>
+        <tr><td>Bekapcsolás / kikapcsolás</td><td>A kikapcsolt változat vagy termék nem jelenik meg a webshopban és nem rendelhető. Legalább egy rendelhető terméknek és változatnak mindig maradnia kell.</td></tr>
+        <tr><td>Kiemelés a főoldalon</td><td>Egyszerre egy termék lehet kiemelt; egy másik kiemelése leveszi az előzőét.</td></tr>
+      </table>
+      <p><strong>Elfogyott jelzés:</strong> 0 darabos készletnél a változat a webshopban „Elfogyott” felirattal jelenik meg, a kosárba tétel gombja le van tiltva, és a pénztár sem fogadja el. Ha két vásárló egyszerre rendeli az utolsó darabot, a második a rendelés mentésekor „elfogyott” hibaüzenetet kap, és nem jön létre rendelés. A Teendők között és az Áttekintésen <strong>3 darab vagy kevesebb</strong> készletnél alacsony készlet figyelmeztetés látszik.</p>
+      <div class="note">A készlet csak a nyilvántartott változatoknál módosul. Ha egy meglévő rendelés után kezdi el nyilvántartani a készletet, a korábbi rendelések nem vonnak le belőle.</div>
+    </section>
+
+    <section id="szamlazas">
+      <h2>7/B. Számlázás</h2>
+      <p>A rendelés részleteinek <strong>Számla</strong> blokkja két módon használható:</p>
+      <ul>
+        <li><strong>Automatikus kiállítás Számlázz.hu-val:</strong> ha a szerveren be van állítva a <code>SZAMLAZZ_AGENT_KEY</code> (a Számlázz.hu fiók Számla Agent kulcsa), a <strong>Számla kiállítása</strong> gomb elkészíti a számlát a rendelés tételeiből (kuponkedvezmény, szállítási és utánvételi díj külön tételként), rögzíti a számlaszámot, és – ha a PDF megérkezik – eltárolja. A <strong>Számla PDF</strong> gombbal bármikor megnyitható. A vásárlónak a Számlázz.hu küldi el e-mailben (ez a <code>SZAMLAZZ_SEND_EMAIL=false</code> értékkel kikapcsolható).</li>
+        <li><strong>Máshol kiállított számla rögzítése:</strong> kulcs nélkül, vagy ha a számlát a számlázó felületén készítette, a számla száma kézzel beírható. A webshop ezt csak nyilvántartja.</li>
+      </ul>
+      <table>
+        <tr><th style="width:34%">Környezeti változó</th><th>Jelentés</th></tr>
+        <tr><td><code>SZAMLAZZ_AGENT_KEY</code></td><td>Számla Agent kulcs. Fejlesztéshez a <code>mock</code> érték teszt-számlaszámot ad PDF nélkül; élesben nem használható.</td></tr>
+        <tr><td><code>SZAMLAZZ_VAT_RATE</code></td><td>ÁFA-kulcs a Számlázz.hu jelölésével: <code>27</code> (alapértelmezés), <code>18</code>, <code>5</code>, <code>0</code> vagy pl. <code>AAM</code> (alanyi adómentes).</td></tr>
+        <tr><td><code>SZAMLAZZ_PREFIX</code></td><td>Opcionális, a Számlázz.hu fiókban előre felvett számlaszám-előtag.</td></tr>
+        <tr><td><code>SZAMLAZZ_SEND_EMAIL</code></td><td><code>true</code> (alapértelmezés) vagy <code>false</code>: a Számlázz.hu küldje-e a számlát a vásárlónak.</td></tr>
+      </table>
+      <div class="warn note">Egy rendeléshez egy számla tartozik, a lemondott rendelésről nem állítható ki számla. A <strong>kiállított számlát a webshopban nem lehet érvényteleníteni</strong>: ahhoz sztornó számla kell a Számlázz.hu felületén. A „Számlaszám törlése” gomb csak a webshopban tárolt számot törli. Az automatikus számlázást élesítés előtt Számlázz.hu teszt-fiókkal próbálja ki, és ellenőrizze az ÁFA-kulcsot.</div>
+      <p>Az Áttekintésen a Teendők között látszik a <strong>„Fizetve, de nincs számla”</strong> rendelések száma; erre kattintva a lista megfelelően szűrve nyílik meg.</p>
+    </section>
+
+    <section id="vasarlok">
+      <h2>7/C. Vásárlók (admin)</h2>
+      <p>A <code>/admin/vasarlok</code> oldalon a vásárlók listája látható (név, e-mail, telefon, település, fiók állapota, rendelések száma, összes vásárlás, utolsó rendelés), név, e-mail, telefonszám vagy település szerint kereshető és bármely oszlop szerint rendezhető. Egy sorra kattintva az adatlap nyílik meg: elérhetőség (másolás gombokkal), hírlevél-állapot, az összes rendelés (kattintásra a rendelés részletei nyílnak meg) és a műveletek.</p>
+      <table>
+        <tr><th style="width:26%">Művelet</th><th>Mit tesz</th></tr>
+        <tr><td>Fiók letiltása / engedélyezése</td><td>Letiltáskor a vásárló minden munkamenete megszűnik, és nem tud belépni („ez a fiók le van tiltva” üzenetet kap), amíg újra nem engedélyezi. <strong>Vendégként továbbra is rendelhet.</strong> Csak regisztrált vásárlónál érhető el.</td></tr>
+        <tr><td>Személyes adatok törlése (GDPR)</td><td><strong>Végleges anonimizálás:</strong> a név, e-mail, telefon és cím törlődik a vásárlóról és a rendelésein; a fiók és a hírlevél-feliratkozás megszűnik. A rendelések összege és tételei (számviteli adat) megmaradnak. <strong>Nem vonható vissza.</strong> Ha a vásárlónak kiállított számlája van, a megerősítő ablak külön figyelmeztet: a számlák adatait a számlázóban a törvényi megőrzési ideig (8 év) meg kell tartani.</td></tr>
+      </table>
+      <p>A vásárló a fiókját továbbra is maga is törölheti (lásd 15. fejezet).</p>
     </section>
 
     <section id="kuponok">
@@ -207,7 +275,7 @@
         <tr><td>Érvényes ettől / eddig</td><td>Napra pontos, budapesti idő szerint; a kezdő és a záró nap is beleszámít. Üresen hagyva nincs korlát.</td></tr>
         <tr><td>Megjegyzés</td><td>Belső megjegyzés (pl. kampány neve).</td></tr>
       </table>
-      <p>A listában látja a kupon állapotát (Érvényes / Még nem érvényes / Lejárt / Kikapcsolva) és azt, hányszor használták. Egy rendeléshez egy kupon használható; a rendeléskor a rendszer újra ellenőrzi.</p>
+      <p>A listában látja a kupon állapotát (Érvényes / Még nem érvényes / Lejárt / Kikapcsolva) és azt, hányszor használták. Egy rendeléshez egy kupon használható; a rendeléskor a rendszer újra ellenőrzi. A kupon létrehozása, módosítása és törlése bekerül az admin naplóba.</p>
     </section>
 
     <section id="hirlevel">
@@ -250,7 +318,7 @@
         <tr><th style="width:34%">Levél</th><th>Mikor megy ki</th></tr>
         <tr><td>Rendelés visszaigazolása</td><td>Minden rendeléskor (tételek, szállítás, fizetési teendők, ÁSZF-link).</td></tr>
         <tr><td>Fizetés beérkezett</td><td>Sikeres kártyás fizetés után, illetve amikor az admin rögzíti a beérkezést.</td></tr>
-        <tr><td>Csomag feladva</td><td>Amikor az admin „Feladva” állapotba teszi a rendelést.</td></tr>
+        <tr><td>Csomag feladva</td><td>Amikor az admin „Feladva” állapotba teszi a rendelést (csomagkövetési számmal és – ha van – követési hivatkozással).</td></tr>
         <tr><td>Hírlevél megerősítése</td><td>Feliratkozáskor.</td></tr>
         <tr><td>Jelszó-visszaállítás</td><td>Az „Elfelejtett jelszó” kérésre (1 óráig érvényes link).</td></tr>
       </table>
@@ -286,11 +354,31 @@
     <section id="mentes">
       <h2>15. Adatok, mentés, biztonság</h2>
       <ul>
-        <li><strong>Mentés:</strong> rendszeresen mentse a <code>src/data/production/customers.sqlite</code> fájlt (és a <code>company.json</code>, <code>products.json</code> fájlokat). Az adatbázis egyetlen fájl – a mentés egyszerű másolás (leállított szervernél, vagy az SQLite <code>.backup</code> paranccsal).</li>
-        <li><strong>Személyes adatok:</strong> az adatbázis és az <code>outbox</code> mappa személyes adatot tartalmaz, ezért nem kerül verziókezelésbe.</li>
-        <li><strong>Fióktörlés:</strong> a vásárló maga törölheti a fiókját; a rendelések a számviteli megőrzés miatt megmaradnak.</li>
+        <li><strong>Automatikus mentés:</strong> a szerver naponta (alapértelmezésben 24 óránként) konzisztens pillanatképet készít az adatbázisról a <code>src/data/&lt;környezet&gt;/backups</code> mappába, és az utolsó 14 automatikus mentést tartja meg. A gyakoriság és a megtartott darabszám a <code>BACKUP_INTERVAL_HOURS</code> és a <code>BACKUP_KEEP</code> környezeti változóval állítható. A szerver indulása után néhány perccel készül az első mentés. A mentés futó szerver mellett is biztonságos.</li>
+        <li><strong>Mentések az adminban:</strong> a <strong>Beállítások</strong> oldal <strong>Adatbázis-mentés</strong> blokkjában látszik az utolsó és a következő mentés ideje, a fájlok száma és mérete. A <strong>Mentés most</strong> gombbal azonnali (kézi) mentés készíthető – a kézi mentéseket a rendszer nem törli automatikusan –, és minden mentés a <strong>Letöltés</strong> hivatkozással letölthető.</li>
+        <li><strong>A mentés a szerveren is csak ugyanazon a gépen van.</strong> A szerver meghibásodása ellen töltsön le rendszeresen egy mentést, és tárolja máshol, biztonságosan: a mentés a teljes vásárlói adatbázist személyes adatokkal tartalmazza. A <code>company.json</code>, <code>products.json</code> és <code>faq.json</code> fájlokat külön kell menteni.</li>
+        <li><strong>Visszaállítás:</strong> a szerver leállítása után a kívánt mentés fájlját a <code>customers.sqlite</code> helyére kell másolni (a régi fájlt előtte őrizze meg), majd újra kell indítani a szervert. A mentés az admin felületen keresztül nem állítható vissza.</li>
+        <li><strong>Személyes adatok:</strong> az adatbázis, a mentések (<code>backups</code>), a kiállított számlák PDF-jei (<code>invoices</code>) és az <code>outbox</code> mappa személyes adatot tartalmaz, ezért nem kerülnek verziókezelésbe.</li>
+        <li><strong>Fióktörlés és anonimizálás:</strong> a vásárló maga törölheti a fiókját; az admin a Vásárlók oldalon letilthatja a fiókot, vagy végleg anonimizálhatja a vásárló adatait (lásd 7/C. fejezet). A rendelések összege és tételei a számviteli megőrzés miatt mindkét esetben megmaradnak.</li>
         <li><strong>Jelszavak:</strong> visszafejthetetlen formában tárolódnak; jelszócsere után minden eszközről kijelentkeztet.</li>
       </ul>
+    </section>
+
+    <section id="naplo">
+      <h2>15/A. Admin napló</h2>
+      <p>A <code>/admin/naplo</code> oldalon látható, hogy <strong>ki, mikor, mit módosított</strong> (a legutóbbi 1000 bejegyzés). A lista admin felhasználóra és szabad szövegre szűrhető, és minden oszlop szerint rendezhető; a rendelésre és vásárlóra mutató elem kattintásra megnyílik.</p>
+      <table>
+        <tr><th style="width:34%">Naplózott művelet</th><th>Mit rögzít</th></tr>
+        <tr><td>Rendelés állapota</td><td>Honnan hová (és a megjegyzés).</td></tr>
+        <tr><td>Fizetés beérkezett, csomagkövetési szám, belső megjegyzés, számla</td><td>A művelet ténye (a számlánál a számlaszám, a követésnél a szám; a belső megjegyzés szövege nem, csak a hossza).</td></tr>
+        <tr><td>Kupon létrehozása, módosítása, törlése</td><td>A kupon adatai (módosításnál előtte és utána).</td></tr>
+        <tr><td>Termék és változat módosítása</td><td>A megváltozott mezők előtte → utána (ár, készlet, aktív, kiemelt).</td></tr>
+        <tr><td>Fiók letiltása / engedélyezése, anonimizálás</td><td>A vásárló azonosítója – személyes adat nem kerül a naplóba.</td></tr>
+        <tr><td>Hírlevél-feliratkozó törlése</td><td>A feliratkozó azonosítója (az e-mail cím nem).</td></tr>
+        <tr><td>Adatbázis-mentés készítése, letöltése</td><td>A mentés fájlneve.</td></tr>
+      </table>
+      <p>A rendelés részleteinek előzményei között a rendeléshez tartozó bejegyzések is megjelennek. A naplóból bejegyzés nem törölhető, és az admin felületen nem szerkeszthető. Az admin felhasználót a belépéskor megadott név azonosítja, ezért érdemes kezelőnként külön felhasználót használni.</p>
+      <div class="note">A naplózás a bevezetése után történt módosításokat rögzíti; a korábbi állapotváltásoknál az admin neve nem ismert, ezért ott nem látszik.</div>
     </section>
 
     <section id="hibak">
@@ -303,6 +391,10 @@
         <tr><td>Az admin oldal szerint „nincs bekapcsolva”.</td><td>Állítson be legalább egy <code>ADMIN_USER_1</code> változót <code>felhasználónév:jelszó</code> formában (a jelszó legalább 12 karakter), majd indítsa újra a szervert.</td></tr>
         <tr><td>Az admin más nyelven vagy témával jelenik meg, mint szeretném.</td><td>Menü → Beállítások. A beállítások felhasználónként mentődnek; a belépő oldalon az utoljára használt nyelv látszik.</td></tr>
         <tr><td>A vásárló nem kapott levelet.</td><td>Az e-mail-küldés még nincs bekötve; a levél az <code>outbox</code> mappában található.</td></tr>
+        <tr><td>Egy változat „Elfogyott”, pedig van belőle.</td><td>Admin → Termékek és készlet: nézze meg a készlet értékét. 0 vagy kisebb szám esetén a változat nem rendelhető; üresen hagyva nincs nyilvántartás. A változás fél percen belül jelenik meg a webshopban.</td></tr>
+        <tr><td>Nem tudok számlát kiállítani.</td><td>Ellenőrizze a <code>SZAMLAZZ_AGENT_KEY</code> beállítását (kulcs nélkül csak a számlaszám kézi rögzítése lehetséges). Szolgáltatói hibánál a hibaüzenet a Számlázz.hu válaszát idézi; lemondott rendelésről és kétszer ugyanarról a rendelésről nem állítható ki számla.</td></tr>
+        <tr><td>A vásárló nem tud belépni, pedig jó a jelszava.</td><td>Admin → Vásárlók: lehet, hogy a fiókot letiltották. Az „Engedélyezés” gomb visszaadja a belépést.</td></tr>
+        <tr><td>Az automatikus mentés nem készül.</td><td>A Beállítások → Adatbázis-mentés blokkban látszik az utolsó mentés ideje. Ha nincs, ellenőrizze a <code>backups</code> mappa írási jogát és a szerver naplóját; a mentés a szerver indulása után néhány perccel és óránként ellenőrizve fut.</td></tr>
         <tr><td>Egy kupon nem váltható be.</td><td>Nézze meg az admin listában: kikapcsolt, lejárt vagy még nem érvényes.</td></tr>
       </table>
     </section>
@@ -316,9 +408,10 @@
         <tr><td>☐</td><td>Jogi szövegek jogászi véglegesítése, a „Vázlat” figyelmeztetés eltávolítása</td></tr>
         <tr><td>☐</td><td>Barion szerződés, sandbox teszt, éles kulcsok; Barion logó és Pixel követelményeinek ellenőrzése</td></tr>
         <tr><td>☐</td><td>Futár, Foxpost, MPL szerződés; szállítási módok bekapcsolása</td></tr>
-        <tr><td>☐</td><td>Valódi e-mail-küldés bekötése; számlázó rendszer bekötése</td></tr>
-        <tr><td>☐</td><td><code>ADMIN_USER_1…5</code> (kezelőnként saját felhasználó), <code>SITE_URL</code> beállítása; telepítés HTTPS-sel; adatmentés beállítása</td></tr>
-        <tr><td>☐</td><td>Próbarendelés minden szállítási és fizetési móddal a teszt környezetben</td></tr>
+        <tr><td>☐</td><td>Valódi e-mail-küldés bekötése; Számlázz.hu bekötése (<code>SZAMLAZZ_AGENT_KEY</code>, <code>SZAMLAZZ_VAT_RATE</code>), teszt-számla kiállítása és az ÁFA-kulcs ellenőrzése</td></tr>
+        <tr><td>☐</td><td>Készletnyilvántartás: a raktáron lévő darabszámok felvétele a Termékek és készlet oldalon (vagy üresen hagyva nincs nyilvántartás)</td></tr>
+        <tr><td>☐</td><td><code>ADMIN_USER_1…5</code> (kezelőnként saját felhasználó), <code>SITE_URL</code> beállítása; telepítés HTTPS-sel; adatmentés beállítása (<code>BACKUP_INTERVAL_HOURS</code>, <code>BACKUP_KEEP</code>), rendszeres mentés letöltése a szerveren kívülre</td></tr>
+        <tr><td>☐</td><td>Próbarendelés minden szállítási és fizetési móddal a teszt környezetben (feladással, követési számmal, lemondással és a készlet ellenőrzésével)</td></tr>
       </table>
       <p class="footer">CUPRÉ webshop · felhasználói dokumentáció. A képernyőképek a fejlesztési változatból készültek; a képek AI-generált látványtervek, az árak tesztárak.</p>
     </section>

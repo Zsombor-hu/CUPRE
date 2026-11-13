@@ -120,12 +120,33 @@
         <div class="card">
           <h3>Rendeléskezelés</h3>
           <ul>
-            <li>Lista állapot szerinti szűrőgombokkal és kereséssel</li>
+            <li>Lista állapot szerinti szűrőgombokkal és kereséssel (rendelésszám, név, e-mail, követési és számlaszám)</li>
             <li>Rendezhető, méretezhető oszlopok, lapozás állítható lapmérettel</li>
-            <li>Rendelés részletei felugró ablakban: vásárló, tételek, szállítás, fizetés, kupon</li>
-            <li>Állapotváltás naplózással, feladáskor automatikus értesítő</li>
+            <li>„Következő lépés” gomb: egy kattintásos állapotváltás a listából</li>
+            <li>Rendelés részletei felugró ablakban: vásárló, tételek, szállítás, fizetés, kupon, időrendi előzmények az admin nevével</li>
+            <li>Csomagkövetési szám külön mezőben – a feladási levélben követési linkkel</li>
+            <li>Belső megjegyzés, amit a vásárló nem lát</li>
             <li>Átutalás / utánvét beérkezésének rögzítése</li>
+            <li>Számla kiállítása a rendelésből (Számlázz.hu) vagy a számlaszám rögzítése</li>
+            <li>Másolás gombok, e-mail és telefon hivatkozások</li>
             <li>CSV és Excel export könyveléshez, futárnak</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Áttekintés és készlet</h3>
+          <ul>
+            <li>Kezdőoldal: napi, heti és havi bevétel, teendők, napi grafikon, legkelendőbb termékek</li>
+            <li>Ár, rendelhetőség és kiemelés módosítása build nélkül</li>
+            <li>Készletnyilvántartás: levonás rendeléskor, visszaírás lemondáskor, „Elfogyott” jelzés a webshopban</li>
+            <li>Alacsony készlet figyelmeztetés</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Vásárlók</h3>
+          <ul>
+            <li>Vásárlólista rendelési összesítővel, kereséssel</li>
+            <li>Fiók letiltása és engedélyezése</li>
+            <li>GDPR szerinti törlés: személyes adatok anonimizálása a számviteli adatok megtartásával</li>
           </ul>
         </div>
         <div class="card">
@@ -145,6 +166,14 @@
           </ul>
         </div>
         <div class="card">
+          <h3>Napló és adatmentés</h3>
+          <ul>
+            <li>Admin napló: ki, mikor, mit módosított (rendelés, kupon, termék, vásárló)</li>
+            <li>Automatikus napi adatbázis-mentés, azonnali mentés és letöltés az adminból</li>
+            <li>Az utolsó és a következő mentés ideje a Beállítások oldalon</li>
+          </ul>
+        </div>
+        <div class="card">
           <h3>Biztonságos működés</h3>
           <ul>
             <li>Külön fejlesztői, teszt és éles környezet, saját adatokkal</li>
@@ -160,6 +189,7 @@
             <li>Bal oldali hamburgermenü, telefonon is teljes értékű használat</li>
             <li>Legfeljebb öt saját admin felhasználó</li>
             <li>Felhasználónként mentett nyelv, lapméret és téma – minden eszközön ugyanaz</li>
+            <li>Visszajelzés értesítésekkel, megerősítő ablak a visszafordíthatatlan műveletek előtt</li>
           </ul>
         </div>
       </div>
@@ -182,9 +212,9 @@
         <tr><td>Kártyás fizetés</td><td>Barion Smart Gateway – a kártyaadatot a vásárló a Barion oldalán adja meg; a fizetés állapotát a rendszer mindig közvetlenül a Bariontól kérdezi le.</td></tr>
         <tr><td>Fiókok</td><td>Sózott, visszafejthetetlen jelszó-tárolás; biztonságos munkamenet-sütik; jelszócsere után minden eszközről kijelentkeztet.</td></tr>
         <tr><td>Visszaélések ellen</td><td>Próbálkozás-korlát a belépésre, regisztrációra, kuponkódokra és fizetés-indításra; az admin belépésnél egyszer használható ellenőrző kérdés.</td></tr>
-        <tr><td>Admin hozzáférés</td><td>Legfeljebb öt névvel azonosított admin felhasználó, 8 órás munkamenet; a beállítások felhasználónként a szerveren tárolódnak.</td></tr>
-        <tr><td>Adatvédelem</td><td>Személyes adat csak az elkülönített adatbázisban; a böngészőben csak a kosár tartalma tárolódik; analitika nincs beépítve.</td></tr>
-        <tr><td>Üzembiztonság</td><td>Fejlesztői, teszt és éles környezet külön adatokkal; a módosítások előbb tesztkörnyezetben próbálhatók ki.</td></tr>
+        <tr><td>Admin hozzáférés</td><td>Legfeljebb öt névvel azonosított admin felhasználó, 8 órás munkamenet; a beállítások felhasználónként a szerveren tárolódnak; minden módosítás bekerül a naplóba az admin nevével.</td></tr>
+        <tr><td>Adatvédelem</td><td>Személyes adat csak az elkülönített adatbázisban; a böngészőben csak a kosár tartalma tárolódik; analitika nincs beépítve; a vásárló adatai az adminból anonimizálhatók.</td></tr>
+        <tr><td>Üzembiztonság</td><td>Fejlesztői, teszt és éles környezet külön adatokkal; a módosítások előbb tesztkörnyezetben próbálhatók ki; az adatbázisról automatikus napi mentés készül.</td></tr>
       </table>
     </section>
 
@@ -219,8 +249,9 @@
           <h3>Technikai lépések</h3>
           <ul>
             <li>Valódi e-mail-küldés bekötése</li>
-            <li>Számlázó rendszer (pl. Számlázz.hu, Billingo) bekötése</li>
-            <li>Telepítés a VPS-re HTTPS-sel, adatmentéssel</li>
+            <li>Számlázz.hu kulcs beállítása és kipróbálása (a bekötés elkészült, éles kulccsal még nem tesztelt)</li>
+            <li>Készlet felvétele a nyilvántartott termékekre</li>
+            <li>Telepítés a VPS-re HTTPS-sel; a mentések letöltése a szerveren kívülre</li>
             <li>Barion teszt a sandbox környezetben</li>
           </ul>
         </div>
