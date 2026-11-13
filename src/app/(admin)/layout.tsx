@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./admin.css";
+import { AdminI18nProvider } from "@/components/admin/admin-i18n";
+import { AdminFeedbackProvider } from "@/components/admin/admin-feedback";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -26,14 +28,18 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-// Az admin felület önálló root layoutja: HeroUI v3 + Tailwind, a webshop és a demó oldalak stílusától függetlenül
+// Az admin felület önálló root layoutja: HeroUI v3 + Tailwind, a webshop és a demó oldalak stílusától függetlenül; háromnyelvű (hu/en/de) admin szótárral
 export default function AdminRootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="hu" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="min-h-full bg-background text-foreground">{children}</body>
+      <body className="min-h-full bg-background text-foreground">
+        <AdminI18nProvider>
+          <AdminFeedbackProvider>{children}</AdminFeedbackProvider>
+        </AdminI18nProvider>
+      </body>
     </html>
   );
 }

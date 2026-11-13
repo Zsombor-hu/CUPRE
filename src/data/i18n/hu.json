@@ -92,7 +92,8 @@
     "grades": {
       "first": "I. osztály",
       "second": "II. osztály"
-    }
+    },
+    "soldOut": "Elfogyott"
   },
   "products": {
     "eyebrow": "KOLLEKCIÓ",
@@ -282,7 +283,8 @@
       "pickupPointRequired": "Válaszd ki az átvételi pontot.",
       "couponInvalid": "Ez a kuponkód nem érvényes.",
       "couponNotYetValid": "Ez a kupon még nem váltható be.",
-      "couponExpired": "Ez a kupon lejárt."
+      "couponExpired": "Ez a kupon lejárt.",
+      "outOfStock": "A kosárban lévő egyik termék időközben elfogyott. Frissítsd az oldalt, és módosítsd a kosarat."
     }
   },
   "notFound": {
@@ -361,7 +363,9 @@
     "paymentReceivedIntro": "Köszönjük, a(z) #{orderId} rendelésed fizetése ({amount}) sikeresen beérkezett.",
     "shippedSubject": "CUPRÉ – feladtuk a csomagodat (#{orderId})",
     "shippedIntro": "Örömmel jelezzük, hogy a(z) #{orderId} rendelésedet feladtuk.",
-    "shippedNote": "Megjegyzés"
+    "shippedNote": "Megjegyzés",
+    "shippedTracking": "Csomagkövetési szám",
+    "shippedTrackingLink": "Csomagkövetés"
   },
   "account": {
     "eyebrow": "CUPRÉ FIÓK",
@@ -436,7 +440,8 @@
       "tooManyAttempts": "Túl sok próbálkozás. Próbáld újra néhány perc múlva.",
       "unauthorized": "A munkameneted lejárt, lépj be újra.",
       "invalidRequest": "Érvénytelen kérés.",
-      "network": "A kérést most nem sikerült elküldeni. Próbáld újra később."
+      "network": "A kérést most nem sikerült elküldeni. Próbáld újra később.",
+      "accountDisabled": "Ez a fiók le van tiltva. Kérjük, vedd fel velünk a kapcsolatot."
     }
   },
   "checkoutAccount": {

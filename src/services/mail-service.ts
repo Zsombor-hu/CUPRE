@@ -165,6 +165,8 @@ export function sendOrderShipped(input: {
   lang: Locale;
   shipping: ShippingSummary;
   note: string;
+  trackingNumber?: string | null;
+  trackingUrl?: string | null;
 }): void {
   sendSafely(() => {
     const dict = getDictionary(input.lang);
@@ -178,6 +180,8 @@ export function sendOrderShipped(input: {
         interpolate(dict.mail.shippedIntro, { orderId: input.orderId }),
         "",
         ...shippingLines(dict, input.shipping, input.lang),
+        ...(input.trackingNumber ? ["", `${dict.mail.shippedTracking}: ${input.trackingNumber}`] : []),
+        ...(input.trackingUrl ? [`${dict.mail.shippedTrackingLink}: ${input.trackingUrl}`] : []),
         ...(input.note ? ["", `${dict.mail.shippedNote}: ${input.note}`] : []),
         "",
         interpolate(dict.mail.footer, { email: company.email }),

@@ -92,7 +92,8 @@
     "grades": {
       "first": "First grade",
       "second": "Second grade"
-    }
+    },
+    "soldOut": "Sold out"
   },
   "products": {
     "eyebrow": "COLLECTION",
@@ -282,7 +283,8 @@
       "pickupPointRequired": "Please choose a pickup point.",
       "couponInvalid": "This coupon code is not valid.",
       "couponNotYetValid": "This coupon cannot be used yet.",
-      "couponExpired": "This coupon has expired."
+      "couponExpired": "This coupon has expired.",
+      "outOfStock": "One of the items in your cart has just sold out. Please refresh the page and update your cart."
     }
   },
   "notFound": {
@@ -361,7 +363,9 @@
     "paymentReceivedIntro": "Thank you, the payment ({amount}) for your order #{orderId} has been received.",
     "shippedSubject": "CUPRÉ – your parcel is on its way (#{orderId})",
     "shippedIntro": "We are happy to let you know that your order #{orderId} has been shipped.",
-    "shippedNote": "Note"
+    "shippedNote": "Note",
+    "shippedTracking": "Tracking number",
+    "shippedTrackingLink": "Track your parcel"
   },
   "account": {
     "eyebrow": "CUPRÉ ACCOUNT",
@@ -436,7 +440,8 @@
       "tooManyAttempts": "Too many attempts. Please try again in a few minutes.",
       "unauthorized": "Your session has expired, please sign in again.",
       "invalidRequest": "Invalid request.",
-      "network": "The request could not be sent right now. Please try again later."
+      "network": "The request could not be sent right now. Please try again later.",
+      "accountDisabled": "This account has been disabled. Please contact us."
     }
   },
   "checkoutAccount": {

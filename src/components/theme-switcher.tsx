@@ -90,8 +90,31 @@ function applyTheme(mode: Mode, palette: Palette) {
     }
 }
 
+// A váltó feliratai (alapértelmezetten magyar; az admin a választott nyelven adja át)
+export type ThemeSwitcherLabels = {
+    paletteLabel: string
+    modeLabel: string
+    modes: Record<Mode, string>
+}
+
+const DEFAULT_LABELS: ThemeSwitcherLabels = {
+    paletteLabel: "Szín téma váltása",
+    modeLabel: "Világos vagy sötét mód váltása",
+    modes: { light: "Világos", dark: "Sötét", system: "Rendszer" },
+}
+
+// Téma beállítása kívülről (pl. az admin felhasználó mentett beállításából): elmenti, alkalmazza és értesíti a váltókat
+export function setTheme(mode: Mode, palette: Palette) {
+    save(MODE_KEY, mode)
+    save(PALETTE_KEY, palette)
+    applyTheme(mode, palette)
+}
+
+// A színtémák listája (azonosító, név, mintaszín) – az admin beállítások oldal is ezt mutatja
+export const THEME_PALETTE_OPTIONS = PALETTES
+
 // Téma váltó: két legördülő menü, a Mód (Világos/Sötét/Rendszer) és a Szín (a HeroUI 11 témája)
-export default function ThemeSwitcher() {
+export default function ThemeSwitcher({ labels = DEFAULT_LABELS }: { labels?: ThemeSwitcherLabels }) {
     const mode = useSyncExternalStore(
         subscribe,
         () => readStored(MODE_KEY, MODES.map((item) => item.id), "system"),
@@ -128,7 +151,7 @@ export default function ThemeSwitcher() {
     return (
         <div className="flex items-center gap-2">
             <Dropdown>
-                <Button aria-label="Szín téma váltása" variant="secondary" size="sm">
+                <Button aria-label={labels.paletteLabel} variant="secondary" size="sm">
                     <span
                         className="size-3 rounded-full border border-foreground/20"
                         style={{ backgroundColor: PALETTES.find((item) => item.id === palette)?.color }}
@@ -155,8 +178,8 @@ export default function ThemeSwitcher() {
                 </Dropdown.Popover>
             </Dropdown>
             <Dropdown>
-                <Button aria-label="Világos vagy sötét mód váltása" variant="secondary" size="sm">
-                    {MODES.find((item) => item.id === mode)?.label}
+                <Button aria-label={labels.modeLabel} variant="secondary" size="sm">
+                    {labels.modes[mode]}
                 </Button>
                 <Dropdown.Popover>
                     <Dropdown.Menu
@@ -165,9 +188,9 @@ export default function ThemeSwitcher() {
                         onSelectionChange={(keys) => handleSelectionChange(MODE_KEY, keys)}
                     >
                         {MODES.map((item) => (
-                            <Dropdown.Item key={item.id} id={item.id} textValue={item.label}>
+                            <Dropdown.Item key={item.id} id={item.id} textValue={labels.modes[item.id]}>
                                 <Dropdown.ItemIndicator />
-                                <Label>{item.label}</Label>
+                                <Label>{labels.modes[item.id]}</Label>
                             </Dropdown.Item>
                         ))}
                     </Dropdown.Menu>

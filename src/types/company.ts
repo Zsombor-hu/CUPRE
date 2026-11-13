@@ -42,6 +42,8 @@ export type ShippingModeSettings = {
   enabled: boolean;
   feeHuf: number;
   deliveryDays: string;
+  // Opcionális csomagkövetési cím, a {code} helyére kerül a követési szám (Foxpostnál és MPL-nél van beépített alapérték)
+  trackingUrl?: string;
 };
 
 // Szállítási módok (company.json → shop.shipping)

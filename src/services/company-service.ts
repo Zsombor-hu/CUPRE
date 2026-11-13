@@ -17,7 +17,8 @@ function isShippingMode(value: unknown): value is ShippingModeSettings {
     typeof mode.enabled === "boolean" &&
     Number.isInteger(mode.feeHuf) &&
     mode.feeHuf >= 0 &&
-    typeof mode.deliveryDays === "string"
+    typeof mode.deliveryDays === "string" &&
+    (mode.trackingUrl === undefined || typeof mode.trackingUrl === "string")
   );
 }
 

@@ -44,3 +44,7 @@ next-env.d.ts
 /src/data/*/*.sqlite*
 /src/data/*/outbox/
 !.env.example
+
+# CUPRÉ adatbázis-mentések és kiállított számlák (személyes adat)
+/src/data/*/backups/
+/src/data/*/invoices/

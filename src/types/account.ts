@@ -81,6 +81,7 @@ export type AccountErrorCode =
   | "consentRequired"
   | "tooManyAttempts"
   | "unauthorized"
+  | "accountDisabled"
   | "invalidRequest";
 
 // Hibás kérés válasza: mezőnkénti hibakódok

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button, Card } from "@heroui/react";
 import ThemeSwitcher from "@/components/theme-switcher";
+import { AdminLanguageSwitcher, useAdminI18n } from "@/components/admin/admin-i18n";
 
 // Az admin elérhetősége és a munkamenet állapota
 type Status = "loading" | "disabled" | "login";
@@ -11,6 +12,7 @@ type Status = "loading" | "disabled" | "login";
 // Admin belépő oldal: ha már van érvényes munkamenet, egyből a rendelésekre visz
 export default function AdminLogin() {
   const router = useRouter();
+  const { t, fmt } = useAdminI18n();
   const [status, setStatus] = useState<Status>("loading");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -36,7 +38,7 @@ export default function AdminLogin() {
       const data = (await response.json()) as { configured: boolean; authenticated: boolean };
       // Már belépett: tovább a rendelésekhez
       if (data.authenticated) {
-        router.replace("/admin/rendelesek");
+        router.replace("/admin/attekintes");
         return;
       }
       if (active) {
@@ -74,44 +76,43 @@ export default function AdminLogin() {
       const code = data?.errors?.form;
       // Hibaüzenet a hiba oka szerint
       if (response.status === 429) {
-        setError("Túl sok próbálkozás, várj néhány percet.");
+        setError(t.login.tooMany);
       } else if (code === "invalidCaptcha") {
-        setError("Hibás vagy lejárt ellenőrző kérdés, próbáld újra.");
+        setError(t.login.invalidCaptcha);
       } else {
-        setError("Hibás felhasználónév vagy jelszó.");
+        setError(t.login.invalidCredentials);
       }
       setBusy(false);
       // Minden kísérlethez új feladvány tartozik
       void loadCaptcha();
       return;
     }
-    router.replace("/admin/rendelesek");
+    router.replace("/admin/attekintes");
   }
 
   return (
     <main className="relative flex min-h-screen items-center justify-center bg-gradient-to-br from-accent/10 via-background to-background p-6">
-      <div className="absolute right-4 top-4">
-        <ThemeSwitcher />
+      <div className="absolute right-4 top-4 flex items-center gap-2">
+        <AdminLanguageSwitcher />
+        <ThemeSwitcher labels={t.theme} />
       </div>
       <Card className="w-full max-w-sm">
         <Card.Header>
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">CUPRÉ</p>
-          <Card.Title className="text-2xl">Admin belépés</Card.Title>
-          <Card.Description>Rendelések, kuponok és hírlevél-feliratkozók kezelése.</Card.Description>
+          <Card.Title className="text-2xl">{t.login.title}</Card.Title>
+          <Card.Description>{t.login.description}</Card.Description>
         </Card.Header>
         <Card.Content>
-          {status === "loading" ? <p className="text-sm text-foreground/60">Betöltés…</p> : null}
+          {status === "loading" ? <p className="text-sm text-foreground/60">{t.common.loading}</p> : null}
           {status === "disabled" ? (
             <p className="text-sm">
-              Az admin felület nincs bekapcsolva. Állítsd be legalább egy <code>ADMIN_USER_1</code> környezeti változót{" "}
-              (<code>felhasználónév:jelszó</code> formában, a jelszó legalább 12 karakter) a környezet .env fájljában,
-              majd indítsd újra a szervert.
+              {t.login.disabledBefore} <code>ADMIN_USER_1</code> {t.login.disabledAfter}
             </p>
           ) : null}
           {status === "login" ? (
             <form className="flex flex-col gap-3" onSubmit={submit}>
               <label className="flex flex-col gap-1 text-sm">
-                Felhasználónév
+                {t.login.username}
                 <input
                   className="rounded-xl border border-foreground/20 bg-transparent px-3 py-2 outline-none focus:border-accent"
                   type="text"
@@ -123,7 +124,7 @@ export default function AdminLogin() {
                 />
               </label>
               <label className="flex flex-col gap-1 text-sm">
-                Jelszó
+                {t.login.password}
                 <input
                   className="rounded-xl border border-foreground/20 bg-transparent px-3 py-2 outline-none focus:border-accent"
                   type="password"
@@ -134,7 +135,7 @@ export default function AdminLogin() {
                 />
               </label>
               <label className="flex flex-col gap-1 text-sm">
-                {captcha ? `Ellenőrző kérdés: mennyi ${captcha.question}?` : "Ellenőrző kérdés betöltése…"}
+                {captcha ? fmt(t.login.captcha, { question: captcha.question }) : t.login.captchaLoading}
                 <input
                   className="rounded-xl border border-foreground/20 bg-transparent px-3 py-2 outline-none focus:border-accent"
                   type="text"
@@ -151,7 +152,7 @@ export default function AdminLogin() {
                 </p>
               ) : null}
               <Button type="submit" isDisabled={busy || captcha === null}>
-                Belépés
+                {t.login.submit}
               </Button>
             </form>
           ) : null}

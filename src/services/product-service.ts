@@ -1,5 +1,6 @@
 import "server-only";
 import type {
+  AdminProduct,
   CatalogVariant,
   EconomicOperator,
   Product,
@@ -9,6 +10,55 @@ import type {
 } from "@/types/product";
 import { isLocalizedText as isLocalized, type Locale } from "@/lib/i18n";
 import { readJsonData } from "@/services/data-paths";
+import { getCustomerDb } from "@/services/customer-db";
+
+// Változatonkénti admin felülírás (ár, aktív, készlet)
+type VariantOverride = { priceHuf: number | null; active: boolean; stock: number | null };
+
+// Termékenkénti admin felülírás (aktív, kiemelt)
+type ProductOverride = { active: boolean; featured: boolean | null };
+
+// Az admin felületen beállított felülírások az adatbázisból; ha az adatbázis nem érhető el (pl. build), nincs felülírás
+function readOverrides(): { variants: Map<string, VariantOverride>; products: Map<string, ProductOverride> } {
+  const variants = new Map<string, VariantOverride>();
+  const products = new Map<string, ProductOverride>();
+  // Az adatbázis hiánya nem akadályozhatja a katalógus megjelenítését
+  try {
+    const db = getCustomerDb();
+    const variantRows = db.prepare("SELECT sku, price_huf AS priceHuf, active, stock FROM product_overrides").all() as {
+      sku: string;
+      priceHuf: number | null;
+      active: number;
+      stock: number | null;
+    }[];
+    // Cikkszámonként egy felülírás
+    for (const row of variantRows) {
+      variants.set(row.sku, {
+        priceHuf: row.priceHuf === null ? null : Number(row.priceHuf),
+        active: Number(row.active) === 1,
+        stock: row.stock === null ? null : Number(row.stock),
+      });
+    }
+    const productRows = db.prepare("SELECT slug, active, featured FROM product_settings").all() as {
+      slug: string;
+      active: number;
+      featured: number | null;
+    }[];
+    // Slugonként egy felülírás
+    for (const row of productRows) {
+      products.set(row.slug, { active: Number(row.active) === 1, featured: row.featured === null ? null : Number(row.featured) === 1 });
+    }
+  } catch (error) {
+    console.error("A termék-felülírások nem olvashatók, a products.json adatai érvényesek:", error);
+  }
+  return { variants, products };
+}
+
+// Változat a felülírások után (a soldOut a nyilvántartott készletből)
+type MergedVariant = ProductVariantData & { soldOut: boolean };
+
+// Termék a felülírások után
+type MergedProduct = Omit<ProductData, "variants"> & { variants: MergedVariant[] };
 
 // Egy változat szerkezeti ellenőrzése
 function isVariant(value: unknown): value is ProductVariantData {
@@ -100,8 +150,76 @@ function getProductData(): ProductData[] {
   return data;
 }
 
+// A vásárlók számára elérhető katalógus: az admin felülírásai (ár, kikapcsolás, kiemelés, készlet) a products.json adataira.
+// A kikapcsolt termék és változat kimarad; ha emiatt egy termék sem maradna, a products.json adatai érvényesek.
+function getActiveProductData(): MergedProduct[] {
+  const data = getProductData();
+  const overrides = readOverrides();
+  const merged: MergedProduct[] = [];
+  // Termékenként alkalmazzuk a felülírásokat
+  for (const product of data) {
+    const productOverride = overrides.products.get(product.slug);
+    // Kikapcsolt termék
+    if (productOverride && !productOverride.active) {
+      continue;
+    }
+    const variants: MergedVariant[] = [];
+    // Változatonként ár, aktív és készlet
+    for (const variant of product.variants) {
+      const override = overrides.variants.get(variant.sku);
+      // Kikapcsolt változat
+      if (override && !override.active) {
+        continue;
+      }
+      variants.push({
+        ...variant,
+        priceHuf: override?.priceHuf ?? variant.priceHuf,
+        soldOut: override?.stock !== null && override?.stock !== undefined && override.stock <= 0,
+      });
+    }
+    // Változat nélkül a termék nem rendelhető
+    if (variants.length === 0) {
+      continue;
+    }
+    merged.push({ ...product, featured: productOverride?.featured ?? product.featured, variants });
+  }
+  // Biztonsági háló: üres katalógus helyett az eredeti adatok
+  if (merged.length === 0) {
+    return data.map((product) => ({ ...product, variants: product.variants.map((variant) => ({ ...variant, soldOut: false })) }));
+  }
+  return merged;
+}
+
+// Az admin terméklistája: minden termék és változat (a kikapcsoltak is) a felülírásokkal; a név az alapnyelven
+export function getAdminProducts(): AdminProduct[] {
+  const overrides = readOverrides();
+  return getProductData().map((product) => {
+    const productOverride = overrides.products.get(product.slug);
+    return {
+      slug: product.slug,
+      name: product.name.hu,
+      image: product.image,
+      active: productOverride?.active ?? true,
+      featured: productOverride?.featured ?? product.featured,
+      variants: product.variants.map((variant) => {
+        const override = overrides.variants.get(variant.sku);
+        return {
+          sku: variant.sku,
+          size: variant.size,
+          grade: variant.grade,
+          basePriceHuf: variant.priceHuf,
+          priceOverrideHuf: override?.priceHuf ?? null,
+          priceHuf: override?.priceHuf ?? variant.priceHuf,
+          active: override?.active ?? true,
+          stock: override?.stock ?? null,
+        };
+      }),
+    };
+  });
+}
+
 // Nyers termék feloldása egy nyelvre
-function localizeProduct(product: ProductData, lang: Locale): Product {
+function localizeProduct(product: MergedProduct, lang: Locale): Product {
   return {
     slug: product.slug,
     featured: product.featured,
@@ -127,14 +245,14 @@ function localizeProduct(product: ProductData, lang: Locale): Product {
   };
 }
 
-// Összes termék a megadott nyelven
+// Összes (bekapcsolt) termék a megadott nyelven
 export function getProducts(lang: Locale): Product[] {
-  return getProductData().map((product) => localizeProduct(product, lang));
+  return getActiveProductData().map((product) => localizeProduct(product, lang));
 }
 
-// Az összes termék slugja (a termékoldalak előgenerálásához)
+// Az összes bekapcsolt termék slugja (a termékoldalak előgenerálásához)
 export function getProductSlugs(): string[] {
-  return getProductData().map((product) => product.slug);
+  return getActiveProductData().map((product) => product.slug);
 }
 
 // Termék slug alapján (termékoldalhoz); ismeretlen slug esetén undefined

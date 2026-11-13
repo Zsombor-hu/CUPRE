@@ -1,4 +1,6 @@
 import { adminPasswordConfigured, isAdmin } from "@/services/auth-service";
+import { logAdminAction } from "@/services/audit-service";
+import { requireAdminName } from "@/services/admin-guard";
 import { deleteSubscriber, listSubscribers, subscriberCounts } from "@/services/newsletter-service";
 import { formError, okResponse } from "@/services/api-helpers";
 import type { NewsletterStatus } from "@/types/account";
@@ -27,14 +29,17 @@ export async function GET(request: Request) {
 
 // Admin: feliratkozó végleges törlése (?id=…)
 export async function DELETE(request: Request) {
+  const admin = await requireAdminName();
   // Admin munkamenet nélkül nincs hozzáférés
-  if (!(await isAdmin())) {
-    return formError("unauthorized", 401);
+  if ("denied" in admin) {
+    return admin.denied;
   }
   const id = Number(new URL(request.url).searchParams.get("id"));
   // Érvénytelen vagy nem létező azonosító
   if (!Number.isInteger(id) || !deleteSubscriber(id)) {
     return formError("invalidRequest", 404);
   }
+  // A naplóba személyes adat (e-mail) nem kerül, csak az azonosító
+  logAdminAction(admin.name, "newsletter.delete", "newsletter", id);
   return okResponse();
 }

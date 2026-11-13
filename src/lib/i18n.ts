@@ -12,7 +12,7 @@ export type Dictionary = typeof huDictionary;
 export type LocalizedText = Record<Locale, string>;
 
 // Számformátum nyelvenként (ezres tagolás)
-const NUMBER_LOCALES: Record<Locale, string> = { hu: "hu-HU", en: "en-GB", de: "de-DE" };
+export const NUMBER_LOCALES: Record<Locale, string> = { hu: "hu-HU", en: "en-GB", de: "de-DE" };
 
 // Ellenőrzi, hogy a szöveg támogatott nyelvkód-e (pl. az URL [lang] szegmense)
 export function hasLocale(value: string): value is Locale {

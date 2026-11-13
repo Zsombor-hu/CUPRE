@@ -120,11 +120,12 @@
         <div class="card">
           <h3>Rendeléskezelés</h3>
           <ul>
-            <li>Lista állapot szerinti fülekkel és kereséssel</li>
-            <li>Rendelés részletei: vásárló, tételek, szállítás, fizetés, kupon</li>
+            <li>Lista állapot szerinti szűrőgombokkal és kereséssel</li>
+            <li>Rendezhető, méretezhető oszlopok, lapozás állítható lapmérettel</li>
+            <li>Rendelés részletei felugró ablakban: vásárló, tételek, szállítás, fizetés, kupon</li>
             <li>Állapotváltás naplózással, feladáskor automatikus értesítő</li>
             <li>Átutalás / utánvét beérkezésének rögzítése</li>
-            <li>CSV export könyveléshez, futárnak</li>
+            <li>CSV és Excel export könyveléshez, futárnak</li>
           </ul>
         </div>
         <div class="card">
@@ -132,7 +133,7 @@
           <ul>
             <li>Kuponok létrehozása, ki-bekapcsolása, felhasználási statisztika</li>
             <li>Hírlevél-feliratkozók állapot szerint, törlés</li>
-            <li>CSV export a hírlevélküldő szolgáltatónak (csak megerősített címek)</li>
+            <li>CSV és Excel export a hírlevélküldő szolgáltatónak (csak megerősített címek)</li>
           </ul>
         </div>
         <div class="card">
@@ -149,7 +150,16 @@
             <li>Külön fejlesztői, teszt és éles környezet, saját adatokkal</li>
             <li>Az árakat és díjakat mindig a szerver számolja</li>
             <li>A kártyaadat sosem érinti a webshopot</li>
-            <li>Jelszavak titkosítva, próbálkozás-korlátozás</li>
+            <li>Jelszavak titkosítva, próbálkozás-korlátozás, ellenőrző kérdés az admin belépésnél</li>
+          </ul>
+        </div>
+        <div class="card" style="grid-column: 1 / -1">
+          <h3>Admin felület bárhonnan</h3>
+          <ul>
+            <li>Háromnyelvű kezelőfelület: magyar, angol, német</li>
+            <li>Bal oldali hamburgermenü, telefonon is teljes értékű használat</li>
+            <li>Legfeljebb öt saját admin felhasználó</li>
+            <li>Felhasználónként mentett nyelv, lapméret és téma – minden eszközön ugyanaz</li>
           </ul>
         </div>
       </div>
@@ -171,7 +181,8 @@
         <tr><th style="width:30%">Terület</th><th>Megoldás</th></tr>
         <tr><td>Kártyás fizetés</td><td>Barion Smart Gateway – a kártyaadatot a vásárló a Barion oldalán adja meg; a fizetés állapotát a rendszer mindig közvetlenül a Bariontól kérdezi le.</td></tr>
         <tr><td>Fiókok</td><td>Sózott, visszafejthetetlen jelszó-tárolás; biztonságos munkamenet-sütik; jelszócsere után minden eszközről kijelentkeztet.</td></tr>
-        <tr><td>Visszaélések ellen</td><td>Próbálkozás-korlát a belépésre, regisztrációra, kuponkódokra és fizetés-indításra.</td></tr>
+        <tr><td>Visszaélések ellen</td><td>Próbálkozás-korlát a belépésre, regisztrációra, kuponkódokra és fizetés-indításra; az admin belépésnél egyszer használható ellenőrző kérdés.</td></tr>
+        <tr><td>Admin hozzáférés</td><td>Legfeljebb öt névvel azonosított admin felhasználó, 8 órás munkamenet; a beállítások felhasználónként a szerveren tárolódnak.</td></tr>
         <tr><td>Adatvédelem</td><td>Személyes adat csak az elkülönített adatbázisban; a böngészőben csak a kosár tartalma tárolódik; analitika nincs beépítve.</td></tr>
         <tr><td>Üzembiztonság</td><td>Fejlesztői, teszt és éles környezet külön adatokkal; a módosítások előbb tesztkörnyezetben próbálhatók ki.</td></tr>
       </table>
@@ -182,7 +193,7 @@
       <p class="lead">Korszerű, széles körben használt alapokon – gyors oldalbetöltés, jó keresőoptimalizálás, könnyű továbbfejleszthetőség.</p>
       <table>
         <tr><th style="width:30%">Elem</th><th>Választás</th></tr>
-        <tr><td>Keretrendszer</td><td>Next.js 16 (App Router), React 19, TypeScript</td></tr>
+        <tr><td>Keretrendszer</td><td>Next.js 16 (App Router), React 19, TypeScript; az admin felület HeroUI v3 és Tailwind CSS alapon</td></tr>
         <tr><td>Megjelenítés</td><td>Előre generált, gyorsan betöltődő oldalak; optimalizált képek; reszponzív dizájn</td></tr>
         <tr><td>Adatok</td><td>Termékek, GYIK, cégadatok, szövegek: JSON fájlok; vásárlók, rendelések, kuponok: SQLite adatbázis</td></tr>
         <tr><td>Fizetés</td><td>Barion (bankkártya), banki átutalás, utánvét</td></tr>

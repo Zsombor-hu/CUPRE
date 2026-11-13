@@ -96,3 +96,22 @@ export function shippingSummaryById(orderId: number): ShippingSummary | null {
     pickupPoint: row.pointName ? { id: row.pointId ?? "", name: row.pointName, address: row.pointAddress ?? "" } : undefined,
   };
 }
+
+// Beépített csomagkövetési címek ({code}: a követési szám); a company.json trackingUrl mezője felülírja
+const DEFAULT_TRACKING_URLS: Partial<Record<ShippingMethod, string>> = {
+  foxpost: "https://foxpost.hu/csomagkovetes/?code={code}",
+  mpl_point: "https://www.posta.hu/nyomkovetes/nyitooldal?searchvalue={code}",
+};
+
+// Csomagkövetési link a szállítási mód és a követési szám alapján; ha a módhoz nincs cím, null
+export function trackingUrl(method: ShippingMethod, code: string | null): string | null {
+  // Követési szám nélkül nincs link
+  if (!code) {
+    return null;
+  }
+  const settings = getCompanyInfo().shop.shipping;
+  const configured =
+    method === "home" ? settings.home.trackingUrl : method === "foxpost" ? settings.foxpost.trackingUrl : method === "mpl_point" ? settings.mplPoint.trackingUrl : undefined;
+  const template = configured || DEFAULT_TRACKING_URLS[method];
+  return template ? template.replace("{code}", encodeURIComponent(code)) : null;
+}

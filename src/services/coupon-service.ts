@@ -83,7 +83,7 @@ function readDate(value: unknown): string | null | undefined {
   return /^\d{4}-\d{2}-\d{2}$/.test(raw) && !Number.isNaN(Date.parse(raw)) ? raw : undefined;
 }
 
-// Admin: kupon adatainak beolvasása és ellenőrzése (létrehozás és módosítás közösen)
+// Admin: kupon adatainak beolvasása és ellenőrzése (létrehozás és módosítás közösen); hiba esetén nyelvfüggetlen hibakódot ad, amit az admin felület fordít
 function readCouponInput(
   body: unknown,
 ): { ok: true; value: { code: string; amountHuf: number; validFrom: string | null; validUntil: string | null; active: boolean; note: string } } | { ok: false; error: string } {
@@ -94,19 +94,19 @@ function readCouponInput(
   const validUntil = readDate(raw.validUntil);
   // Kötelező, legalább 3 karakteres kód
   if (code.length < 3) {
-    return { ok: false, error: "A kód legalább 3 karakter (betű, szám, kötőjel)." };
+    return { ok: false, error: "codeTooShort" };
   }
   // Pozitív egész forintösszeg
   if (!Number.isInteger(amountHuf) || amountHuf <= 0 || amountHuf > 1_000_000) {
-    return { ok: false, error: "A kedvezmény összege pozitív egész forint legyen." };
+    return { ok: false, error: "invalidAmount" };
   }
   // Hibás dátumformátum
   if (validFrom === undefined || validUntil === undefined) {
-    return { ok: false, error: "A dátum formátuma ÉÉÉÉ-HH-NN legyen." };
+    return { ok: false, error: "invalidDate" };
   }
   // A kezdő dátum nem lehet a záró után
   if (validFrom && validUntil && validFrom > validUntil) {
-    return { ok: false, error: "Az érvényesség kezdete nem lehet a vége után." };
+    return { ok: false, error: "invalidRange" };
   }
   return { ok: true, value: { code, amountHuf, validFrom, validUntil, active: raw.active !== false, note: text(raw.note, 200) } };
 }
@@ -121,7 +121,7 @@ export function createCoupon(body: unknown): { ok: true; coupon: Coupon } | { ok
   const db = getCustomerDb();
   // Foglalt kód
   if (db.prepare("SELECT 1 FROM coupons WHERE code = ?").get(input.value.code)) {
-    return { ok: false, error: "Ez a kuponkód már létezik." };
+    return { ok: false, error: "codeExists" };
   }
   const result = db
     .prepare("INSERT INTO coupons (code, amount_huf, valid_from, valid_until, active, note) VALUES (?, ?, ?, ?, ?, ?)")
@@ -136,7 +136,7 @@ export function updateCoupon(id: number, body: unknown): { ok: true } | { ok: fa
   const existing = db.prepare("SELECT * FROM coupons WHERE id = ?").get(id) as CouponRow | undefined;
   // Ismeretlen kupon
   if (!existing) {
-    return { ok: false, error: "A kupon nem található." };
+    return { ok: false, error: "notFound" };
   }
   const input = readCouponInput({ ...record(body), code: existing.code });
   // Hibás adatok

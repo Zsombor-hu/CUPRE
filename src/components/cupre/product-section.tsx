@@ -12,7 +12,8 @@ import type { Product } from "@/types/product";
 export default function ProductSection({ product }: { product: Product }) {
   const { addToCart } = useShop();
   const { lang, dict } = useI18n();
-  const [selectedSku, setSelectedSku] = useState(product.variants[0].sku);
+  // Alapból az első rendelhető (nem elfogyott) változat van kiválasztva
+  const [selectedSku, setSelectedSku] = useState((product.variants.find((variant) => !variant.soldOut) ?? product.variants[0]).sku);
   const selected = product.variants.find((variant) => variant.sku === selectedSku) ?? product.variants[0];
   // Másodosztályú változat esetén kis betűs tájékoztatás az optikai eltérésekről
   const hasSecondGrade = product.variants.some((variant) => variant.grade === "second");
@@ -61,7 +62,7 @@ export default function ProductSection({ product }: { product: Product }) {
                       aria-pressed={variant.sku === selected.sku}
                       onClick={() => setSelectedSku(variant.sku)}
                     >
-                      {variant.size}, {dict.product.grades[variant.grade]} · {formatPrice(variant.priceHuf, lang)}
+                      {variant.size}, {dict.product.grades[variant.grade]} · {variant.soldOut ? dict.product.soldOut : formatPrice(variant.priceHuf, lang)}
                     </button>
                   ))}
                 </div>
@@ -73,9 +74,16 @@ export default function ProductSection({ product }: { product: Product }) {
               <strong>{formatPrice(selected.priceHuf, lang)}</strong>
               <small>{selected.priceNote}</small>
             </div>
-            <button className="btn btn-copper" id="addCart" onClick={() => addToCart(selected.sku)}>
-              {dict.product.addToCart} <span>→</span>
-            </button>
+            {/* Elfogyott változat nem tehető kosárba */}
+            {selected.soldOut ? (
+              <button className="btn btn-copper" id="addCart" disabled aria-disabled="true">
+                {dict.product.soldOut}
+              </button>
+            ) : (
+              <button className="btn btn-copper" id="addCart" onClick={() => addToCart(selected.sku)}>
+                {dict.product.addToCart} <span>→</span>
+              </button>
+            )}
           </div>
           <p className="product-disclaimer">{product.disclaimer}</p>
           {hasSecondGrade ? <p className="product-disclaimer product-grade-note">{dict.product.secondGradeNote}</p> : null}

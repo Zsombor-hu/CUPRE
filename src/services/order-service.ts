@@ -11,7 +11,8 @@ import { localePath } from "@/lib/i18n";
 import { resolveShipping, shippingSummaryById } from "@/services/shipping-service";
 import { validateCoupon } from "@/services/coupon-service";
 import { findVariant } from "@/services/product-service";
-import { createOrder, type ResolvedOrderItem } from "@/services/customer-db";
+import { revalidateTag } from "next/cache";
+import { OutOfStockError, createOrder, type ResolvedOrderItem } from "@/services/customer-db";
 import { sendOrderConfirmation } from "@/services/mail-service";
 import { subscribe } from "@/services/newsletter-service";
 import { DEFAULT_LOCALE, hasLocale, type Locale } from "@/lib/i18n";
@@ -87,6 +88,11 @@ export function validateOrderRequest(body: unknown, accountEmail: string | null 
       errors.items = "invalidItems";
       break;
     }
+    // Elfogyott változat (a pontos darabszámot a mentés tranzakciója ellenőrzi)
+    if (variant.soldOut) {
+      errors.items = "outOfStock";
+      break;
+    }
     items.push({ variant, qty });
   }
 
@@ -130,21 +136,34 @@ export async function placeOrder(
     discount = { couponCode: coupon.coupon.code, discountHuf: coupon.coupon.amountHuf };
   }
   const access = newOrderAccessToken();
-  const result = createOrder(
-    validation.customer,
-    validation.items,
-    validation.note,
-    validation.lang,
-    { method: shipping.method, feeHuf: shipping.feeHuf, pickupPoint: shipping.pickupPoint },
-    account?.id ?? null,
-    {
-      method: payment.method,
-      status: initialPaymentStatus(payment.method),
-      feeHuf: payment.feeHuf,
-      accessTokenHash: access.hash,
-    },
-    discount,
-  );
+  let result: ReturnType<typeof createOrder>;
+  // Mentés; ha közben elfogyott egy tétel, a tranzakció visszagörgetődik
+  try {
+    result = createOrder(
+      validation.customer,
+      validation.items,
+      validation.note,
+      validation.lang,
+      { method: shipping.method, feeHuf: shipping.feeHuf, pickupPoint: shipping.pickupPoint },
+      account?.id ?? null,
+      {
+        method: payment.method,
+        status: initialPaymentStatus(payment.method),
+        feeHuf: payment.feeHuf,
+        accessTokenHash: access.hash,
+      },
+      discount,
+    );
+  } catch (error) {
+    // Elfogyott készlet: a katalógus frissítése, hogy a vásárló lássa
+    if (error instanceof OutOfStockError) {
+      revalidateTag("catalog", "max");
+      return { ok: false, errors: { items: "outOfStock" } };
+    }
+    throw error;
+  }
+  // A készlet változhatott: a katalógus (elfogyott jelzés) a következő kéréskor frissül
+  revalidateTag("catalog", "max");
   const summary = paymentSummaryById(result.orderId);
   const shippingSummary = shippingSummaryById(result.orderId) ?? { method: shipping.method, feeHuf: shipping.feeHuf, deliveryDays: "" };
   const resultPage = `${localePath(validation.lang, "/fizetes/eredmeny")}?order=${result.orderId}&token=${encodeURIComponent(access.token)}`;

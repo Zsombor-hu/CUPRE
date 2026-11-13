@@ -2,7 +2,10 @@
 
 import { useCallback, useEffect, useState } from "react";
 import AdminRedirect from "@/components/admin/admin-redirect";
-import { Card, buttonVariants } from "@heroui/react";
+import { Button, Card, buttonVariants } from "@heroui/react";
+import DataGrid, { type GridColumn } from "@/components/admin/data-grid";
+import { useAdminI18n } from "@/components/admin/admin-i18n";
+import { notify, useConfirm } from "@/components/admin/admin-feedback";
 import type { NewsletterStatus, NewsletterSubscriber } from "@/types/account";
 
 // A lista API válasza
@@ -14,32 +17,15 @@ type ListResponse = {
 // Betöltési állapot: betöltés, letiltott admin, belépés szükséges, vagy betöltött lista
 type AdminState = { kind: "loading" } | { kind: "disabled" } | { kind: "login" } | { kind: "ready"; data: ListResponse };
 
-// Állapotok magyar felirata
-const STATUS_LABELS: Record<NewsletterStatus, string> = {
-  active: "Aktív",
-  pending: "Megerősítésre vár",
-  unsubscribed: "Leiratkozott",
-};
-
-// Forrás magyar felirata
-const SOURCE_LABELS: Record<string, string> = {
-  form: "Hírlevél űrlap",
-  checkout: "Pénztár",
-  account: "Fiók",
-};
-
-// Dátum rövid megjelenítése (az SQLite UTC időt helyi időként mutatjuk)
-function shortDate(value: string | null): string {
-  // Hiányzó dátum
-  if (!value) {
-    return "–";
-  }
-  const date = new Date(`${value.replace(" ", "T")}Z`);
-  return Number.isNaN(date.getTime()) ? value : date.toLocaleString("hu-HU");
-}
+// A feliratkozási állapotok sorrendje (számlálók és szűrőgombok)
+const STATUSES: NewsletterStatus[] = ["active", "pending", "unsubscribed"];
 
 // Hírlevél admin: számlálók, szűrés, lista, törlés, CSV export
 export default function NewsletterAdmin() {
+  const { t, fmt, when } = useAdminI18n();
+  const confirm = useConfirm();
+  const n = t.newsletter;
+  const sourceLabels: Record<string, string> = n.sources;
   const [state, setState] = useState<AdminState>({ kind: "loading" });
   const [filter, setFilter] = useState<NewsletterStatus | "all">("all");
 
@@ -68,28 +54,32 @@ export default function NewsletterAdmin() {
 
   // Feliratkozó végleges törlése megerősítés után
   async function remove(subscriber: NewsletterSubscriber) {
+    const ok = await confirm({ title: fmt(n.deleteConfirm, { email: subscriber.email }), confirmLabel: t.common.delete, danger: true });
     // Mégsem
-    if (!window.confirm(`Véglegesen törlöd: ${subscriber.email}?`)) {
+    if (!ok) {
       return;
     }
-    await fetch(`/api/admin/newsletter?id=${subscriber.id}`, { method: "DELETE" });
+    const response = await fetch(`/api/admin/newsletter?id=${subscriber.id}`, { method: "DELETE" });
+    // Eredmény visszajelzése
+    if (response.ok) {
+      notify.success(fmt(n.deleted, { email: subscriber.email }));
+    } else {
+      notify.error(t.common.genericError);
+    }
     await load();
   }
 
   // Betöltés közben
   if (state.kind === "loading") {
-    return <p className="p-6">Betöltés…</p>;
+    return <p className="p-6">{t.common.loading}</p>;
   }
   // Letiltott admin felület
   if (state.kind === "disabled") {
     return (
       <Card className="w-full max-w-md">
         <Card.Header>
-          <Card.Title>Az admin felület nincs bekapcsolva</Card.Title>
-          <Card.Description>
-            Állítsd be az ADMIN_USER_1…5 környezeti változót (legalább 12 karakter) a környezet .env fájljában, majd
-            indítsd újra a szervert.
-          </Card.Description>
+          <Card.Title>{n.disabledTitle}</Card.Title>
+          <Card.Description>{n.disabledText}</Card.Description>
         </Card.Header>
       </Card>
     );
@@ -101,86 +91,93 @@ export default function NewsletterAdmin() {
 
   const { counts, subscribers } = state.data;
   const exportStatus = filter === "all" ? "all" : filter;
+  // A feliratkozólista oszlopai (rendezhetők, méretezhetők)
+  const columns: GridColumn<NewsletterSubscriber>[] = [
+    { key: "email", label: n.columns.email, width: 260, sortValue: (row) => row.email, render: (row) => row.email },
+    { key: "name", label: n.columns.name, width: 180, sortValue: (row) => row.name || null, render: (row) => row.name || "–" },
+    { key: "lang", label: n.columns.lang, width: 90, sortValue: (row) => row.lang, render: (row) => row.lang.toUpperCase() },
+    { key: "status", label: n.columns.status, width: 170, sortValue: (row) => n.statuses[row.status], render: (row) => n.statuses[row.status] },
+    {
+      key: "source",
+      label: n.columns.source,
+      width: 150,
+      sortValue: (row) => sourceLabels[row.source] ?? row.source,
+      render: (row) => sourceLabels[row.source] ?? row.source,
+    },
+    { key: "consentAt", label: n.columns.subscribed, width: 180, sortValue: (row) => row.consentAt, render: (row) => when(row.consentAt) },
+    { key: "confirmedAt", label: n.columns.confirmed, width: 180, sortValue: (row) => row.confirmedAt, render: (row) => when(row.confirmedAt) },
+    {
+      key: "actions",
+      label: "",
+      width: 90,
+      render: (row) => (
+        <button type="button" className="text-red-600 underline" onClick={() => void remove(row)}>
+          {t.common.delete}
+        </button>
+      ),
+    },
+  ];
   return (
-    <div className="flex w-full flex-col gap-4">
+    <div className="flex w-full min-w-0 flex-col gap-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-2xl font-semibold">Hírlevél-feliratkozók</h1>
-        <div className="flex gap-2">
+        <h1 className="text-2xl font-semibold">{n.title}</h1>
+        <div className="flex flex-wrap gap-2">
           <a className={buttonVariants({ variant: "secondary", size: "sm" })} href={`/api/admin/newsletter/export?status=${exportStatus}`}>
-            CSV letöltése ({filter === "all" ? "mind" : STATUS_LABELS[filter].toLowerCase()})
+            {filter === "all" ? n.csvAll : fmt(n.csvFiltered, { status: n.statuses[filter].toLowerCase() })}
           </a>
           <a className={buttonVariants({ variant: "secondary", size: "sm" })} href={`/api/admin/newsletter/export?status=${exportStatus}&format=xlsx`}>
-            Excel letöltése
+            {t.common.excel}
           </a>
         </div>
       </div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-        {(Object.keys(STATUS_LABELS) as NewsletterStatus[]).map((status) => (
+        {STATUSES.map((status) => (
           <Card key={status}>
             <Card.Header>
-              <Card.Description>{STATUS_LABELS[status]}</Card.Description>
+              <Card.Description>{n.statuses[status]}</Card.Description>
               <Card.Title className="text-3xl">{counts[status]}</Card.Title>
             </Card.Header>
           </Card>
         ))}
       </div>
-      <div className="flex flex-wrap gap-2 text-sm">
-        {(["all", "active", "pending", "unsubscribed"] as const).map((option) => (
+      <div className="-mx-3 flex gap-2 overflow-x-auto px-3 pb-1 text-sm sm:mx-0 sm:flex-wrap sm:px-0">
+        {(["all", ...STATUSES] as const).map((option) => (
           <button
             key={option}
             type="button"
-            className={`rounded-full border px-3 py-1 ${filter === option ? "border-foreground font-semibold" : "border-foreground/20"}`}
+            className={`shrink-0 whitespace-nowrap rounded-full border px-3 py-1 transition-colors ${filter === option ? "border-accent bg-accent font-semibold text-accent-foreground shadow-sm" : "border-foreground/20 hover:border-accent/60 hover:bg-accent/10"}`}
             onClick={() => setFilter(option)}
           >
-            {option === "all" ? "Mind" : STATUS_LABELS[option]}
+            {option === "all" ? n.all : n.statuses[option]}
           </button>
         ))}
       </div>
-      <p className="text-xs text-foreground/60">
-        Hírlevelet csak az „Aktív” (megerősített) címekre szabad küldeni. A CSV-t a hírlevélküldő szolgáltatóba
-        importálhatod; az ott leiratkozottakat itt is töröld vagy jelöld.
-      </p>
-      <div className="overflow-x-auto rounded-xl border border-foreground/10">
-        <table className="w-full text-left text-sm">
-          <thead className="bg-foreground/5">
-            <tr>
-              <th className="px-3 py-2">E-mail</th>
-              <th className="px-3 py-2">Név</th>
-              <th className="px-3 py-2">Nyelv</th>
-              <th className="px-3 py-2">Állapot</th>
-              <th className="px-3 py-2">Forrás</th>
-              <th className="px-3 py-2">Feliratkozott</th>
-              <th className="px-3 py-2">Megerősítve</th>
-              <th className="px-3 py-2"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {subscribers.length === 0 ? (
-              <tr>
-                <td className="px-3 py-4 text-foreground/60" colSpan={8}>
-                  Nincs feliratkozó.
-                </td>
-              </tr>
-            ) : null}
-            {subscribers.map((subscriber) => (
-              <tr key={subscriber.id} className="border-t border-foreground/10">
-                <td className="px-3 py-2">{subscriber.email}</td>
-                <td className="px-3 py-2">{subscriber.name || "–"}</td>
-                <td className="px-3 py-2 uppercase">{subscriber.lang}</td>
-                <td className="px-3 py-2">{STATUS_LABELS[subscriber.status]}</td>
-                <td className="px-3 py-2">{SOURCE_LABELS[subscriber.source] ?? subscriber.source}</td>
-                <td className="px-3 py-2">{shortDate(subscriber.consentAt)}</td>
-                <td className="px-3 py-2">{shortDate(subscriber.confirmedAt)}</td>
-                <td className="px-3 py-2 text-right">
-                  <button type="button" className="text-red-600 underline" onClick={() => void remove(subscriber)}>
-                    Törlés
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <p className="text-xs text-foreground/60">{n.hint}</p>
+      <DataGrid
+        rows={subscribers}
+        columns={columns}
+        rowKey={(subscriber) => subscriber.id}
+        storageKey="admin:newsletter"
+        emptyText={n.empty}
+        resetKey={filter}
+        renderCard={(subscriber) => (
+          <div className="rounded-xl border border-foreground/10 bg-background p-3 text-sm">
+            <div className="break-all font-semibold">{subscriber.email}</div>
+            <div className="text-foreground/60">
+              {subscriber.name || "–"} · {subscriber.lang.toUpperCase()} · {n.statuses[subscriber.status]} ·{" "}
+              {sourceLabels[subscriber.source] ?? subscriber.source}
+            </div>
+            <div className="text-foreground/60">
+              {n.columns.subscribed}: {when(subscriber.consentAt)} · {n.columns.confirmed}: {when(subscriber.confirmedAt)}
+            </div>
+            <div className="mt-2">
+              <Button size="sm" variant="danger" onPress={() => void remove(subscriber)}>
+                {t.common.delete}
+              </Button>
+            </div>
+          </div>
+        )}
+      />
     </div>
   );
 }

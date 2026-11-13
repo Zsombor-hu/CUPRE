@@ -132,6 +132,7 @@ export type OrderErrorCode =
   | "termsRequired"
   | "emptyCart"
   | "invalidItems"
+  | "outOfStock"
   | "invalidPaymentMethod"
   | "invalidShippingMethod"
   | "pickupPointRequired"

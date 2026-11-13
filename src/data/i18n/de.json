@@ -92,7 +92,8 @@
     "grades": {
       "first": "1. Wahl",
       "second": "2. Wahl"
-    }
+    },
+    "soldOut": "Ausverkauft"
   },
   "products": {
     "eyebrow": "KOLLEKTION",
@@ -282,7 +283,8 @@
       "pickupPointRequired": "Bitte wählen Sie eine Abholstelle.",
       "couponInvalid": "Dieser Gutscheincode ist ungültig.",
       "couponNotYetValid": "Dieser Gutschein kann noch nicht eingelöst werden.",
-      "couponExpired": "Dieser Gutschein ist abgelaufen."
+      "couponExpired": "Dieser Gutschein ist abgelaufen.",
+      "outOfStock": "Ein Artikel in Ihrem Warenkorb ist inzwischen ausverkauft. Bitte laden Sie die Seite neu und passen Sie Ihren Warenkorb an."
     }
   },
   "notFound": {
@@ -361,7 +363,9 @@
     "paymentReceivedIntro": "Vielen Dank, die Zahlung ({amount}) für Ihre Bestellung #{orderId} ist eingegangen.",
     "shippedSubject": "CUPRÉ – Ihr Paket ist unterwegs (#{orderId})",
     "shippedIntro": "Wir freuen uns, Ihnen mitzuteilen, dass Ihre Bestellung #{orderId} versandt wurde.",
-    "shippedNote": "Hinweis"
+    "shippedNote": "Hinweis",
+    "shippedTracking": "Sendungsnummer",
+    "shippedTrackingLink": "Sendungsverfolgung"
   },
   "account": {
     "eyebrow": "CUPRÉ KONTO",
@@ -436,7 +440,8 @@
       "tooManyAttempts": "Zu viele Versuche. Bitte versuchen Sie es in einigen Minuten erneut.",
       "unauthorized": "Ihre Sitzung ist abgelaufen, bitte melden Sie sich erneut an.",
       "invalidRequest": "Ungültige Anfrage.",
-      "network": "Die Anfrage konnte gerade nicht gesendet werden. Bitte versuchen Sie es später erneut."
+      "network": "Die Anfrage konnte gerade nicht gesendet werden. Bitte versuchen Sie es später erneut.",
+      "accountDisabled": "Dieses Konto wurde gesperrt. Bitte kontaktieren Sie uns."
     }
   },
   "checkoutAccount": {

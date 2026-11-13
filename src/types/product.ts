@@ -56,9 +56,39 @@ export type ProductData = {
   productInfo: ProductInfoData;
 };
 
-// Egy nyelvre feloldott változat
+// Egy nyelvre feloldott változat; a soldOut az admin által nyilvántartott készletből jön (nincs nyilvántartás: mindig rendelhető)
 export type ProductVariant = Omit<ProductVariantData, "priceNote"> & {
   priceNote: string;
+  soldOut: boolean;
+};
+
+// Ennyi darab alatt a készlet „alacsony” (az admin áttekintés figyelmeztet)
+export const LOW_STOCK_THRESHOLD = 3;
+
+// Változat az admin terméklistában: a products.json alapadatai és az admin felülírásai együtt
+export type AdminVariant = {
+  sku: string;
+  size: string;
+  grade: ProductGrade;
+  // A products.json-ban megadott ár
+  basePriceHuf: number;
+  // Az admin által beállított ár (null: a products.json ára érvényes)
+  priceOverrideHuf: number | null;
+  // A ténylegesen érvényes ár
+  priceHuf: number;
+  active: boolean;
+  // Nyilvántartott készlet (null: nincs nyilvántartás, korlátlanul rendelhető)
+  stock: number | null;
+};
+
+// Termék az admin terméklistában
+export type AdminProduct = {
+  slug: string;
+  name: string;
+  image: string;
+  active: boolean;
+  featured: boolean;
+  variants: AdminVariant[];
 };
 
 // Termék kiemelt jellemzője (ikon + rövid felirat)

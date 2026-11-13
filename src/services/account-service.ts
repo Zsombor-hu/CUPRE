@@ -119,9 +119,9 @@ export function login(body: unknown): Result<number> {
   const pass = password(raw.password);
   const row = getCustomerDb()
     .prepare(
-      "SELECT a.id AS id, a.password_hash AS hash FROM accounts a JOIN customers c ON c.id = a.customer_id WHERE c.email = ?",
+      "SELECT a.id AS id, a.password_hash AS hash, a.disabled_at AS disabledAt FROM accounts a JOIN customers c ON c.id = a.customer_id WHERE c.email = ?",
     )
-    .get(email) as { id: number; hash: string } | undefined;
+    .get(email) as { id: number; hash: string; disabledAt: string | null } | undefined;
   // Nem létező fióknál is lefut egy hash-ellenőrzés, hogy a válaszidő ne áruljon el semmit
   if (!row) {
     verifyAgainstDummy(pass);
@@ -130,6 +130,10 @@ export function login(body: unknown): Result<number> {
   // Hibás jelszó
   if (!verifyPassword(pass, row.hash)) {
     return fail({ form: "invalidCredentials" });
+  }
+  // Az admin által letiltott fiókkal nem lehet belépni (a helyes jelszó után jelezzük, így nem árul el idegennek semmit)
+  if (row.disabledAt) {
+    return fail({ form: "accountDisabled" });
   }
   getCustomerDb().prepare("UPDATE accounts SET last_login_at = datetime('now') WHERE id = ?").run(row.id);
   return { ok: true, value: row.id };

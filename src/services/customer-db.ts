@@ -127,6 +127,34 @@ const SCHEMA = `
     unit_price_huf INTEGER NOT NULL,
     qty INTEGER NOT NULL
   );
+  CREATE TABLE IF NOT EXISTS admin_settings (
+    admin_name TEXT PRIMARY KEY,
+    settings TEXT NOT NULL DEFAULT '{}',
+    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+  );
+  CREATE TABLE IF NOT EXISTS product_overrides (
+    sku TEXT PRIMARY KEY,
+    price_huf INTEGER CHECK (price_huf IS NULL OR price_huf > 0),
+    active INTEGER NOT NULL DEFAULT 1,
+    stock INTEGER,
+    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+  );
+  CREATE TABLE IF NOT EXISTS product_settings (
+    slug TEXT PRIMARY KEY,
+    active INTEGER NOT NULL DEFAULT 1,
+    featured INTEGER,
+    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+  );
+  CREATE TABLE IF NOT EXISTS admin_audit (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    admin_name TEXT NOT NULL,
+    action TEXT NOT NULL,
+    entity TEXT NOT NULL DEFAULT '',
+    entity_id TEXT NOT NULL DEFAULT '',
+    details TEXT NOT NULL DEFAULT '',
+    created_at TEXT NOT NULL DEFAULT (datetime('now'))
+  );
+  CREATE INDEX IF NOT EXISTS admin_audit_entity ON admin_audit (entity, entity_id);
 `;
 
 // A korábban létrehozott orders táblához utólag felvett oszlopok (név → definíció)
@@ -152,35 +180,144 @@ const ORDER_COLUMNS: Record<string, string> = {
   pickup_point_address: "TEXT",
   coupon_code: "TEXT",
   discount_huf: "INTEGER NOT NULL DEFAULT 0",
+  tracking_number: "TEXT",
+  internal_note: "TEXT NOT NULL DEFAULT ''",
+  invoice_number: "TEXT",
+  invoice_issued_at: "TEXT",
+  invoice_file: "TEXT",
+};
+
+// Utólag felvett oszlopok: a rendelési tételnél a készletből ténylegesen levont darabszám (lemondáskor ennyi kerül vissza)
+const ORDER_ITEM_COLUMNS: Record<string, string> = {
+  stock_taken: "INTEGER NOT NULL DEFAULT 0",
+};
+
+// Utólag felvett oszlop: az állapotváltást végző admin neve
+const STATUS_HISTORY_COLUMNS: Record<string, string> = {
+  admin_name: "TEXT",
+};
+
+// Utólag felvett oszlop: az admin által letiltott fiók időpontja (letiltott fiókkal nem lehet belépni)
+const ACCOUNT_COLUMNS: Record<string, string> = {
+  disabled_at: "TEXT",
+};
+
+// A korábban létrehozott sessions táblához utólag felvett oszlopok (admin munkamenetnél a belépett admin neve)
+const SESSION_COLUMNS: Record<string, string> = {
+  admin_name: "TEXT",
 };
 
 // Folyamatonként egy kapcsolat; fejlesztéskor a hot reload ne nyisson újat minden módosításnál
-const globalForDb = globalThis as typeof globalThis & { cupreCustomerDb?: DatabaseSync };
+const globalForDb = globalThis as typeof globalThis & {
+  cupreCustomerDb?: DatabaseSync;
+  cupreCustomerDbRevision?: number;
+  cupreBackupTimer?: ReturnType<typeof setInterval>;
+};
+
+// A séma változatszáma: ha a kód újabb sémát hoz (pl. hot reload után), a már megnyitott kapcsolaton is lefut a sémafrissítés
+const SCHEMA_REVISION = 3;
 
 // Sémafrissítés a korábban létrehozott adatbázisokhoz (a CREATE TABLE IF NOT EXISTS új oszlopot nem ad hozzá)
 function migrate(db: DatabaseSync): void {
-  const existing = new Set((db.prepare("PRAGMA table_info(orders)").all() as { name: string }[]).map((c) => c.name));
-  // Csak a hiányzó oszlopokat vesszük fel, a meglévő adatok érintetlenek maradnak
-  for (const [column, definition] of Object.entries(ORDER_COLUMNS)) {
+  addMissingColumns(db, "orders", ORDER_COLUMNS);
+  addMissingColumns(db, "sessions", SESSION_COLUMNS);
+  addMissingColumns(db, "order_items", ORDER_ITEM_COLUMNS);
+  addMissingColumns(db, "order_status_history", STATUS_HISTORY_COLUMNS);
+  addMissingColumns(db, "accounts", ACCOUNT_COLUMNS);
+}
+
+// Egy tábla hiányzó oszlopainak felvétele (a meglévő adatok érintetlenek maradnak)
+function addMissingColumns(db: DatabaseSync, table: string, columns: Record<string, string>): void {
+  const existing = new Set((db.prepare(`PRAGMA table_info(${table})`).all() as { name: string }[]).map((c) => c.name));
+  // Csak a hiányzó oszlopokat vesszük fel
+  for (const [column, definition] of Object.entries(columns)) {
     // Már létező oszlopot nem lehet újra felvenni
     if (!existing.has(column)) {
-      db.exec(`ALTER TABLE orders ADD COLUMN ${column} ${definition}`);
+      db.exec(`ALTER TABLE ${table} ADD COLUMN ${column} ${definition}`);
     }
   }
 }
 
 // Az aktuális környezet ügyfél-adatbázisa; első megnyitáskor létrehozza a fájlt és a táblákat
 export function getCustomerDb(): DatabaseSync {
-  // Már megnyitott kapcsolatot újrahasznosítunk
-  if (globalForDb.cupreCustomerDb) {
-    return globalForDb.cupreCustomerDb;
+  const cached = globalForDb.cupreCustomerDb;
+  // Már megnyitott, naprakész sémájú kapcsolatot újrahasznosítunk
+  if (cached && globalForDb.cupreCustomerDbRevision === SCHEMA_REVISION) {
+    return cached;
   }
-  fs.mkdirSync(dataDir(), { recursive: true });
-  const db = new DatabaseSync(dataFile(DB_FILE));
+  // Új kapcsolat, ha még nincs megnyitva
+  if (!cached) {
+    fs.mkdirSync(dataDir(), { recursive: true });
+  }
+  const db = cached ?? new DatabaseSync(dataFile(DB_FILE));
   db.exec(SCHEMA);
   migrate(db);
   globalForDb.cupreCustomerDb = db;
+  globalForDb.cupreCustomerDbRevision = SCHEMA_REVISION;
+  startBackupScheduler();
   return db;
+}
+
+// Óránként ellenőrizzük, esedékes-e az automatikus adatbázis-mentés (build közben nem fut; folyamatonként egyszer indul)
+function startBackupScheduler(): void {
+  // Már fut, vagy éppen build zajlik (az előgenerálás is megnyithatja az adatbázist)
+  if (globalForDb.cupreBackupTimer || process.env.NEXT_PHASE === "phase-production-build") {
+    return;
+  }
+  // Késleltetett betöltés: a mentési szolgáltatás maga is ezt a modult használja
+  const run = () => {
+    void import("@/services/backup-service")
+      .then((module) => module.runScheduledBackup())
+      .catch((error: unknown) => console.error("Az automatikus adatbázis-mentés nem sikerült:", error));
+  };
+  globalForDb.cupreBackupTimer = setInterval(run, 60 * 60 * 1000);
+  globalForDb.cupreBackupTimer.unref();
+  setTimeout(run, 60 * 1000).unref();
+}
+
+// Elfogyott készlet miatt nem teljesíthető rendelés (a tranzakció visszagörgetése után a hívó „outOfStock” hibát ad)
+export class OutOfStockError extends Error {
+  constructor(public readonly sku: string) {
+    super(`Nincs elég készlet: ${sku}`);
+  }
+}
+
+// A rendelés tételeinek levonása a készletből (csak a nyilvántartott készletű cikkszámoknál); hiány esetén OutOfStockError.
+// A levont darabszám a tételen marad, lemondáskor ez kerül vissza.
+export function takeStock(db: DatabaseSync, orderId: number, enforce: boolean): void {
+  const items = db.prepare("SELECT id, sku, qty FROM order_items WHERE order_id = ? AND stock_taken = 0").all(orderId) as {
+    id: number;
+    sku: string;
+    qty: number;
+  }[];
+  // Tételenként a nyilvántartott készletből vonunk le
+  for (const item of items) {
+    const row = db.prepare("SELECT stock FROM product_overrides WHERE sku = ?").get(item.sku) as { stock: number | null } | undefined;
+    // Nem nyilvántartott készlet: korlátlanul rendelhető
+    if (!row || row.stock === null) {
+      continue;
+    }
+    // Új rendelésnél nem mehet a készlet nulla alá (visszaállított rendelésnél igen, azt az admin tudatosan kéri)
+    if (enforce && Number(row.stock) < Number(item.qty)) {
+      throw new OutOfStockError(item.sku);
+    }
+    db.prepare("UPDATE product_overrides SET stock = stock - ?, updated_at = datetime('now') WHERE sku = ?").run(item.qty, item.sku);
+    db.prepare("UPDATE order_items SET stock_taken = ? WHERE id = ?").run(item.qty, item.id);
+  }
+}
+
+// A rendelés által lefoglalt készlet visszaírása (lemondáskor)
+export function releaseStock(db: DatabaseSync, orderId: number): void {
+  const items = db.prepare("SELECT id, sku, stock_taken AS taken FROM order_items WHERE order_id = ? AND stock_taken > 0").all(orderId) as {
+    id: number;
+    sku: string;
+    taken: number;
+  }[];
+  // Tételenként vissza a készletbe (ha közben megszűnt a nyilvántartás, nincs mit visszaírni)
+  for (const item of items) {
+    db.prepare("UPDATE product_overrides SET stock = stock + ?, updated_at = datetime('now') WHERE sku = ? AND stock IS NOT NULL").run(item.taken, item.sku);
+    db.prepare("UPDATE order_items SET stock_taken = 0 WHERE id = ?").run(item.id);
+  }
 }
 
 // Művelet futtatása tranzakcióban: hiba esetén visszagörget, így nem marad félig mentett adat
@@ -318,6 +455,8 @@ export function createOrder(
         item.qty,
       );
     }
+    // Készlet levonása (elfogyott tételnél az egész rendelés visszagörgetődik)
+    takeStock(db, orderId, true);
     // A beváltott kupon felhasználási számlálója
     if (discount && discountHuf > 0) {
       db.prepare("UPDATE coupons SET used_count = used_count + 1 WHERE code = ?").run(discount.couponCode);

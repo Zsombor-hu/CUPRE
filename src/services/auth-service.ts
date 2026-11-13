@@ -54,13 +54,13 @@ function secureCookies(): boolean {
   return (process.env.SITE_URL ?? "").startsWith("https://");
 }
 
-// Munkamenet létrehozása és a süti beállítása
-async function startSession(kind: "customer" | "admin", accountId: number | null): Promise<void> {
+// Munkamenet létrehozása és a süti beállítása (admin munkamenetnél a belépett admin nevével)
+async function startSession(kind: "customer" | "admin", accountId: number | null, adminName: string | null = null): Promise<void> {
   const token = createToken();
   const ttl = kind === "customer" ? CUSTOMER_SESSION_MS : ADMIN_SESSION_MS;
   getCustomerDb()
-    .prepare("INSERT INTO sessions (token_hash, kind, account_id, expires_at) VALUES (?, ?, ?, ?)")
-    .run(hashToken(token), kind, accountId, new Date(Date.now() + ttl).toISOString());
+    .prepare("INSERT INTO sessions (token_hash, kind, account_id, admin_name, expires_at) VALUES (?, ?, ?, ?, ?)")
+    .run(hashToken(token), kind, accountId, adminName, new Date(Date.now() + ttl).toISOString());
   const store = await cookies();
   store.set(kind === "customer" ? SESSION_COOKIE : ADMIN_COOKIE, token, {
     httpOnly: true,
@@ -72,7 +72,7 @@ async function startSession(kind: "customer" | "admin", accountId: number | null
 }
 
 // Érvényes munkamenet sora a süti alapján (lejárt munkamenetet töröl)
-async function readSession(kind: "customer" | "admin"): Promise<{ id: number; account_id: number | null } | null> {
+async function readSession(kind: "customer" | "admin"): Promise<{ id: number; account_id: number | null; admin_name: string | null } | null> {
   const store = await cookies();
   const token = store.get(kind === "customer" ? SESSION_COOKIE : ADMIN_COOKIE)?.value;
   // Süti nélkül nincs munkamenet
@@ -81,8 +81,8 @@ async function readSession(kind: "customer" | "admin"): Promise<{ id: number; ac
   }
   const db = getCustomerDb();
   const row = db
-    .prepare("SELECT id, account_id, expires_at FROM sessions WHERE token_hash = ? AND kind = ?")
-    .get(hashToken(token), kind) as { id: number; account_id: number | null; expires_at: string } | undefined;
+    .prepare("SELECT id, account_id, admin_name, expires_at FROM sessions WHERE token_hash = ? AND kind = ?")
+    .get(hashToken(token), kind) as { id: number; account_id: number | null; admin_name: string | null; expires_at: string } | undefined;
   // Ismeretlen token
   if (!row) {
     return null;
@@ -220,18 +220,21 @@ export function verifyAdminCaptcha(token: string, answer: string): boolean {
 
 // Admin belépés: felhasználónév + jelszó; minden felhasználót végigellenőrzünk, hogy a válaszidő ne áruljon el semmit
 export async function signInAdmin(name: string, plain: string): Promise<boolean> {
-  let matched = false;
+  let matched: string | null = null;
   // Mindkét adatot állandó idejű összehasonlítással vetjük össze
   for (const user of adminUsers()) {
     const nameOk = safeEqual(user.name.toLowerCase(), name.trim().toLowerCase());
     const passwordOk = safeEqual(user.password, plain);
-    matched = (nameOk && passwordOk) || matched;
+    // Az első egyező felhasználó neve (a beállításai ehhez tartoznak)
+    if (nameOk && passwordOk && matched === null) {
+      matched = user.name;
+    }
   }
   // Hibás adatoknál nem jön létre munkamenet
-  if (!matched) {
+  if (matched === null) {
     return false;
   }
-  await startSession("admin", null);
+  await startSession("admin", null, matched);
   return true;
 }
 
@@ -243,4 +246,14 @@ export async function signOutAdmin(): Promise<void> {
 // Van-e érvényes admin munkamenet
 export async function isAdmin(): Promise<boolean> {
   return adminPasswordConfigured() && (await readSession("admin")) !== null;
+}
+
+// A belépett admin felhasználó neve (a beállítások kulcsa); régi, név nélküli munkamenetnél vagy belépés nélkül null
+export async function currentAdminName(): Promise<string | null> {
+  // Letiltott admin felületnél nincs belépett admin
+  if (!adminPasswordConfigured()) {
+    return null;
+  }
+  const session = await readSession("admin");
+  return session?.admin_name ?? null;
 }
